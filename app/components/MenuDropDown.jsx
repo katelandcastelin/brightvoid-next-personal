@@ -6,20 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const StyledMenuIcon = styled(MenuIcon)`
-  color: #555;
-`;
-
-const StyledMenu = styled(Menu)`
-  && {
-    
-  }
-`;
-
-const StyledMenuItem = styled(MenuItem)`
-  && {
-    font-weight: 100;
-    margin: 10px;
-  }
+  color: #ffffff;
 `;
 
 export default function MenuDropDown() {
@@ -43,7 +30,7 @@ export default function MenuDropDown() {
       >
         <StyledMenuIcon fontSize='large' />
       </Button>
-      <StyledMenu
+      <Menu
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
@@ -52,17 +39,17 @@ export default function MenuDropDown() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <StyledMenuItem onClick={handleClose}>
+        <MenuItem onClick={handleClose}>
           <a href='/pages/gallery'>
             Gallery
           </a>
-        </StyledMenuItem>
-        <StyledMenuItem onClick={handleClose}>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
           <a href='/pages/about'>
             About
           </a>
-        </StyledMenuItem>
-      </StyledMenu>
+        </MenuItem>
+      </Menu>
     </div>
   );
 }

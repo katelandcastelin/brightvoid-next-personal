@@ -8,10 +8,6 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  a {
-    margin: 10px;
-  }
 `;
 
 const DropDownDiv = styled.div`
@@ -23,13 +19,20 @@ const DropDownDiv = styled.div`
 `;
 
 const Menu = styled.div`
+  a {
+    margin-left: 10px;
+  }
+
   @media (max-width: 1040px) {
     display: none;
   }
 `;
 
 const CustomerHub = styled.div`
-
+  img {
+    margin-right: 10px;
+    height: 40px;
+  }
 `;
 
 export default function Navigation() {
@@ -44,13 +47,13 @@ export default function Navigation() {
       </Menu>
       <CustomerHub>
         <a href="/pages/log-in">
-          log-in
+          <img src="/customer-hub/log-in.png" />
         </a>
         <a href="/pages/profile">
-          profile
+          <img src="/customer-hub/profile.png" />
         </a>
         <a href="/pages/cart">
-          cart
+          <img src="/customer-hub/cart.png" />
         </a>
       </CustomerHub>
     </Container>
