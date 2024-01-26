@@ -35,21 +35,24 @@ const LogoContainer = styled.div`
   img {
     height: 90px;
     margin-bottom: 5px;
+    z-index: 1;
   }
 `;
 
 export default function Header() {
   return (
-    <Container>
-      <Navigation />
-      <a href="/">
-        <LogoContainer>
-          <img src='/logo/logo-white.png' />
-        </LogoContainer>
-        <div>
-          <p>Step into the void</p>
-        </div>
-      </a>
-    </Container>
+    <div style={{height: '200px'}}>
+      <Container>
+        <Navigation />
+        <a href="/">
+          <LogoContainer>
+            <img src='/logo/logo-white.png' />
+          </LogoContainer>
+          <div>
+            <p>Step into the void</p>
+          </div>
+        </a>
+      </Container>
+    </div>
   )
 }

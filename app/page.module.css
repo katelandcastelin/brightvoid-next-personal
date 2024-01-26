@@ -3,8 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  margin-top: 100px;
 }
 
 .code {
@@ -52,6 +50,7 @@
   align-items: center;
   position: absolute;
   padding: 4rem 0;
+  z-index: -1;
 }
 
 .glow::before {
