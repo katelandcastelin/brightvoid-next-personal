@@ -5,20 +5,18 @@ import styled from 'styled-components';
 
 const Label = styled.label`
   margin-bottom: 10px;
-  color: #555;
 `;
 
 const Input = styled.input`
-  background-color: #fff;
-  border: 1px solid #cfd4d5;
   border-radius: 5px;
   padding: 15px;
   margin-bottom: 20px;
-  color: #555;
   z-index: 1;
+  font-family: var(--font-mono);
 `;
 
 const SubmitButton = styled.input`
+  color: #cccccc;
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
@@ -39,6 +37,8 @@ export default function LogInPage() {
   return (
     <div className={styles.main}>
       <div className={styles.formsContainer}>
+        <div className={styles.glow} />
+        <div className={styles.glow} />
         <div className={styles.formBlock}>
           <form className={styles.form}>
             <p className={styles.formHeader}>Log in</p>
@@ -52,7 +52,7 @@ export default function LogInPage() {
 
         <div className={styles.formBlock}>
           <form className={styles.form}>
-            <p className={styles.formHeader}>Sign me up</p>
+            <p className={styles.formHeader}>Sign up</p>
             <Label>Username</Label>
             <Input type="username" placeholder="Enter Username" name="uname" required />
             <Label>Email</Label>

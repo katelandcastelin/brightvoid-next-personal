@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  color: #a8a8a8;
 }
 
 .formsContainer {
@@ -18,7 +19,6 @@
   padding: 20px;
   border-radius: 10px;
   margin: 0 40px;
-
   background: rgba(var(--card-rgb), 0.1);
   border: 1px solid rgba(var(--card-border-rgb), 0.15);
 }
@@ -30,11 +30,61 @@
 }
 
 .formHeader {
-  color: #848484;
   font-size: 23px;
   font-weight: 500;
   margin-bottom: 35px;
   letter-spacing: 0.5px;
+}
+
+.glow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding: 4rem 0;
+  z-index: -1;
+}
+
+.glow::before {
+  background: var(--secondary-glow);
+  border-radius: 50%;
+  width: 480px;
+  height: 360px;
+  margin-left: -800px;
+}
+
+.glow::after {
+  background: var(--primary-glow);
+  width: 240px;
+  height: 180px;
+  z-index: -1;
+}
+
+.glow::before,
+.glow::after {
+  content: "";
+  left: 50%;
+  position: absolute;
+  filter: blur(45px);
+  transform: translateZ(0);
+}
+
+.glow:nth-of-type(1)::before {
+  background: green;
+  margin-left: -400px;
+  opacity: 1;
+}
+.glow:nth-of-type(1)::after {
+  background: lightgreen;
+}
+.glow:nth-of-type(1)::before,
+.glow:nth-of-type(1)::after {
+  content: "";
+  top: 100%;
+  left: 0%;
+  position: absolute;
+  filter: blur(95px);
+  transform: translateZ(0);
 }
 
 @media (max-width: 1280px) {
@@ -46,7 +96,6 @@
 @media (max-width: 1200px) {
   .formBlock {
     width: 100%;
-    margin: 10px;
   }
 }
 
