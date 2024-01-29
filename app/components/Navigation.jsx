@@ -43,7 +43,7 @@ export default function Navigation() {
       </DropDownDiv>
       <Menu>
         <a href="/pages/gallery">Gallery</a>
-        <a href="/about">About</a>
+        <a href="/pages/about">About</a>
       </Menu>
       <CustomerHub>
         <a href="/pages/log-in">
