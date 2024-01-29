@@ -46,13 +46,13 @@ export default function Navigation() {
         <a href="/pages/about">About</a>
       </Menu>
       <CustomerHub>
-        <a href="/pages/log-in">
+        <a href="/pages/log-in" title="log-in">
           <img src="/customer-hub/log-in.png" />
         </a>
-        <a href="/pages/profile">
+        <a href="/pages/profile" title="profile">
           <img src="/customer-hub/profile.png" />
         </a>
-        <a href="/pages/cart">
+        <a href="/pages/cart" title="cart">
           <img src="/customer-hub/cart.png" />
         </a>
       </CustomerHub>
