@@ -6,7 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const StyledMenuIcon = styled(MenuIcon)`
-  color: #ffffff;
+  color: #cccccc;
 `;
 
 export default function MenuDropDown() {
