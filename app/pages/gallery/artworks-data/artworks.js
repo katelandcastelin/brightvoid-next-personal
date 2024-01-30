@@ -1,4 +1,4 @@
-const ArtworkImages = [
+const Artworks = [
   {
     id: '/artworks/anon.png',
     title: 'anon',
@@ -6,35 +6,26 @@ const ArtworkImages = [
     year: '2022',
   },
   {
-    id: '/images/artworks/almond-blossoms.jpeg',
-    title: 'Almond Blossoms',
-    artist: 'Vincent Van Gogh',
-    year: '1890',
+    id: '/artworks/guiding-neon/ace-of-cups.png',
+    title: 'Ace of Cups',
+    artist: 'cardboard',
+    year: '2022',
+    collectionName: 'Guiding Neon',
     corsets: [
       {
-        image: '/images/artworks/almond-blossoms/1.jpeg',
-        description: '',
+        image: '/artworks/guiding-neon/king-of-cups.png',
+        description: 'King of Cups',
       },
       {
-        image: '/images/artworks/almond-blossoms/1-1.jpeg',
-        description: '',
+        image: '/artworks/guiding-neon/temperence.png',
+        description: 'Temperence',
       },
       {
-        image: '/images/artworks/almond-blossoms/1-2.jpeg',
-        description: '',
-      },
-      {
-        image: '/images/artworks/almond-blossoms/1-3.jpeg',
-        description: '',
-      },
-      {
-        image: '/images/artworks/almond-blossoms/2.jpg',
-        description: '',
-      },
-      {
-        image: '/images/artworks/almond-blossoms/3.jpg',
-        description: '',
-      },
+        image: '/artworks/guiding-neon/three-of-pentacles.png',
+        description: 'Three of Pentacles',
+      }
     ],
   },
-]
+];
+
+export default Artworks;

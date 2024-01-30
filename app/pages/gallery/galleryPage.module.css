@@ -1,11 +1,3 @@
-.galleryContainer {
-  columns: 2 200px;
-  column-gap: auto;
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 1rem;
-}
-
 @media (max-width: 750px) {
   .galleryContainer{
     columns: 1 100px;

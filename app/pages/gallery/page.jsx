@@ -1,6 +1,8 @@
 'use client';
+import { React, useState, useEffect } from 'react';
 import styles from './galleryPage.module.css';
 import styled from 'styled-components';
+import Artworks from './artworks-data/artworks';
 
 const Container = styled.div`
   columns: 2 200px;
@@ -27,12 +29,28 @@ const Artwork = styled.img`
 `;
 
 export default function GalleryPage() {
+  const [selectArtwork, setSelectedArtwork] = useState(null);
+
+  const artworks = Artworks.map((artwork) => (
+    <div key={artwork.id}>
+      <div className={styles.frame}>
+        <Artwork src={artwork.id} />
+        <div>{artwork.title}</div>
+        <div>{artwork.artist}</div>
+        <div>{artwork.year}</div>
+      </div>
+    </div>
+  ))
 
   return (
     <Container>
-      <div className={styles.frame}>
+      {artworks}
+      {/* <div className={styles.frame}>
         <Artwork src='/artworks/anon.png' />
       </div>
+      <div className={styles.frame}>
+        <Artwork src='/artworks/guiding-neon/ace-of-cups.png' />
+      </div> */}
     </Container>
   );
 }
