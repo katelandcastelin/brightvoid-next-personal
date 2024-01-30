@@ -24,7 +24,7 @@ const Container = styled.div`
   backdrop-filter: blur(24px);
 
   p {
-    color: blue;
+    color: #4400ff;
   }
 `;
 
