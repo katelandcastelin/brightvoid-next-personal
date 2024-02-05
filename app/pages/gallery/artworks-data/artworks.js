@@ -4,6 +4,9 @@ const Artworks = [
     title: 'anon',
     artist: 'cardboard',
     year: '2022',
+    collection: [
+      
+    ]
   },
   {
     id: '/artworks/guiding-neon/ace-of-cups.png',
@@ -11,13 +14,13 @@ const Artworks = [
     artist: 'cardboard',
     year: '2022',
     collectionName: 'Guiding Neon',
-    corsets: [
+    collection: [
       {
         image: '/artworks/guiding-neon/king-of-cups.png',
         description: 'King of Cups',
       },
       {
-        image: '/artworks/guiding-neon/temperence.png',
+        image: '/artworks/guiding-neon/temperance.png',
         description: 'Temperence',
       },
       {

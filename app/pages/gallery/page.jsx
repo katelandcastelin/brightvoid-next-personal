@@ -3,6 +3,7 @@ import { React, useState, useEffect } from 'react';
 import styles from './galleryPage.module.css';
 import styled from 'styled-components';
 import Artworks from './artworks-data/artworks';
+import CollectionDisplay from '../../components/CollectionDisplay';
 
 const Container = styled.div`
   columns: 2 200px;
@@ -10,6 +11,13 @@ const Container = styled.div`
   width: 90%;
   margin: 0 auto;
   padding-top: 1rem;
+
+  @media (max-width: 750px) {
+    columns: 1 100px;
+    column-gap: auto;
+    width: 90%;
+    margin: 0 auto;
+  }
 `;
 
 const Artwork = styled.img`
@@ -29,28 +37,39 @@ const Artwork = styled.img`
 `;
 
 export default function GalleryPage() {
-  const [selectArtwork, setSelectedArtwork] = useState(null);
+  const [selectedArtwork, setSelectedArtwork] = useState(null);
+
+  useEffect(() => {
+    if (selectedArtwork === null) {
+      window.scrollTo(0, 170);
+    }
+  }, [selectedArtwork]);
+
+  const handleImageClick = (artworkId) => {
+    setSelectedArtwork(artworkId);
+  }
+
+  const handleCloseClick = () => {
+    setSelectedArtwork(null);
+  }
 
   const artworks = Artworks.map((artwork) => (
-    <div key={artwork.id}>
+    <div key={artwork.id} onClick={() => handleImageClick(artwork)}>
       <div className={styles.frame}>
         <Artwork src={artwork.id} />
-        <div>{artwork.title}</div>
-        <div>{artwork.artist}</div>
-        <div>{artwork.year}</div>
       </div>
     </div>
-  ))
+  ));
 
   return (
     <Container>
       {artworks}
-      {/* <div className={styles.frame}>
-        <Artwork src='/artworks/anon.png' />
-      </div>
-      <div className={styles.frame}>
-        <Artwork src='/artworks/guiding-neon/ace-of-cups.png' />
-      </div> */}
+
+      {selectedArtwork && (
+        <div className={styles.fullScreenContainer}>
+          <CollectionDisplay selectedArtwork={selectedArtwork} />
+        </div>
+      )}
     </Container>
   );
 }
