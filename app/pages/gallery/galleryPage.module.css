@@ -1,0 +1,139 @@
+@media (max-width: 750px) {
+  .galleryContainer{
+    columns: 1 100px;
+    column-gap: auto;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.frame {
+  background-color: #ddc;
+  border: solid 5vmin #eee;
+  border-bottom-color :#fff;
+  border-left-color :#eee;
+  border-radius: 2px;
+  border-right-color :#eee;
+  border-top-color: #ddd;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+  box-sizing: border-box;
+  display: inline-block;
+  margin-bottom: 20px;
+  height: auto;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.frame::before {
+  border-radius: 2px;
+  bottom: -2vmin;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.25) inset;
+  content: "";
+  left: -2vmin;
+  position: absolute;
+  right: -2vmin;
+  top: -2vmin;
+}
+
+.frame::after {
+  border-radius: 2px;
+  bottom: -2.5vmin;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
+  content: "";
+  left: -2.5vmin;
+  position: absolute;
+  right: -2.5vmin;
+  top: -2.5vmin;
+}
+
+.labelContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.labelContents {
+  padding: 2px 7px 2px 7px;
+  margin-top: 2%;
+  border: solid 2px;
+  border-bottom-color: #ffe;
+  border-left-color: #eed;
+  border-right-color: #eed;
+  border-top-color: #ccb;
+  background-color: #f6f6f6;
+  position: relative;
+}
+
+@media (max-width: 950px) {
+  .labelContents {
+    padding: 1px 5px 1px 5px;
+  }
+}
+
+.title {
+  font-size: 50%;
+  font-weight: bold;
+  color: #404040;
+}
+
+@media (max-width: 950px) {
+  .title {
+    font-size: 20%;
+  }
+}
+
+.artist {
+  margin-top: 2px;
+  font-size: 50%;
+  color: #5e5e5e;
+}
+
+@media (max-width: 950px) {
+  .artist {
+    margin-top: 0;
+    font-size: 20%;
+  }
+}
+
+.year {
+  margin-top: 4px;
+  font-size: 45%;
+  color: #5e5e5e;
+}
+
+@media (max-width: 1050px) {
+  .year {
+    margin-top: 2px;
+    font-size: 10%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fullScreenContainer {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: slideUp 0.5s ease-in-out;
+}
+
+.closeButton {
+  display: flex;
+  margin: 20px 30px 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  cursor: pointer;
+}
