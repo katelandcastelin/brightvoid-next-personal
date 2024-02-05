@@ -39,7 +39,7 @@ export default function LogInPage() {
       <div className={styles.formsContainer}>
         <div className={styles.glow} />
         <div className={styles.glow} />
-        <div className={styles.formBlock}>
+        <div className={styles.formBlock} style={{background: 'rgba(13, 26, 21, 0.2)'}}>
           <form className={styles.form}>
             <p className={styles.formHeader}>Log in</p>
             <Label>Username or email</Label>
@@ -50,7 +50,7 @@ export default function LogInPage() {
           <SubmitButton type="submit" value="Log in" />
         </div>
 
-        <div className={styles.formBlock}>
+        <div className={styles.formBlock} style={{background: 'rgba(17, 13, 26, 0.2)'}}>
           <form className={styles.form}>
             <p className={styles.formHeader}>Sign up</p>
             <Label>Username</Label>
