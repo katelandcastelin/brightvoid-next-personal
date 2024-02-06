@@ -22,10 +22,6 @@ const Container = styled.div`
   );
   background-clip: padding-box;
   backdrop-filter: blur(24px);
-
-  p {
-    color: #4400ff;
-  }
 `;
 
 const LogoContainer = styled.div`
