@@ -39,11 +39,11 @@ const Artwork = styled.img`
 export default function GalleryPage() {
   const [selectedArtwork, setSelectedArtwork] = useState(null);
 
-  useEffect(() => {
-    if (selectedArtwork === null) {
-      window.scrollTo(0, 170);
-    }
-  }, [selectedArtwork]);
+  // useEffect(() => {
+  //   if (selectedArtwork === null) {
+  //     window.scrollTo(0, 170);
+  //   }
+  // }, [selectedArtwork]);
 
   const handleImageClick = (artworkId) => {
     setSelectedArtwork(artworkId);
