@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './logInPage.module.css';
 import styled from 'styled-components';
 
@@ -34,11 +34,53 @@ const SubmitButton = styled.input`
 `;
 
 export default function LogInPage() {
+
+  const [isSent, setIsSent] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+  const [formValues, setFormValues] = useState({});
+  const [isAlertClosed, setIsAlertClosed] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); 
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormValues((prevFormValues) => ({
+      ...prevFormValues,
+      [name]: value,
+    }));
+    setIsSent(false);
+    setShowAlert(false);
+  };
+
+  const handleAlertClose = () => {
+    setIsAlertClosed(true);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (formValues.username && formValues.phone && formValues.email && formValues.message) {
+      setIsSent(true);
+      setShowAlert(true);
+      setFormValues({});
+      setIsAlertClosed(false); 
+    } else {
+      alert('Please input empty fields!');
+    }
+  };
+
+  const CustomAlert = ({ message }) => {
+    return (
+      <SentMessage>{message}</SentMessage>
+    );
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.formsContainer}>
 
-        <div className={styles.glow} />
         <div className={styles.glow} />
         <div className={styles.glow2} />
 
@@ -54,12 +96,24 @@ export default function LogInPage() {
         </div>
 
         <div className={styles.formBlock} style={{background: 'rgba(13, 26, 21, 0.2)'}}>
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <p className={styles.formHeader}>Sign up</p>
             <Label>Username</Label>
-            <Input type="username" placeholder="Enter Username" name="uname" required />
+            <Input
+              type="username"
+              placeholder="Enter Username"
+              name="uname"
+              required
+              value={formValues.username || ''} onChange={handleInputChange}
+            />
             <Label>Email</Label>
-            <Input type="email" placeholder="Enter email" name="email" required />
+            <Input
+              type="email"
+              placeholder="Enter email"
+              name="email"
+              required
+              value={formValues.email || ''} onChange={handleInputChange}
+            />
             <Label>Password</Label>
             <Input type="password" placeholder="Enter Password" name="pwd" required />
             <Label>Confirm password</Label>
