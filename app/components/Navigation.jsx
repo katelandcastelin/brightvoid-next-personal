@@ -1,6 +1,9 @@
 'use client';
 import styled from "styled-components";
 import MenuDropDown from './MenuDropDown';
+import LoginIcon from '@mui/icons-material/Login';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Container = styled.div`
   width: 100%;
@@ -21,7 +24,7 @@ const DropDownDiv = styled.div`
 
 const Menu = styled.div`
   a {
-    margin-left: 10px;
+    margin: 10px;
   }
 
   @media (max-width: 1040px) {
@@ -33,6 +36,10 @@ const CustomerHub = styled.div`
   img {
     margin-right: 10px;
     height: 40px;
+  }
+
+  a {
+    margin: 10px;
   }
 `;
 
@@ -48,13 +55,13 @@ export default function Navigation() {
       </Menu>
       <CustomerHub>
         <a href="/pages/log-in" title="log-in">
-          <img src="/customer-hub/log-in.png" />
+          <LoginIcon />
         </a>
         <a href="/pages/profile" title="profile">
-          <img src="/customer-hub/profile.png" />
+          <PersonOutlineOutlinedIcon />
         </a>
         <a href="/pages/cart" title="cart">
-          <img src="/customer-hub/cart.png" />
+          <ShoppingCartOutlinedIcon />
         </a>
       </CustomerHub>
     </Container>
