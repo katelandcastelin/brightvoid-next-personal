@@ -2,6 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import styled from "styled-components";
+import { useEffect } from "react";
 
 const Glow = styled.div`
   display: flex;
@@ -18,13 +19,13 @@ const Glow = styled.div`
     position: absolute;
     filter: blur(95px);
     transform: translateZ(0);
-    opacity: 0.1;
+    opacity: 0.15;
   }
 
   &::before {
     background: #fff;
     border-radius: 50%;
-    width: 780px;
+    width: 900px;
     height: 860px;
   }
 
@@ -38,8 +39,33 @@ const Glow = styled.div`
 `;
 
 export default function Home() {
+
+  useEffect(() => {
+    const blobs = document.getElementsByClassName(styles.blob);
+    if (blobs.length > 0) {
+      const blob = blobs[0]; // Assuming you have only one element with this class for simplicity
+
+      window.onpointermove = event => {
+        const { clientX, clientY } = event;
+
+        // Adjust the element's position directly
+        blob.style.position = 'fixed'; // Make sure your element's position is fixed or absolute
+        blob.style.left = `${clientX}px`;
+        blob.style.top = `${clientY}px`;
+        blob.style.transform = 'translate(-50%, -50%)'; // Adjust this as necessary to center/position the blob as desired
+      };
+    }
+
+    // Cleanup the event listener to prevent memory leaks
+    return () => {
+      window.onpointermove = null;
+    };
+  }, []);
+
   return (
     <main className={styles.main}>
+      <div className={styles.blob}></div>
+      <div className={styles.blur}></div>
       <Glow />
       <div className={styles.grid}>
         <a
