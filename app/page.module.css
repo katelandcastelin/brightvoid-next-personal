@@ -19,7 +19,7 @@
     transform: scale(0.5);
   }
   50% {
-    transform: scale(2);
+    transform: scale(1.5);
   }
   100% {
     transform: scale(0.5);
@@ -29,7 +29,7 @@
 .blob {
   background-color: white;
   height: 34vmax;
-  aspect-ratio: 1;
+  aspect-ratio: 1.2;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -50,7 +50,7 @@
   translate: -50% -50%;
   border-radius: 50%;
   background: linear-gradient(to right, rgb(255, 255, rgb(0, 0, 0) 0, 0));
-  animation: scale 4s linear infinite;
+  animation: scale 5s linear infinite;
   opacity: 0.5;
   z-index: -2;
 }
