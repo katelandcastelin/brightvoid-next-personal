@@ -6,16 +6,23 @@
 }
 
 @keyframes rotate {
-  from {
-    rotate: 0deg;
+  0% {
+    transform: scale(1) rotate(0deg);
   }
-  
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.5);
+  }
   50% {
-    scale: 1 1.5;
+    transform: scale(2);
   }
-  
-  to {
-    rotate: 360deg;
+  100% {
+    transform: scale(0.5);
   }
 }
 
@@ -29,11 +36,24 @@
   translate: -50% -50%;
   border-radius: 50%;
   background: linear-gradient(to right, aquamarine, mediumpurple);
-  animation: rotate 20s infinite;
-  opacity: 0.8;
+  animation: rotate 5s linear infinite;
+  opacity: 0.5;
   z-index: -2;
 }
-
+.blob2 {
+  background-color: white;
+  height: 14vmax;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(to right, rgb(255, 255, rgb(0, 0, 0) 0, 0));
+  animation: scale 4s linear infinite;
+  opacity: 0.5;
+  z-index: -2;
+}
 .blur {
   height: 100%;
   width: 100%;

@@ -40,30 +40,30 @@ const Glow = styled.div`
 
 export default function Home() {
 
-  useEffect(() => {
-    const blobs = document.getElementsByClassName(styles.blob);
-    if (blobs.length > 0) {
-      const blob = blobs[0]; // Assuming you have only one element with this class for simplicity
+  // useEffect(() => {
+  //   const blobs = document.getElementsByClassName(styles.blob);
 
-      window.onpointermove = event => {
-        const { clientX, clientY } = event;
+  //   if (blobs.length > 0) {
+  //     const blob = blobs[0];
 
-        // Adjust the element's position directly
-        blob.style.position = 'fixed'; // Make sure your element's position is fixed or absolute
-        blob.style.left = `${clientX}px`;
-        blob.style.top = `${clientY}px`;
-        blob.style.transform = 'translate(-50%, -50%)'; // Adjust this as necessary to center/position the blob as desired
-      };
-    }
+  //     window.onpointermove = event => {
+  //       const { clientX, clientY } = event;
 
-    // Cleanup the event listener to prevent memory leaks
-    return () => {
-      window.onpointermove = null;
-    };
-  }, []);
+  //       blob.style.position = 'fixed';
+  //       blob.style.left = `${clientX}px`;
+  //       blob.style.top = `${clientY}px`;
+  //       blob.style.transform = 'translate(-50%, -50%)';
+  //     };
+  //   }
+
+  //   return () => {
+  //     window.onpointermove = null;
+  //   };
+  // }, []);
 
   return (
     <main className={styles.main}>
+      <div className={styles.blob2}></div>
       <div className={styles.blob}></div>
       <div className={styles.blur}></div>
       <Glow />
