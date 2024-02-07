@@ -12,6 +12,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   color: #cccccc;
+  padding: 0 20px;
 `;
 
 const DropDownDiv = styled.div`
