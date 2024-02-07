@@ -17,9 +17,9 @@
   height: 100%;
   width: 45%;
   padding: 20px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   margin: 0 40px;
-  background: rgba(var(--card-rgb), 0.2);
+  /* background: rgba(13, 26, 21, 0.2); */
   border: 1px solid rgba(var(--card-border-rgb), 0.15);
 }
 
@@ -37,60 +37,38 @@
 }
 
 .glow {
+  height: 300px;
+  width: 280px;
+  border-radius: 50%;
+  background: #ffffff;
+
+  box-shadow: 
+  0px 0px 60px 30px #ffffff,
+  0px 0px 100px 60px #ff00ff,
+  0px 0px 140px 190px #00ffff;
+
+  opacity: 0.1;
+  position: absolute;
+  left: 0;
+  filter: blur(65px);
   display: flex;
-  justify-content: center;
-  align-items: center;
+}
+.glow2 {
+  height: 280px;
+  width: 280px;
+  border-radius: 10%;
+  background: #ffffff;
+
+  box-shadow: 
+  0px 0px 100px 10px #00ffff,
+  0px 0px 140px 190px #0022ff;
+
+  opacity: 0.15;
   position: absolute;
-  padding: 4rem 0;
-  z-index: -1;
-}
-
-.glow::before {
-  background: var(--secondary-glow);
-  border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -800px;
-}
-
-.glow::after {
-  background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
-}
-
-.glow::before,
-.glow::after {
-  content: "";
-  left: 50%;
-  position: absolute;
-  filter: blur(45px);
-  transform: translateZ(0);
-}
-
-.glow:nth-of-type(1)::before {
-  background: rgb(27, 3, 70);
-  border-radius: 50%;
-  width: 480px;
-  height: 360px;
-  margin-left: -800px;
-  margin-top: 90px;
-}
-.glow:nth-of-type(1)::after {
-  background: rgb(144, 167, 238);
-  width: 240px;
-  height: 180px;
-  z-index: -1;
-  margin-left: 400px;
-}
-.glow:nth-of-type(1)::before,
-.glow:nth-of-type(1)::after {
-  content: "";
-  top: 20%;
-  position: absolute;
-  filter: blur(95px);
-  transform: translateZ(0);
+  filter: blur(65px);
+  display: flex;
+  right: 0;
+  bottom: 0;
 }
 
 @media (max-width: 1280px) {
@@ -115,20 +93,6 @@
 
   .formBlock {
     margin: 0 0 50px 0;
-  }
-
-  .glow::after {
-    background: var(--primary-glow);
-    width: 290px;
-    height: 280px;
-    z-index: -1;
-    top: -200px;
-    margin-left: -200px;
-  }
-
-  .glow:nth-of-type(1)::before {
-    margin-left: 50px;
-    margin-top: -800px;
   }
 }
 
