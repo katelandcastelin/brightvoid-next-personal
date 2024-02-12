@@ -43,6 +43,7 @@ const CorsetImage = styled.img`
 `;
 
 export default function CollectionDisplay({ selectedArtwork }) {
+
   return (
     <Container>
       <ListBlock>

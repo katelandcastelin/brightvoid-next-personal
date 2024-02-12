@@ -21,7 +21,7 @@ const Container = styled.div`
 `;
 
 const Artwork = styled.img`
-  max-height: 100%;
+  max-height: 70vh;
   max-width: 100%;
   border: solid 2px;
   border-bottom-color: #ffe;
@@ -68,6 +68,9 @@ export default function GalleryPage() {
       {selectedArtwork && (
         <div className={styles.fullScreenContainer}>
           <CollectionDisplay selectedArtwork={selectedArtwork} />
+          <button className={styles.closeButton} onClick={handleCloseClick}>
+            close
+          </button>
         </div>
       )}
     </Container>
