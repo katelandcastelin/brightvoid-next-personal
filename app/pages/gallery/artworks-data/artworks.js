@@ -5,7 +5,10 @@ const Artworks = [
     artist: 'cardboard',
     year: '2022',
     collection: [
-      
+      {
+        image: '/artworks/anon.png',
+        description: 'anon',
+      },
     ]
   },
   {
@@ -28,6 +31,42 @@ const Artworks = [
         description: 'Three of Pentacles',
       }
     ],
+  },
+  {
+    id: '/artworks/purfume-bottle.png',
+    title: 'Magic scent',
+    artist: 'cardboard',
+    year: '2022',
+    collection: [
+      {
+        image: '/artworks/purfume-bottle.png',
+        description: 'Magical purfume bottle',
+      },
+    ]
+  },
+  {
+    id: '/artworks/rose-emblem.png',
+    title: 'Rosy',
+    artist: 'cardboard',
+    year: '2022',
+    collection: [
+      {
+        image: '/artworks/rose-emblem.png',
+        description: 'Rose emblem',
+      },
+    ]
+  },
+  {
+    id: '/artworks/self-eating-human.png',
+    title: 'Human consumption',
+    artist: 'cardboard',
+    year: '2022',
+    collection: [
+      {
+        image: '/artworks/self-eating-human.png',
+        description: 'Self destruction',
+      },
+    ]
   },
 ];
 

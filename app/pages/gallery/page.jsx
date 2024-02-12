@@ -7,7 +7,8 @@ import CollectionDisplay from '../../components/CollectionDisplay';
 
 const Container = styled.div`
   columns: 2 200px;
-  column-gap: auto;
+  column-gap: 1%;
+  justify-content: space-around;
   width: 90%;
   margin: 0 auto;
   padding-top: 1rem;
@@ -30,20 +31,11 @@ const Artwork = styled.img`
   border-top-color: #ccb;
   position: inherit;
   z-index: 1;
-
-  :hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;
 
 export default function GalleryPage() {
   const [selectedArtwork, setSelectedArtwork] = useState(null);
-
-  // useEffect(() => {
-  //   if (selectedArtwork === null) {
-  //     window.scrollTo(0, 170);
-  //   }
-  // }, [selectedArtwork]);
 
   const handleImageClick = (artworkId) => {
     setSelectedArtwork(artworkId);
@@ -54,9 +46,9 @@ export default function GalleryPage() {
   }
 
   const artworks = Artworks.map((artwork) => (
-    <div key={artwork.id} onClick={() => handleImageClick(artwork)}>
+    <div key={artwork.id} style={{display: 'flex', justifyContent: 'center'}}>
       <div className={styles.frame}>
-        <Artwork src={artwork.id} />
+        <Artwork src={artwork.id} onClick={() => handleImageClick(artwork)} />
       </div>
     </div>
   ));
