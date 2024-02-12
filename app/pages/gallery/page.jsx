@@ -7,7 +7,7 @@ import CollectionDisplay from '../../components/CollectionDisplay';
 
 const Container = styled.div`
   columns: 2 200px;
-  column-gap: 1%;
+  column-gap: 20px;
   justify-content: space-around;
   width: 90%;
   margin: 0 auto;

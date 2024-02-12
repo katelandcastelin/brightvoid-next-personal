@@ -46,7 +46,7 @@ const Artworks = [
   },
   {
     id: '/artworks/rose-emblem.png',
-    title: 'Rosy',
+    title: 'Rose emblem',
     artist: 'cardboard',
     year: '2022',
     collection: [
