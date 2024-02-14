@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './logInPage.module.css';
 import styled from 'styled-components';
+import Header from '../../components/Header';
 
 const Label = styled.label`
   margin-bottom: 10px;
@@ -79,6 +80,7 @@ export default function LogInPage() {
 
   return (
     <div className={styles.main}>
+      <Header />
       <div className={styles.formsContainer}>
 
         <div className={styles.glow} />
