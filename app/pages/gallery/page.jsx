@@ -1,9 +1,10 @@
 'use client';
-import { React, useState, useEffect } from 'react';
+import { React, useState } from 'react';
 import styles from './galleryPage.module.css';
 import styled from 'styled-components';
 import Artworks from './artworks-data/artworks';
 import CollectionDisplay from '../../components/CollectionDisplay';
+import GalleryHeader from '../../components/GalleryHeader';
 
 const Container = styled.div`
   columns: 2 200px;
@@ -54,17 +55,20 @@ export default function GalleryPage() {
   ));
 
   return (
-    <Container>
-      {artworks}
+    <div className={styles.background}>
+      <GalleryHeader />
+      <Container>
+        {artworks}
 
-      {selectedArtwork && (
-        <div className={styles.fullScreenContainer}>
-          <CollectionDisplay selectedArtwork={selectedArtwork} />
-          <button className={styles.closeButton} onClick={handleCloseClick}>
-            close
-          </button>
-        </div>
-      )}
-    </Container>
+        {selectedArtwork && (
+          <div className={styles.fullScreenContainer}>
+            <CollectionDisplay selectedArtwork={selectedArtwork} />
+            <button className={styles.closeButton} onClick={handleCloseClick}>
+              close
+            </button>
+          </div>
+        )}
+      </Container>
+    </div>
   );
 }
