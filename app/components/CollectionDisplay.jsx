@@ -4,57 +4,63 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   max-height: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  overflow: scroll;
+  max-width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
 `;
 
-const ListBlock = styled.div`
-  background-color: #fff;
-  min-height: 93vh;
-  width: 80%;
-  height: 100%;
-  padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+const Grid = styled.div`
+  columns: 2 200px;
+  column-gap: 20px;
+  justify-content: space-around;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+
+  @media (max-width: 750px) {
+    columns: 1 100px;
+    column-gap: auto;
+    width: 90%;
+    margin: 0 auto;
+  }
 `;
 
 const Title = styled.h2`
   display: flex;
   justify-content: center;
-  padding-bottom: 19px;
+  padding: 40px 0 20px 0;
   letter-spacing: 0.1em;
-  z-index: 1;
   font-size: 55px;
   letter-spacing: 3px;
   font-weight: 200;
-  color: #000;
+  color: #fff;
   text-transform: uppercase;
 `;
 
-const CorsetImage = styled.img`
-  width: 30%;
+const Image = styled.img`
+  max-height: 90vh;
+  max-width: 100%;
   border: solid 2px;
   border-bottom-color: #ffe;
   border-left-color: #eed;
   border-right-color: #eed;
   border-top-color: #ccb;
+  position: inherit;
+  z-index: 1;
+  cursor: pointer;
 `;
 
 export default function CollectionDisplay({ selectedArtwork }) {
   return (
     <Container>
-      <ListBlock>
-        <Title>{selectedArtwork.title}</Title>
-        <div>
-          {selectedArtwork.collection.map((piece, index) => (
-            <div key={index}>
-              <CorsetImage src={piece.image} alt={piece.description} />
-            </div>
-          ))}
-        </div>
-      </ListBlock>
+      <Title>{selectedArtwork.title}</Title>
+      <Grid>
+        {selectedArtwork.collection.map((piece, index) => (
+          <div key={index} style={{display: 'flex', justifyContent: 'center'}}>
+            <Image src={piece.image} alt={piece.description} />
+          </div>
+        ))}
+      </Grid>
     </Container>
   )
 }

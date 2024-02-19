@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import styled from "styled-components";
 import { useEffect } from "react";
+import Header from "./components/Header";
 
 const Glow = styled.div`
   display: flex;
@@ -40,29 +41,9 @@ const Glow = styled.div`
 
 export default function Home() {
 
-  // useEffect(() => {
-  //   const blobs = document.getElementsByClassName(styles.blob);
-
-  //   if (blobs.length > 0) {
-  //     const blob = blobs[0];
-
-  //     window.onpointermove = event => {
-  //       const { clientX, clientY } = event;
-
-  //       blob.style.position = 'fixed';
-  //       blob.style.left = `${clientX}px`;
-  //       blob.style.top = `${clientY}px`;
-  //       blob.style.transform = 'translate(-50%, -50%)';
-  //     };
-  //   }
-
-  //   return () => {
-  //     window.onpointermove = null;
-  //   };
-  // }, []);
-
   return (
     <main className={styles.main}>
+      <Header />
       <div className={styles.blob2}></div>
       <div className={styles.blob}></div>
       <div className={styles.blur}></div>
