@@ -6,6 +6,13 @@ import Artworks from './artworks-data/artworks';
 import CollectionDisplay from '../../components/CollectionDisplay';
 import GalleryHeader from '../../components/GalleryHeader';
 
+const Background = styled.div`
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  #282828 0%, rgba(4,0,4,1) 90% );
+  padding-top: 120px;
+  height: 100vh;
+  overflow-y: ${props => props.completed ? 'hidden' : 'scroll'};
+`;
+
 const Container = styled.div`
   columns: 2 200px;
   column-gap: 20px;
@@ -55,13 +62,16 @@ export default function GalleryPage() {
   ));
 
   return (
-    <div className={styles.background}>
+    <Background>
       <GalleryHeader />
       <Container>
         {artworks}
 
         {selectedArtwork && (
-          <div className={styles.fullScreenContainer}>
+          <div
+            className={styles.fullScreenContainer}
+            completed={selectedArtwork !== null}
+          >
             <CollectionDisplay selectedArtwork={selectedArtwork} />
             <button className={styles.closeButton} onClick={handleCloseClick}>
               close
@@ -69,6 +79,6 @@ export default function GalleryPage() {
           </div>
         )}
       </Container>
-    </div>
+    </Background>
   );
 }
