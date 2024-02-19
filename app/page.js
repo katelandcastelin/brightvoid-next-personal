@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import styles from "./page.module.css";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useEffect } from "react";
 import Header from "./components/Header";
 
@@ -43,23 +43,48 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      <div className={styles.section}>
+        <div className={styles.article}>
+          <div>
+            <ul>
+              <li>
+                <img src="/artworks/anon.png" />
+              </li>
+              <li>
+                <img src="/artworks/purfume-bottle.png" />
+              </li>
+              <li>
+                <img src="/logo/logo-white.png" />
+              </li>
+              <li>
+                <img src="/artworks/rose-emblem.png" />
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <img src="/artworks/anon.png" />
+              </li>
+              <li>
+                <img src="/artworks/purfume-bottle.png" />
+              </li>
+              <li>
+                <img src="/logo/logo-white.png" />
+              </li>
+              <li>
+                <img src="/artworks/rose-emblem.png" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <Header />
       <div className={styles.blob2}></div>
       <div className={styles.blob}></div>
       <div className={styles.blur}></div>
       <Glow />
-      <div className={styles.grid}>
-        <a
-          href="/"
-          className={styles.card}
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Brightvoid <span>-&gt;</span>
-          </h2>
-          <p>Coming soon . . .</p>
-        </a>
-      </div>
     </main>
   );
 }
