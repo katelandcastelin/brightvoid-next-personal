@@ -15,7 +15,7 @@ const Grid = styled.div`
   justify-content: space-around;
   width: 90%;
   margin: 0 auto;
-  padding-top: 1rem;
+  padding: 1rem;
 
   @media (max-width: 750px) {
     columns: 1 100px;
@@ -38,7 +38,7 @@ const Title = styled.h2`
 `;
 
 const Image = styled.img`
-  max-height: 70vh;
+  max-height: 90vh;
   max-width: 100%;
   border: solid 2px;
   border-bottom-color: #ffe;
