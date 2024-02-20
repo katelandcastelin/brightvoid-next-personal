@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <div style={{marginTop: '200px'}}>
+      <div className={styles.sliderContainer}>
         <div className={styles.slider}>
           <div className={styles.mover}>
             <img src='/slider.png' />
