@@ -1,8 +1,7 @@
 'use client';
-import Image from "next/image";
+import React from 'react';
 import styles from "./page.module.css";
 import styled, { keyframes } from "styled-components";
-import { useEffect } from "react";
 import Header from "./components/Header";
 
 const Glow = styled.div`
@@ -43,43 +42,17 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <div className={styles.section}>
-        <div className={styles.article}>
-          <div>
-            <ul>
-              <li>
-                <img src="/artworks/anon.png" />
-              </li>
-              <li>
-                <img src="/artworks/purfume-bottle.png" />
-              </li>
-              <li>
-                <img src="/logo/logo-white.png" />
-              </li>
-              <li>
-                <img src="/artworks/rose-emblem.png" />
-              </li>
-            </ul>
+      <div style={{marginTop: '200px'}}>
+        <div className={styles.slider}>
+          <div className={styles.mover}>
+            <img src='/slider.png' />
           </div>
-          <div>
-            <ul>
-              <li>
-                <img src="/artworks/anon.png" />
-              </li>
-              <li>
-                <img src="/artworks/purfume-bottle.png" />
-              </li>
-              <li>
-                <img src="/logo/logo-white.png" />
-              </li>
-              <li>
-                <img src="/artworks/rose-emblem.png" />
-              </li>
-            </ul>
+          <div className={styles.mover}>
+            <img src='/slider.png' />
           </div>
         </div>
       </div>
-
+      
       <Header />
       <div className={styles.blob2}></div>
       <div className={styles.blob}></div>
