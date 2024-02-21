@@ -74,7 +74,7 @@ export default function LogInPage() {
 
   const CustomAlert = ({ message }) => {
     return (
-      <div>{message}</div>
+      {message}
     );
   };
 
