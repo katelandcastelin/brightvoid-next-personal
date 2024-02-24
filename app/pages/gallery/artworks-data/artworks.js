@@ -1,58 +1,42 @@
 const Artworks = [
   {
-    id: '/artworks/anon.png',
-    title: 'anon',
-    artist: 'cardboard',
-    year: '2022',
+    id: '/artworks/ai2.png',
+    title: 'AI teller',
+    artist: 'photoshop',
+    year: '2024',
     collection: [
       {
-        image: '/artworks/anon.png',
-        description: 'anon',
+        image: '/artworks/ai2.png',
+        description: 'AI teller',
       },
     ]
   },
   {
-    id: '/artworks/guiding-neon/ace-of-cups.png',
-    title: 'Ace of Cups',
-    artist: 'cardboard',
-    year: '2022',
-    collectionName: 'Guiding Neon',
+    id: '/artworks/ai1.png',
+    title: 'Bright symbolism',
+    artist: 'ai',
+    year: '2024',
+    collectionName: 'Guiding AI',
     collection: [
       {
-        image: '/artworks/guiding-neon/king-of-cups.png',
-        description: 'King of Cups',
+        image: '/artworks/collection1/collection1.jpeg',
+        description: 'Bright symbolism',
       },
       {
-        image: '/artworks/guiding-neon/temperance.png',
-        description: 'Temperence',
+        image: '/artworks/ai1.png',
+        description: 'Bright symbolism',
       },
-      {
-        image: '/artworks/guiding-neon/three-of-pentacles.png',
-        description: 'Three of Pentacles',
-      }
     ],
   },
   {
-    id: '/artworks/purfume-bottle.png',
-    title: 'Magic scent',
-    artist: 'cardboard',
-    year: '2022',
+    id: '/artworks/ai3.jpeg',
+    title: 'Snake',
+    artist: 'ai',
+    year: '2024',
     collection: [
       {
-        image: '/artworks/purfume-bottle.png',
-        description: 'Magical purfume bottle',
-      },
-    ]
-  },
-  {
-    id: '/artworks/rose-emblem.png',
-    title: 'Rose emblem',
-    artist: 'cardboard',
-    year: '2022',
-    collection: [
-      {
-        image: '/artworks/rose-emblem.png',
-        description: 'Rose emblem',
+        image: '/artworks/ai3.jpeg',
+        description: 'Snake',
       },
     ]
   },
