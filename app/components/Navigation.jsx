@@ -53,6 +53,7 @@ export default function Navigation() {
       <Menu>
         <a href="/pages/gallery">Gallery</a>
         <a href="/pages/about">About</a>
+        <a href="/pages/shop">Shop</a>
       </Menu>
       <CustomerHub>
         <a href="/pages/log-in" title="log-in">

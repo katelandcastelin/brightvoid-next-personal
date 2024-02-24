@@ -14,7 +14,7 @@ const Background = styled.div`
 `;
 
 const Container = styled.div`
-  columns: 2 200px;
+  columns: 3 300px;
   column-gap: 20px;
   justify-content: space-around;
   width: 90%;

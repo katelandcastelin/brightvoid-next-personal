@@ -38,7 +38,7 @@
   border-radius: 50%;
   background: linear-gradient(to right, aquamarine, mediumpurple);
   animation: rotate 5s linear infinite;
-  opacity: 0.4;
+  opacity: 0.3;
   z-index: -2;
 }
 .blob2 {
@@ -102,7 +102,9 @@
 }
 
 .sliderContainer {
-  margin-top: 30vh;
+  display: flex;
+  height: 100%;
+  margin-top: 700px;
 }
 
 .slider {
@@ -141,5 +143,5 @@
 }
 
 .mover {
-  animation: moveSlideshow 20s linear infinite;
+  animation: moveSlideshow 30s linear infinite;
 }
