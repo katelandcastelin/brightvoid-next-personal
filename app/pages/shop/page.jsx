@@ -86,7 +86,7 @@ export default function Store() {
             <p>Apparel</p>
             <img src='/shop-display/apparel.jpeg' />
           </DisplayBlock>
-          <DisplayBlock href="/">
+          <DisplayBlock href="/pages/submitArt">
             <p>Design & earn</p>
             <img src='/shop-display/design-and-earn.jpeg' />
             {/* create and collaborate */}
