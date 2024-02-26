@@ -49,6 +49,16 @@ export default function MenuDropDown() {
             About
           </a>
         </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <a href='/pages/contact'>
+            Contact
+          </a>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <a href='/pages/shop'>
+            Shop
+          </a>
+        </MenuItem>
       </Menu>
     </div>
   );
