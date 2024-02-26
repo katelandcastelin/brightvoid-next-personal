@@ -2,7 +2,6 @@
 import React from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import styles from "./page.module.css";
-import styled from "styled-components";
 import Header from "./components/Header";
 
 export default function Home() {
