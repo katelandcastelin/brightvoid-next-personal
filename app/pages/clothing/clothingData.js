@@ -25,12 +25,12 @@ const clothingProducts = [
     price: 100,
   },
   {
-    id: 'C5',
+    id: 'C6',
     image: '/clothing/bt-model2.jpeg',
     price: 180,
   },
   {
-    id: 'C5',
+    id: 'C7',
     image: '/clothing/wt-model3.jpeg',
     price: 180,
   },

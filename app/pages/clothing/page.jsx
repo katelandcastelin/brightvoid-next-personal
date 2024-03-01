@@ -5,8 +5,9 @@ import Link from 'next/link';
 import styles from './clothingPage.module.css';
 import clothingProducts from './clothingData';
 import styled from 'styled-components';
+import { useRouter } from 'next/navigation';
 
-const Card = styled(Link)`
+const Card = styled.div`
   padding: 1rem 1.2rem;
   transition: filter 200ms, border 200ms;
   cursor: pointer;
@@ -30,15 +31,15 @@ export default function ClothingPage() {
       <Header />
       <div className={styles.grid}>
         {clothing.map((item) => (
-          <Card key={item.id} href={`/clothing/${item.id}`}>
-            <div>
+          <Link key={item.id} href={`/pages/clothing/${item.id}`}>
+            <Card>
               <div className={styles.productImage}>
                 <img src={item.image} alt={item.description} />
               </div>
               <p>R {item.price}</p>
               <p>{item.description}</p>
-            </div>
-          </Card>
+            </Card>
+          </Link>
         ))}
       </div>
     </div>
