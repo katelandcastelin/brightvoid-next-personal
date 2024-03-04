@@ -11,7 +11,6 @@ export default function ClothingDetailsPage({ params }) {
     <div>
       <Header />
       <ProductDetails product={product} />
-      TEST
     </div>
   )
 }
