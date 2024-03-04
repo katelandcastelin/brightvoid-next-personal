@@ -8,7 +8,7 @@ import ShopDropDown from "./ShopDropDown";
 
 const Background = styled.div`
   z-index: 2;
-  height: 150px;
+  height: 100px;
   display: flex;
   align-items: center;
   position: fixed;
@@ -48,7 +48,7 @@ const LogoContainer = styled.div`
 `;
 
 const Logo = styled.img`
-  height: 110px;
+  height: 70px;
 `;
 
 const Navigation = styled.div`
@@ -137,7 +137,7 @@ export default function Header() {
             </LogoContainer>
           </a>
           <Navigation>
-            <a href="/pages/gallery">Gallery</a>
+            <a href="/pages/gallery">Artists</a>
             <a href="/pages/about">About</a>
             <a href="/pages/contact">Contact</a>
 
