@@ -1,17 +1,17 @@
 .frame {
-  border: solid 2vmin #ffffff;
+  background-color: #ddc;
   border-bottom-color :#fff;
   border-left-color :#eee;
-  border-radius: 2px;
   border-right-color :#eee;
   border-top-color: #ddd;
   box-shadow: 0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
   box-sizing: border-box;
-  display: flex;
+  display: inline-block;
+  margin-bottom: 20px;
   height: auto;
+  padding: 20px;
   position: relative;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .labelContainer {
@@ -20,9 +20,10 @@
 }
 
 .labelContents {
-  padding: 2px 7px 2px 7px;
+  padding: 7px 12px;
   margin-top: 2%;
   border: solid 2px;
+  border-radius: 4px;
   border-bottom-color: #ffe;
   border-left-color: #eed;
   border-right-color: #eed;
@@ -37,42 +38,8 @@
   }
 }
 
-.title {
-  font-size: 50%;
-  font-weight: bold;
-  color: #404040;
-}
-
-@media (max-width: 950px) {
-  .title {
-    font-size: 20%;
-  }
-}
-
 .artist {
-  margin-top: 2px;
-  font-size: 50%;
   color: #5e5e5e;
-}
-
-@media (max-width: 950px) {
-  .artist {
-    margin-top: 0;
-    font-size: 20%;
-  }
-}
-
-.year {
-  margin-top: 4px;
-  font-size: 45%;
-  color: #5e5e5e;
-}
-
-@media (max-width: 1050px) {
-  .year {
-    margin-top: 2px;
-    font-size: 10%;
-  }
 }
 
 @keyframes slideUp {

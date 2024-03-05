@@ -2,7 +2,7 @@ import { React, useState, useEffect }from 'react';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.div`
-  height: 100px;
+  height: 80px;
   background-color: transparent;
   border-bottom: 1px solid #555;
   display: flex;
@@ -17,6 +17,7 @@ const HeaderContainer = styled.div`
 
   img {
     height: 60px;
+    display: flex;
   }
 `;
 

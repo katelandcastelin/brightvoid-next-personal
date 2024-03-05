@@ -7,6 +7,7 @@ const Container = styled.div`
   max-width: 100vw;
   overflow-y: scroll;
   overflow-x: hidden;
+  padding-top: 180px;
 `;
 
 const Grid = styled.div`
@@ -25,20 +26,8 @@ const Grid = styled.div`
   }
 `;
 
-const Title = styled.h2`
-  display: flex;
-  justify-content: center;
-  padding: 40px 0 20px 0;
-  letter-spacing: 0.1em;
-  font-size: 55px;
-  letter-spacing: 3px;
-  font-weight: 200;
-  color: #fff;
-  text-transform: uppercase;
-`;
-
 const Image = styled.img`
-  max-height: 90vh;
+  max-height: 80vh;
   max-width: 100%;
   border: solid 2px;
   border-bottom-color: #ffe;
@@ -53,14 +42,25 @@ const Image = styled.img`
 export default function CollectionDisplay({ selectedArtwork }) {
   return (
     <Container>
-      <Title>{selectedArtwork.title}</Title>
-      <Grid>
+      <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+        <div style={{display: 'flex', justifyContent: 'space-around', width: '80%'}}>
+          <div style={{width: '45%'}}>
+            <p>{selectedArtwork.aboutTheArtist}</p>
+          </div>
+          <div style={{width: '45%'}}>
+            <Image src={selectedArtwork.id} />
+          </div>
+        </div>
+      </div>
+      {/* <Grid>
         {selectedArtwork.collection.map((piece, index) => (
-          <div key={index} style={{display: 'flex', justifyContent: 'center'}}>
-            <Image src={piece.image} alt={piece.description} />
+          <div>
+            <div>
+              <Image src={piece.image} alt={piece.description} />
+            </div>
           </div>
         ))}
-      </Grid>
+      </Grid> */}
     </Container>
   )
 }

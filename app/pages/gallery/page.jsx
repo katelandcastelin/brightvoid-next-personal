@@ -55,8 +55,18 @@ export default function GalleryPage() {
 
   const artworks = Artworks.map((artwork) => (
     <div key={artwork.id} style={{display: 'flex', justifyContent: 'center'}}>
-      <div className={styles.frame}>
-        <Artwork src={artwork.id} onClick={() => handleImageClick(artwork)} />
+      <div>
+        <div className={styles.frame}>
+          <Artwork
+            src={artwork.id}
+            onClick={() => handleImageClick(artwork)} 
+          />
+          <div className={styles.labelContainer}>
+            <div className={styles.labelContents}>
+              <div className={styles.artist}>{artwork.artist}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   ));
