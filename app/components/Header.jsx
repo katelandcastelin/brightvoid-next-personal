@@ -124,7 +124,7 @@ const ShopNavContainer = styled.div`
 
 export default function Header() {
   return (
-    <div style={{marginBottom: '150px'}}>
+    <div>
     <Background>
       <MaxWidthWrapper>
         <HeaderContainer>
