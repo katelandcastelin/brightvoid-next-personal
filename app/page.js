@@ -31,53 +31,94 @@ const SliderDiv = styled.div`
   }
 `;
 
-export default function Home() {
-  var settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    speed: 1500,
-    centerMode: true,
-    centerPadding: '60px',
-    focusOnSelect: true,
-    cssEase: 'ease-in-out',
+const Banner = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  background-color: #000;
+  overflow: hidden;
+`;
 
-    responsive: [
-      {
-        breakpoint: 1100,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: false,
-          speed: 1000,
-        },
-      },
-    ],
-  };
+const ImageContainer = styled.div`
+  height: 100%;
+  width: 100%;
+`;
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+`;
+
+const TextContainer = styled.div`
+  color: #fff;
+  z-index: 2;
+  position: absolute;
+`;
+
+export default function Home() {
+//   var settings = {
+//     dots: false,
+//     infinite: true,
+//     slidesToShow: 3,
+//     slidesToScroll: 1,
+//     autoplay: true,
+//     autoplaySpeed: 3000,
+//     pauseOnHover: true,
+//     speed: 1500,
+//     centerMode: true,
+//     centerPadding: '60px',
+//     focusOnSelect: true,
+//     cssEase: 'ease-in-out',
+
+//     responsive: [
+//       {
+//         breakpoint: 1100,
+//         settings: {
+//           slidesToShow: 2,
+//           slidesToScroll: 1,
+//           infinite: true,
+//         },
+//       },
+//       {
+//         breakpoint: 800,
+//         settings: {
+//           slidesToShow: 1,
+//           slidesToScroll: 1,
+//         },
+//       },
+//       {
+//         breakpoint: 480,
+//         settings: {
+//           slidesToShow: 1,
+//           slidesToScroll: 1,
+//           centerMode: false,
+//           speed: 1000,
+//         },
+//       },
+//     ],
+//   };
 
   return (
     <main className={styles.main}>
       <Header />
-      
+      <Banner>
+        <div
+          style={{
+            display: 'flex',
+          }}
+        >
+          <TextContainer>
+            <h1>Title for banner</h1>
+          </TextContainer>
+          <ImageContainer>
+            <StyledImage src="/art-display/1.jpeg" />
+          </ImageContainer>
+        </div>
+      </Banner>
 
 
       {/* <Parallax pages={2} style={{paddingTop: '150px', maxWidth: '1500px', justifyContent: 'center', display: 'flex'}}>
