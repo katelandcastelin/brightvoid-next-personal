@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import Header from "./components/Header";
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 const SliderContainer = styled.div`
   max-width: 1500px;
@@ -76,30 +77,150 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Header />
-      <div style={{display: 'flex', justifyContent: 'center'}}>
-        <SliderContainer>
-          <StyledSlider {...settings}>
-            <SliderDiv>
-              <img src="/artworks/ai1.png" />
-            </SliderDiv>
-            <SliderDiv>
-              <img src="/artworks/ai2.png" />
-            </SliderDiv>
-            <SliderDiv>
-              <img src="/artworks/collection1/collection1.jpeg" />
-            </SliderDiv>
-            <SliderDiv>
-              <img src="/art-display/1.jpeg" />
-            </SliderDiv>
-            <SliderDiv>
-              <img src="/art-display/3.jpeg" />
-            </SliderDiv>
-            <SliderDiv>
-              <img src="/art-display/4.jpeg" />
-            </SliderDiv>
-          </StyledSlider>
-        </SliderContainer>
-      </div>
+      
+
+
+      {/* <Parallax pages={2} style={{paddingTop: '150px', maxWidth: '1500px', justifyContent: 'center', display: 'flex'}}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            alignContent: 'center',
+          }}
+        >
+          <div
+            style={{
+            }}
+          >
+            <ParallaxLayer
+              offset={0}
+              speed={0.1}
+            >
+              <div style={{display: 'flex', justifyContent: 'end',}}>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'end',
+                    marginRight: '100px',
+                    fontSize: '70px',
+                    color: 'black',
+                    WebkitTextStroke: '2px white',
+                    zIndex: '1',
+                    position: 'absolute',
+                  }}
+                >
+                  <h1>BRIGHT</h1>
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'end',
+                    marginRight: '100px',
+                    fontSize: '70px',
+                    color: '#000',
+                    zIndex: '2',
+                    position: 'absolute',
+                  }}
+                >
+                  <h1>BRIGHT</h1>
+                </div>
+              </div>
+            </ParallaxLayer>
+            <ParallaxLayer
+              offset={0.12}
+              speed={0.3}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'end',
+                  marginRight: '100px',
+                  fontSize: '70px',
+                  opacity: '0.9',
+                }}
+              >
+                <h1>VOID</h1>
+              </div>
+            </ParallaxLayer>
+          </div>
+
+          <div
+            style={{
+              display: 'flex',
+            }}
+          >
+            <div>
+              <ParallaxLayer
+                offset={0}
+                speed={0.1}
+                style={{
+                  marginLeft: '350px',
+                }}
+              >
+                <div
+                  style={{
+                    height: '500px',
+                    width: '400px',
+                    borderRadius: '100%',
+                    border: '1px solid white',
+                  }}
+                >
+                </div>
+              </ParallaxLayer>
+            </div>
+            <div>
+              <ParallaxLayer
+                offset={0}
+                speed={0.1}
+                style={{
+                  marginLeft: '350px',
+                }}
+              >
+                <div
+                  style={{
+                    height: '450px',
+                    width: '400px',
+                    borderRadius: '100%',
+                    border: '1px solid darkgrey',
+                    transform: 'rotate(20deg)',
+                  }}
+                >
+                </div>
+              </ParallaxLayer>
+            </div>
+          </div>
+        </div>
+
+        <ParallaxLayer
+          offset={0.7}
+        >
+          <div style={{display: 'flex', justifyContent: 'center'}}>
+            <SliderContainer>
+              <StyledSlider {...settings}>
+                <SliderDiv>
+                  <img src="/artworks/ai1.png" />
+                </SliderDiv>
+                <SliderDiv>
+                  <img src="/artworks/ai2.png" />
+                </SliderDiv>
+                <SliderDiv>
+                  <img src="/artworks/collection1/collection1.jpeg" />
+                </SliderDiv>
+                <SliderDiv>
+                  <img src="/art-display/1.jpeg" />
+                </SliderDiv>
+                <SliderDiv>
+                  <img src="/art-display/3.jpeg" />
+                </SliderDiv>
+                <SliderDiv>
+                  <img src="/art-display/4.jpeg" />
+                </SliderDiv>
+              </StyledSlider>
+            </SliderContainer>
+          </div>
+        </ParallaxLayer>
+      </Parallax> */}
 
       <div className={styles.blob2}></div>
       <div className={styles.blob}></div>
