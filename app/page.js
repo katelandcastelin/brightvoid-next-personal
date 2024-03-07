@@ -77,7 +77,10 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Header />
-      <Parallax pages={2} style={{paddingTop: '190px', maxWidth: '1500px', justifyContent: 'center', display: 'flex'}}>
+      
+
+
+      {/* <Parallax pages={2} style={{paddingTop: '150px', maxWidth: '1500px', justifyContent: 'center', display: 'flex'}}>
         <div
           style={{
             display: 'flex',
@@ -99,10 +102,10 @@ export default function Home() {
                   style={{
                     display: 'flex',
                     justifyContent: 'end',
-                    marginRight: '70px',
-                    fontSize: '50px',
+                    marginRight: '100px',
+                    fontSize: '70px',
                     color: 'black',
-                    WebkitTextStroke: '1px white',
+                    WebkitTextStroke: '2px white',
                     zIndex: '1',
                     position: 'absolute',
                   }}
@@ -113,8 +116,8 @@ export default function Home() {
                   style={{
                     display: 'flex',
                     justifyContent: 'end',
-                    marginRight: '70px',
-                    fontSize: '50px',
+                    marginRight: '100px',
+                    fontSize: '70px',
                     color: '#000',
                     zIndex: '2',
                     position: 'absolute',
@@ -125,16 +128,15 @@ export default function Home() {
               </div>
             </ParallaxLayer>
             <ParallaxLayer
-              offset={0.09}
-              speed={0.2}
+              offset={0.12}
+              speed={0.3}
             >
               <div
                 style={{
                   display: 'flex',
                   justifyContent: 'end',
-                  marginRight: '70px',
-                  fontSize: '50px',
-                  letterSpacing: '26px',
+                  marginRight: '100px',
+                  fontSize: '70px',
                   opacity: '0.9',
                 }}
               >
@@ -143,21 +145,55 @@ export default function Home() {
             </ParallaxLayer>
           </div>
 
-          <div>
-            <ParallaxLayer
-              offset={0}
-              speed={0.1}
-              style={{
-                marginLeft: '70px',
-              }}
-            >
-              Left hand side stuff
-            </ParallaxLayer>
+          <div
+            style={{
+              display: 'flex',
+            }}
+          >
+            <div>
+              <ParallaxLayer
+                offset={0}
+                speed={0.1}
+                style={{
+                  marginLeft: '350px',
+                }}
+              >
+                <div
+                  style={{
+                    height: '500px',
+                    width: '400px',
+                    borderRadius: '100%',
+                    border: '1px solid white',
+                  }}
+                >
+                </div>
+              </ParallaxLayer>
+            </div>
+            <div>
+              <ParallaxLayer
+                offset={0}
+                speed={0.1}
+                style={{
+                  marginLeft: '350px',
+                }}
+              >
+                <div
+                  style={{
+                    height: '450px',
+                    width: '400px',
+                    borderRadius: '100%',
+                    border: '1px solid darkgrey',
+                    transform: 'rotate(20deg)',
+                  }}
+                >
+                </div>
+              </ParallaxLayer>
+            </div>
           </div>
         </div>
 
         <ParallaxLayer
-          offset={0.45}
+          offset={0.7}
         >
           <div style={{display: 'flex', justifyContent: 'center'}}>
             <SliderContainer>
@@ -184,7 +220,7 @@ export default function Home() {
             </SliderContainer>
           </div>
         </ParallaxLayer>
-      </Parallax>
+      </Parallax> */}
 
       <div className={styles.blob2}></div>
       <div className={styles.blob}></div>
