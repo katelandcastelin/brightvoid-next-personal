@@ -1,25 +1,33 @@
 'use client';
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
-import Slider from "react-slick";
 import styles from "./page.module.css";
 import Header from "./components/Header";
 
 const slideIn = keyframes`
   from {
-    transform: translateX(100%);
+    transform: translateY(-100%);
   }
   to {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 `;
 
 const slideOut = keyframes`
   from {
-    transform: translateX(0);
+    transform: translateY(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateY(100%);
+  }
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 `;
 
@@ -34,6 +42,7 @@ const BannerContainer = styled.div`
 `;
 
 const Banner = styled.div`
+  max-width: 1500px;
   width: 100%;
   animation: ${(props) => (props.isEntering ? slideIn : slideOut)} 1s forwards;
 `;
@@ -54,6 +63,9 @@ const TextContainer = styled.div`
   color: #fff;
   z-index: 1;
   position: absolute;
+  opacity: 0;
+  animation: ${fadeIn} 1s forwards;
+  animation-delay: 1.5s; 
 `;
 
 export default function Home() {
@@ -66,7 +78,7 @@ export default function Home() {
       setTimeout(() => {
         setActiveBanner((prevActiveBanner) => (prevActiveBanner === 1 ? 2 : 1));
         setIsEntering(true);
-      }, 500);
+      }, 1000);
     }, 4000);
 
     return () => clearInterval(interval);
