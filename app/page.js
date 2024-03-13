@@ -1,230 +1,102 @@
 'use client';
 import React from "react";
-import Slider from "react-slick";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import styles from "./page.module.css";
 import Header from "./components/Header";
-import 'slick-carousel/slick/slick.css'; 
-import 'slick-carousel/slick/slick-theme.css';
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
-const SliderContainer = styled.div`
-  max-width: 1500px;
-  width: 100%;
-`;
-
-const StyledSlider = styled(Slider)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 70px;
-`;
-
-const SliderDiv = styled.div`
-  height: 250px;
-  padding: 5px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+const slideInAndOut = keyframes`
+  0%, 100% {
+    top: 100%;
+    opacity: 0;
+  }
+  4.16%, 50% {
+    top: 0%;
+    opacity: 1;
+  }
+  54.16%, 95.83% {
+    top: -100%;
+    opacity: 0;
   }
 `;
 
+const fadeIn = keyframes`
+  0%, 8%, 100% {
+    opacity: 0;
+  }
+  13%, 95% {
+    opacity: 1;
+  }
+`;
+
+const BannerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* background-color: cornsilk; */
+`;
+
+const Banner = styled.div`
+  max-width: 1700px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  animation: ${slideInAndOut} 24s infinite ease-in-out;
+  animation-delay: ${props => props.delay}s;
+`;
+
+const ImageContainer = styled.div`
+  height: 100%;
+  width: 100%;
+`;
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+`;
+
+const TextContainer = styled.div`
+  color: #fff;
+  text-shadow: 2px 2px 8px #000;
+  z-index: 2;
+  position: absolute;
+  animation: ${fadeIn} 24s infinite ease-in-out;
+  animation-delay: ${props => props.delay + 0.1}s;
+`;
+
 export default function Home() {
-  var settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    speed: 1500,
-    centerMode: true,
-    centerPadding: '60px',
-    focusOnSelect: true,
-    cssEase: 'ease-in-out',
-
-    responsive: [
-      {
-        breakpoint: 1100,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: false,
-          speed: 1000,
-        },
-      },
-    ],
-  };
-
   return (
     <main className={styles.main}>
       <Header />
-      
-
-
-      {/* <Parallax pages={2} style={{paddingTop: '150px', maxWidth: '1500px', justifyContent: 'center', display: 'flex'}}>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            alignContent: 'center',
-          }}
-        >
-          <div
-            style={{
-            }}
-          >
-            <ParallaxLayer
-              offset={0}
-              speed={0.1}
-            >
-              <div style={{display: 'flex', justifyContent: 'end',}}>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'end',
-                    marginRight: '100px',
-                    fontSize: '70px',
-                    color: 'black',
-                    WebkitTextStroke: '2px white',
-                    zIndex: '1',
-                    position: 'absolute',
-                  }}
-                >
-                  <h1>BRIGHT</h1>
-                </div>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'end',
-                    marginRight: '100px',
-                    fontSize: '70px',
-                    color: '#000',
-                    zIndex: '2',
-                    position: 'absolute',
-                  }}
-                >
-                  <h1>BRIGHT</h1>
-                </div>
-              </div>
-            </ParallaxLayer>
-            <ParallaxLayer
-              offset={0.12}
-              speed={0.3}
-            >
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'end',
-                  marginRight: '100px',
-                  fontSize: '70px',
-                  opacity: '0.9',
-                }}
-              >
-                <h1>VOID</h1>
-              </div>
-            </ParallaxLayer>
-          </div>
-
-          <div
-            style={{
-              display: 'flex',
-            }}
-          >
-            <div>
-              <ParallaxLayer
-                offset={0}
-                speed={0.1}
-                style={{
-                  marginLeft: '350px',
-                }}
-              >
-                <div
-                  style={{
-                    height: '500px',
-                    width: '400px',
-                    borderRadius: '100%',
-                    border: '1px solid white',
-                  }}
-                >
-                </div>
-              </ParallaxLayer>
-            </div>
-            <div>
-              <ParallaxLayer
-                offset={0}
-                speed={0.1}
-                style={{
-                  marginLeft: '350px',
-                }}
-              >
-                <div
-                  style={{
-                    height: '450px',
-                    width: '400px',
-                    borderRadius: '100%',
-                    border: '1px solid darkgrey',
-                    transform: 'rotate(20deg)',
-                  }}
-                >
-                </div>
-              </ParallaxLayer>
-            </div>
-          </div>
+      <BannerContainer>
+        <div style={{maxWidth: '1500px'}}>
+          <Banner delay={0}>
+            <TextContainer delay={0}>
+              <h1>Title for banner 1</h1>
+            </TextContainer>
+            <ImageContainer>
+              <StyledImage src="/art-display/1.jpeg" />
+            </ImageContainer>
+          </Banner>
+          <Banner delay={12}>
+            <TextContainer delay={12}>
+              <h1>Title for banner 2</h1>
+            </TextContainer>
+            <ImageContainer>
+              <StyledImage src="/art-display/2.jpeg" />
+            </ImageContainer>
+          </Banner>
         </div>
-
-        <ParallaxLayer
-          offset={0.7}
-        >
-          <div style={{display: 'flex', justifyContent: 'center'}}>
-            <SliderContainer>
-              <StyledSlider {...settings}>
-                <SliderDiv>
-                  <img src="/artworks/ai1.png" />
-                </SliderDiv>
-                <SliderDiv>
-                  <img src="/artworks/ai2.png" />
-                </SliderDiv>
-                <SliderDiv>
-                  <img src="/artworks/collection1/collection1.jpeg" />
-                </SliderDiv>
-                <SliderDiv>
-                  <img src="/art-display/1.jpeg" />
-                </SliderDiv>
-                <SliderDiv>
-                  <img src="/art-display/3.jpeg" />
-                </SliderDiv>
-                <SliderDiv>
-                  <img src="/art-display/4.jpeg" />
-                </SliderDiv>
-              </StyledSlider>
-            </SliderContainer>
-          </div>
-        </ParallaxLayer>
-      </Parallax> */}
-
-      <div className={styles.blob2}></div>
-      <div className={styles.blob}></div>
-      <div className={styles.blur}></div>
+      </BannerContainer>
     </main>
   );
 }
