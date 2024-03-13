@@ -11,6 +11,7 @@ const Container = styled.div`
   padding: 1rem;
   min-height: 100vh;
   max-width: 100vw;
+  margin-top: 100px;
 `;
 
 const SmallBlockContainer = styled.div`
