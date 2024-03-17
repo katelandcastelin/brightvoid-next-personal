@@ -22,7 +22,7 @@ const clothingProducts = [
   {
     id: 'C4',
     image: '/clothing/wt-models1.png',
-    images: clothingGallery.find(item => item.id === 'C6').images,
+    images: clothingGallery.find(item => item.id === 'C4').images,
     price: 100,
   },
   {
@@ -40,7 +40,7 @@ const clothingProducts = [
   {
     id: 'C7',
     image: '/clothing/wt-model3.png',
-    images: clothingGallery.find(item => item.id === 'C6').images,
+    images: clothingGallery.find(item => item.id === 'C7').images,
     price: 180,
   },
 ];

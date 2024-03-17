@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  height: 80%;
+  height: 70vh;
+  overflow-y: auto;
 
   @media (max-width: 1040px) {
     height: 90vh;
