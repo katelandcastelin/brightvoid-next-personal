@@ -2,82 +2,54 @@ import React from 'react';
 import styled from 'styled-components';
 
 const VerticalThumbnailList = styled.div`
-  height: 90%;
-
-  @media (max-width: 1040px) {
-    height: 90vh;
-  }
+  height: 70vh;
+  overflow-y: auto;
+  margin-right: 10px;
 
   @media (max-width: 780px) {
     display: none;
   }
-  /* height: 70vh;
-  overflow-y: auto;
-
-  @media (min-width: 920px) {
-    flex-direction: row;
-  } */
 `;
 
 const ThumbnailList = styled.div`
-  max-height: 100%;
-  height: auto;
   max-width: 150px;
   width: 100%;
-
-  /* @media (max-width: 920px) {
-    display: none;
-  } */
 `;
 
 const ImageThumbnail = styled.div`
   cursor: pointer;
 
   img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
   }
 `;
 
 const HorizontalThumbnailList = styled.div`
-  /* display: none;
+  display: none;
 
-  @media (max-width: 920px) {
+  @media (max-width: 780px) {
+    margin-bottom: 10px;
     display: flex;
     overflow-x: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 100vw;
-  } */
+  }
 `;
 
 const HorizontalImageThumbnail = styled.div`
   display: none;
+
   @media (max-width: 780px) {
     display: flex;
     cursor: pointer;
+    margin-right: 5px;
 
     img {
       height: 150px;
       width: 150px;
       object-fit: cover;
-      margin: 0 3px;
     }
   }
-  /* display: none;
-
-  @media (max-width: 920px) {
-    display: flex;
-    cursor: pointer;
-
-    img {
-      height: 150px;
-      width: 150px;
-      object-fit: cover;
-      margin: 0 3px;
-    }
-  } */
 `;
 
 export default function ThumbnailGallery({ images, setSelectedImage }) {

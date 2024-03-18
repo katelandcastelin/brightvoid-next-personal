@@ -11,40 +11,28 @@ const Container = styled.div`
   margin-top: 100px;
   display: flex;
   padding: 20px;
+
+  @media (max-width: 780px) {
+    padding: 0;
+  }
 `;
 
 const SecondContainer = styled.div`
-  height: 100vh;
-  margin-top: 5%;
+  height: 70vh;
+  width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0 3rem;
 
   @media (max-width: 1040px) {
     flex-direction: column;
-    padding: 3rem;
+    padding: 2rem;
     height: 100%;
-  }
-
-  a {
-    text-decoration: underline;
-
-    :hover {
-      color: #5b5b5b;
-    }
-
-    :active {
-      color: #000;
-    }
   }
 `;
 
 const ImageAndThumbnailContainer = styled.div`
-  /* display: flex;
-  max-width: 600px;
-  width: 100%; */
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: center;
 
   @media (max-width: 1040px) {
@@ -58,44 +46,13 @@ const ImageAndThumbnailContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  /* margin-left: 20px;
-  height: 70vh;
-  width: 600px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden; */
-  display: flex;
-  justify-content: center;
-  height: 90%;
+  max-width: 700px;
   width: 100%;
-  width: 700px;
-  margin: 0 10px;
-
-  @media (max-width: 1290px) {
-    width: 650px;
-  }
-
-  @media (max-width: 1190px) {
-    width: 580px;
-  }
-
-  @media (max-width: 1140px) {
-    width: 530px;
-  }
-
-  @media (max-width: 1095px) {
-    width: 500px;
-  }
-
-  @media (max-width: 1040px) {
-    width: 100%;
-    height: 90vh;
-  }
 
   @media (max-width: 780px) {
     height: 60vh;
-    margin: 0 0 10px 0;
   }
 
   img {
