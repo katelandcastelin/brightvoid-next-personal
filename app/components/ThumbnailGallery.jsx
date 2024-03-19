@@ -31,9 +31,11 @@ const ImageThumbnail = styled.div`
 
 const HorizontalThumbnailList = styled.div`
   display: none;
+  max-width: 90vw;
+  width: 100%;
 
   @media (max-width: 780px) {
-    margin-bottom: 10px;
+    margin: 10px 0;
     display: flex;
     overflow-x: auto;
   }
@@ -45,7 +47,7 @@ const HorizontalImageThumbnail = styled.div`
   @media (max-width: 780px) {
     display: flex;
     cursor: pointer;
-    margin-right: 5px;
+    margin-right: 10px;
 
     img {
       height: 150px;
@@ -71,18 +73,20 @@ export default function ThumbnailGallery({ images, setSelectedImage }) {
         ))}
       </VerticalThumbnailList>
 
-      <HorizontalThumbnailList>
-        {images.map((image, index) => (
-          <HorizontalImageThumbnail key={index} onClick={() => setSelectedImage(image)}>
-            <img
-              srcSet={image}
-              src={image}
-              alt={index}
-              loading="lazy"
-            />
-          </HorizontalImageThumbnail>
-        ))}
-      </HorizontalThumbnailList>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        <HorizontalThumbnailList>
+          {images.map((image, index) => (
+            <HorizontalImageThumbnail key={index} onClick={() => setSelectedImage(image)}>
+              <img
+                srcSet={image}
+                src={image}
+                alt={index}
+                loading="lazy"
+              />
+            </HorizontalImageThumbnail>
+          ))}
+        </HorizontalThumbnailList>
+      </div>
     </div>
   )
 }
