@@ -18,15 +18,17 @@ const Container = styled.div`
 `;
 
 const SecondContainer = styled.div`
-  height: 70vh;
   width: 100%;
   display: flex;
   justify-content: center;
 
+  @media (max-width: 1370px) {
+    height: 550px;
+  }
+
   @media (max-width: 1040px) {
     flex-direction: column;
-    padding: 2rem;
-    height: 100%;
+    display: block;
   }
 `;
 
@@ -34,6 +36,8 @@ const ImageAndThumbnailContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  max-height: 70vh;
+  height: 100%;
 
   @media (max-width: 1040px) {
     display: flex;
@@ -48,8 +52,19 @@ const ImageAndThumbnailContainer = styled.div`
 const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
-  max-width: 700px;
-  width: 100%;
+  width: 600px;
+
+  @media (max-width: 1370px) {
+    width: 500px;
+  }
+
+  @media (max-width: 1170px) {
+    width: 400px;
+  }
+
+  @media (max-width: 1040px) {
+    width: 550px;
+  }
 
   @media (max-width: 780px) {
     height: 60vh;
@@ -69,13 +84,13 @@ export default function ProductDetails({ product }) {
     <div style={{display: 'flex', justifyContent: 'center'}}>
       <Container>
         <SecondContainer>
-        <ImageAndThumbnailContainer>
-          <ThumbnailGallery images={productImages} selectedImage={selectedImage} setSelectedImage={setSelectedImage} />
-          <ImageContainer>
-            <img src={selectedImage} />
-          </ImageContainer>
-        </ImageAndThumbnailContainer>
-        <div style={{ flex: 1 }}>TEST</div>
+          <ImageAndThumbnailContainer>
+            <ThumbnailGallery images={productImages} selectedImage={selectedImage} setSelectedImage={setSelectedImage} />
+            <ImageContainer>
+              <img src={selectedImage} />
+            </ImageContainer>
+          </ImageAndThumbnailContainer>
+          <div style={{ flex: 1 }}>TEST</div>
         </SecondContainer>
       </Container>
     </div>

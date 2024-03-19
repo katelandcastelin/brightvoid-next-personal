@@ -2,27 +2,30 @@ import React from 'react';
 import styled from 'styled-components';
 
 const VerticalThumbnailList = styled.div`
-  height: 70vh;
+  max-height: 70vh;
+  height: 100%;
   overflow-y: auto;
   margin-right: 10px;
+
+  @media (max-width: 1370px) {
+    height: 550px;
+  }
 
   @media (max-width: 780px) {
     display: none;
   }
 `;
 
-const ThumbnailList = styled.div`
-  max-width: 150px;
-  width: 100%;
-`;
-
 const ImageThumbnail = styled.div`
   cursor: pointer;
+  max-width: 150px;
+  width: 100%;
 
   img {
     height: 150px;
     width: 150px;
     object-fit: cover;
+    margin-bottom: 5px;
   }
 `;
 
@@ -56,18 +59,16 @@ export default function ThumbnailGallery({ images, setSelectedImage }) {
   return (
     <div>
       <VerticalThumbnailList>
-        <ThumbnailList cols={1} rowHeight={164}>
-          {images.map((image, index) => (
-            <ImageThumbnail key={index} onClick={() => setSelectedImage(image)}>
-              <img
-                srcSet={image}
-                src={image}
-                alt={index}
-                loading="lazy"
-              />
-            </ImageThumbnail>
-          ))}
-        </ThumbnailList>
+        {images.map((image, index) => (
+          <ImageThumbnail key={index} onClick={() => setSelectedImage(image)}>
+            <img
+              srcSet={image}
+              src={image}
+              alt={index}
+              loading="lazy"
+            />
+          </ImageThumbnail>
+        ))}
       </VerticalThumbnailList>
 
       <HorizontalThumbnailList>
