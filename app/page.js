@@ -35,11 +35,11 @@ const BannerContainer = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
-  /* background-color: cornsilk; */
+  border-top: 1px solid #fff;
 `;
 
 const Banner = styled.div`
-  max-width: 1700px;
+  /* max-width: 1700px; */
   position: absolute;
   top: 100%;
   left: 50%;
@@ -73,6 +73,44 @@ const TextContainer = styled.div`
   animation-delay: ${props => props.delay + 0.1}s;
 `;
 
+const BlockContainer = styled.div`
+  width: 100%;
+  height: 350px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #fff;
+  border-bottom: 4px solid #fff;
+`;
+
+const LeftBlock = styled.div`
+  width: 40%;
+  border-right: 1px solid #fff;
+  padding: 40px;
+
+  h1 {
+    font-size: 70px;
+  }
+`;
+
+const RightBlock = styled.div`
+  width: 40%;
+  border-left: 1px solid #fff;
+  padding: 45px;
+
+  p {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+`;
+
+const DirectoryButton = styled.button`
+  border: 1px solid #fff;
+  padding: 15px 30px;
+  margin-right: 20px;
+  background-color: transparent;
+`;
+
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -97,6 +135,24 @@ export default function Home() {
           </Banner>
         </div>
       </BannerContainer>
+      <BlockContainer>
+        <LeftBlock>
+          <h1>
+            Testing Header
+          </h1>
+        </LeftBlock>
+        <RightBlock>
+          <p>
+            Paragraph testing
+          </p>
+          <DirectoryButton>
+            Our Artists
+          </DirectoryButton>
+          <DirectoryButton>
+            Shop Artworks
+          </DirectoryButton>
+        </RightBlock>
+      </BlockContainer>
     </main>
   );
 }
