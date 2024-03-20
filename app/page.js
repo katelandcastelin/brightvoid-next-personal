@@ -81,15 +81,35 @@ const BlockContainer = styled.div`
   justify-content: center;
   border-top: 1px solid #fff;
   border-bottom: 4px solid #fff;
+
+  @media (max-width: 1600px) {
+    height: 400px;
+  }
 `;
 
 const LeftBlock = styled.div`
   width: 40%;
   border-right: 1px solid #fff;
   padding: 40px;
+  display: flex;
+  align-items: center;
 
   h1 {
-    font-size: 70px;
+    font-size: 80px;
+  }
+
+  @media (max-width: 1600px) {
+    h1 {
+      font-size: 75px;
+    }
+  }
+
+  @media (max-width: 1375px) {
+    width: 50%;
+  }
+
+  @media (max-width: 995px) {
+    padding: 0;
   }
 `;
 
@@ -97,18 +117,39 @@ const RightBlock = styled.div`
   width: 40%;
   border-left: 1px solid #fff;
   padding: 45px;
+  display: flex;
+  align-items: center;
 
   p {
-    font-size: 30px;
+    font-size: 22px;
     margin-bottom: 30px;
+  }
+
+  @media (max-width: 1375px) {
+    width: 50%;
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 1115px) {
+    padding: 0 0 0 30px;
+  }
+
+  @media (max-width: 995px) {
+
   }
 `;
 
 const DirectoryButton = styled.button`
+  margin-top: 20px;
   border: 1px solid #fff;
   padding: 15px 30px;
-  margin-right: 20px;
+  margin-right: 40px;
+  font-size: 20px;
   background-color: transparent;
+  cursor: pointer;
 `;
 
 export default function Home() {
@@ -138,19 +179,24 @@ export default function Home() {
       <BlockContainer>
         <LeftBlock>
           <h1>
-            Testing Header
+            Step into the Brightvoid
           </h1>
         </LeftBlock>
         <RightBlock>
-          <p>
-            Paragraph testing
-          </p>
-          <DirectoryButton>
-            Our Artists
-          </DirectoryButton>
-          <DirectoryButton>
-            Shop Artworks
-          </DirectoryButton>
+          <div>
+            <p>
+              Brightvoid bridges the gap between art and apparel, transforming exceptional artwork into wearable statements.
+            </p>
+            <p>
+              Explore our curated collection, meet the minds behind the designs or find your next wearable masterpiece.
+            </p>
+            <DirectoryButton>
+              Our Artists
+            </DirectoryButton>
+            <DirectoryButton>
+              Shop Artworks
+            </DirectoryButton>
+          </div>
         </RightBlock>
       </BlockContainer>
     </main>
