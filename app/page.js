@@ -79,8 +79,9 @@ const BlockContainer = styled.div`
   justify-content: center;
   border-top: 1px solid #fff;
   border-bottom: 4px solid #fff;
+  margin-bottom: 100px;
 
-  @media (max-width: 1600px) {
+  @media (max-width: 1711px) {
     height: 400px;
   }
 
@@ -198,8 +199,8 @@ const DirectoryButton = styled.button`
   }
 
   @media (max-width: 995px) {
-    margin-right: 10px;
-    margin-top: 10px;
+    margin-right: 30px;
+    margin-top: 5px;
   }
 `;
 
