@@ -21,6 +21,7 @@ const Background = styled.div`
     rgba(var(--callout-rgb), 0.5)
   );
   backdrop-filter: blur(24px);
+  border-bottom: 1px solid #fff;
 `;
 
 const MaxWidthWrapper = styled.div`
