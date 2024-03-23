@@ -35,11 +35,9 @@ const BannerContainer = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
-  border-top: 1px solid #fff;
 `;
 
 const Banner = styled.div`
-  /* max-width: 1700px; */
   position: absolute;
   top: 100%;
   left: 50%;
@@ -116,10 +114,6 @@ const LeftBlock = styled.div`
   }
 
   @media (max-width: 995px) {
-    padding: 0;
-  }
-
-  @media (max-width: 995px) {
     width: 100%;
     border-right: none;
     padding: 20px;
@@ -171,12 +165,6 @@ const RightBlock = styled.div`
     padding: 0 0 0 30px;
   }
 
-  @media (max-width: 875px) {
-    p {
-      font-size: 20px;
-    }
-  }
-
   @media (max-width: 995px) {
     width: 100%;
     border-left: none;
@@ -184,8 +172,10 @@ const RightBlock = styled.div`
     border-bottom: 2px solid #fff;
   }
 
-  @media (max-width: 790px) {
-    
+  @media (max-width: 875px) {
+    p {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -209,6 +199,7 @@ const DirectoryButton = styled.button`
 
   @media (max-width: 995px) {
     margin-right: 10px;
+    margin-top: 10px;
   }
 `;
 
@@ -252,10 +243,14 @@ export default function Home() {
               Explore our curated collection, meet the minds behind the designs or find your next wearable masterpiece.
             </p>
             <DirectoryButton>
-              Our Artists
+              <a href="/pages/gallery">
+                Our Artists
+              </a>
             </DirectoryButton>
             <DirectoryButton>
-              Shop Artworks
+              <a href="/pages/clothing">
+                Shop Artworks
+              </a>
             </DirectoryButton>
           </div>
         </RightBlock>
