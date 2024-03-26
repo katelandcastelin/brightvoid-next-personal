@@ -102,6 +102,18 @@ const LeftBlock = styled.div`
 
   h1 {
     font-size: 80px;
+    background: -webkit-linear-gradient(216deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(216deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+    text-shadow:
+      0 0 2px #0000, /* Transparent spread to soften the start of the glow */
+      0 0 5px rgba(0, 212, 255, 0.3), /* Subtle blue glow */
+      0 0 10px rgba(0, 212, 255, 0.2), /* More extended glow with lower opacity for 'outer' feel */
+      0 0 15px rgba(0, 212, 255, 0.1); /* Even more extended glow with very low opacity */
   }
 
   @media (max-width: 1600px) {
@@ -189,13 +201,24 @@ const DirectoryButton = styled.button`
   background-color: transparent;
   cursor: pointer;
   transition: box-shadow 0.1s ease-in-out;
-  
+  transition: text-shadow 0.1s ease-in-out;
+
   &:hover {
+    text-shadow:
+      0 0 5px rgba(9, 9, 121, 0.5),
+      0 0 15px rgba(9, 9, 121, 0.5),
+      0 0 25px rgba(0, 212, 255, 0.5),
+      0 0 3px rgba(9, 9, 121, 0.5),
+      0 0 5px rgba(9, 9, 121, 0.5),
+      0 0 15px rgba(9, 9, 121, 0.5),
+      0 0 25px rgba(0, 212, 255, 0.5),
+      0 0 30px rgba(0, 212, 255, 0.5);
+
     box-shadow: 
-    0 0 8px rgba(255, 255, 255, 0.2),
-    0 0 20px rgba(255, 255, 255, 0.2),
-    0 0 40px rgba(255, 255, 255, 0.2),
-    0 0 80px rgba(255, 255, 255, 0.2);
+      0 0 5px rgba(9, 9, 121, 0.2),
+      0 0 10px rgba(9, 9, 121, 0.3),
+      0 0 15px rgba(0, 212, 255, 0.3),
+      0 0 60px rgba(0, 212, 255, 0.3);
   }
 
   @media (max-width: 995px) {
