@@ -102,18 +102,18 @@ const LeftBlock = styled.div`
 
   h1 {
     font-size: 80px;
-    background: -webkit-linear-gradient(216deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-    background: linear-gradient(216deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background: -webkit-linear-gradient(216deg, rgba(0,0,36,0.8) 0%, rgba(5,5,61,0.8) 35%, rgba(0,112,185,0.8) 100%);
+    background: linear-gradient(216deg, rgba(0,0,36,0.8) 0%, rgba(5,5,61,0.8) 35%, rgba(0,112,185,0.8) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
     display: inline-block;
     text-shadow:
-      0 0 2px #0000, /* Transparent spread to soften the start of the glow */
-      0 0 5px rgba(0, 212, 255, 0.3), /* Subtle blue glow */
-      0 0 10px rgba(0, 212, 255, 0.2), /* More extended glow with lower opacity for 'outer' feel */
-      0 0 15px rgba(0, 212, 255, 0.1); /* Even more extended glow with very low opacity */
+      0 0 2px #0000,
+      0 0 5px rgba(0, 112, 185, 0.3),
+      10px 0 10px rgba(0, 112, 185, 0.2),
+      0 0 15px rgba(0, 112, 185, 0.1);
   }
 
   @media (max-width: 1600px) {
@@ -152,6 +152,15 @@ const LeftBlock = styled.div`
   @media (max-width: 550px) {
     margin-top: 100px;
   }
+`;
+
+const LeftCircle = styled(LeftBlock)`
+  position: relative;
+  z-index: -1;
+  border: 1px solid #fff;
+  width: 190px;
+  height: 400px;
+  border-radius: 50%;
 `;
 
 const RightBlock = styled.div`
@@ -200,8 +209,7 @@ const DirectoryButton = styled.button`
   font-size: 20px;
   background-color: transparent;
   cursor: pointer;
-  transition: box-shadow 0.1s ease-in-out;
-  transition: text-shadow 0.1s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 
   &:hover {
     text-shadow:
@@ -257,7 +265,11 @@ export default function Home() {
           <h1>
             Step into the Brightvoid
           </h1>
+          <div style={{position: 'absolute'}}>
+            <LeftCircle />
+          </div>
         </LeftBlock>
+        
         <RightBlock>
           <div>
             <p>
