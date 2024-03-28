@@ -167,7 +167,7 @@ const LeftCircle = styled(LeftBlock)`
 const AnimatedSVG = styled.svg`
   position: relative;
   z-index: -1;
-  width: 190px;
+  width: 350px;
   height: 400px;
 
   path {
@@ -183,7 +183,6 @@ const AnimatedSVG = styled.svg`
     }
   }
 `;
-
 
 const RightBlock = styled.div`
   width: 40%;
@@ -289,10 +288,26 @@ export default function Home() {
           </h1>
           <div style={{position: 'absolute'}}>
             {/* <LeftCircle /> */}
-            <AnimatedSVG viewBox="0 0 250 350">
-              <path fill="none" stroke="white" strokeWidth="2" strokeDasharray="5,5"
+            {/* <AnimatedSVG viewBox="0 0 240 350">
+              <path
+                fill="none"
+                stroke="white"
+                strokeWidth="2"
+                strokeDasharray="5,5"
                 d="M95,200a95,200 0 1,0 190,0a95,200 0 1,0 -190,0"
-                transform="rotate(-15 95 200)">
+                transform="rotate(-15 95 200)"
+              >
+              </path>
+            </AnimatedSVG> */}
+            <AnimatedSVG viewBox="0 0 380 400">
+              <path
+                fill="none"
+                stroke="white"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+                d="M 75,200 a 95,200 0 1,0 190,0 a 95,200 0 1,0 -190,0"
+                transform="rotate(-15 235 200)"
+              >
               </path>
             </AnimatedSVG>
           </div>
