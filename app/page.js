@@ -35,6 +35,7 @@ const BannerContainer = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
+  background-color: #000;
 `;
 
 const Banner = styled.div`
@@ -79,7 +80,6 @@ const BlockContainer = styled.div`
   justify-content: center;
   border-top: 1px solid #fff;
   border-bottom: 4px solid #fff;
-  margin-bottom: 100px;
 
   @media (max-width: 1711px) {
     height: 400px;
@@ -157,11 +157,33 @@ const LeftBlock = styled.div`
 const LeftCircle = styled(LeftBlock)`
   position: relative;
   z-index: -1;
-  border: 1px solid #fff;
+  border: 1px dotted #fff;
   width: 190px;
   height: 400px;
   border-radius: 50%;
+  transform: rotate(-15deg);
 `;
+
+const AnimatedSVG = styled.svg`
+  position: relative;
+  z-index: -1;
+  width: 190px;
+  height: 400px;
+
+  path {
+    animation: dash 25s linear infinite;
+  }
+
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+`;
+
 
 const RightBlock = styled.div`
   width: 40%;
@@ -266,7 +288,13 @@ export default function Home() {
             Step into the Brightvoid
           </h1>
           <div style={{position: 'absolute'}}>
-            <LeftCircle />
+            {/* <LeftCircle /> */}
+            <AnimatedSVG viewBox="0 0 250 350">
+              <path fill="none" stroke="white" strokeWidth="2" strokeDasharray="5,5"
+                d="M95,200a95,200 0 1,0 190,0a95,200 0 1,0 -190,0"
+                transform="rotate(-15 95 200)">
+              </path>
+            </AnimatedSVG>
           </div>
         </LeftBlock>
         
@@ -291,6 +319,7 @@ export default function Home() {
           </div>
         </RightBlock>
       </BlockContainer>
+      <div style={{width: '100%', height: '200px', backgroundColor: '#000'}} />
     </main>
   );
 }
