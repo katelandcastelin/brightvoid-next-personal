@@ -155,13 +155,56 @@ const LeftBlock = styled.div`
 `;
 
 const LeftCircle = styled(LeftBlock)`
-  position: relative;
+  position: absolute;
   z-index: -1;
   border: 1px dotted #fff;
   width: 190px;
-  height: 400px;
+  height: 380px;
   border-radius: 50%;
   transform: rotate(-15deg);
+  left: 100px;
+
+  @media (max-width: 995px) {
+    left: 800px;
+    width: 80px;
+    height: 150px;
+    top: 20px;
+  }
+
+  @media (max-width: 920px) {
+    left: 700px;
+  }
+
+  @media (max-width: 820px) {
+    left: 600px;
+  }
+
+  @media (max-width: 790px) {
+    left: 450px;
+    width: 125px;
+    height: 250px;
+    top: 13px;
+  }
+
+  @media (max-width: 627px) {
+    left: 350px;
+  }
+
+  @media (max-width: 603px) {
+    top: -10px;
+  }
+
+  @media (max-width: 550px) {
+    top: -25px;
+  }
+
+  @media (max-width: 530px) {
+    left: 300px;
+  }
+
+  @media (max-width: 490px) {
+    left: 280px;
+  }
 `;
 
 const AnimatedSVG = styled.svg`
@@ -181,6 +224,38 @@ const AnimatedSVG = styled.svg`
     to {
       stroke-dashoffset: 0;
     }
+  }
+
+  @media (max-width: 995px) {
+    left: 750px;
+    width: 150px;
+    height: 200px;
+  }
+
+  @media (max-width: 920px) {
+    left: 650px;
+  }
+
+  @media (max-width: 820px) {
+    left: 550px;
+  }
+
+  @media (max-width: 790px) {
+    left: 350px;
+    width: 250px;
+    height: 400px;
+  }
+
+  @media (max-width: 627px) {
+    left: 260px;
+  }
+
+  @media (max-width: 530px) {
+    left: 220px;
+  }
+
+  @media (max-width: 490px) {
+    left: 200px;
   }
 `;
 
@@ -213,6 +288,7 @@ const RightBlock = styled.div`
     border-left: none;
     padding: 20px;
     border-bottom: 2px solid #fff;
+    background-color: #000;
   }
 
   @media (max-width: 875px) {
@@ -256,6 +332,16 @@ const DirectoryButton = styled.button`
   }
 `;
 
+const BlackDiv = styled.div`
+  width: 100%;
+  height: 200px;
+  background-color: #000;
+
+  @media (max-width: 995px) {
+    display: none;
+  }
+`;
+
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -287,23 +373,12 @@ export default function Home() {
             Step into the Brightvoid
           </h1>
           <div style={{position: 'absolute'}}>
-            {/* <LeftCircle /> */}
-            {/* <AnimatedSVG viewBox="0 0 240 350">
+            <LeftCircle />
+            <AnimatedSVG viewBox="0 0 380 430">
               <path
                 fill="none"
                 stroke="white"
-                strokeWidth="2"
-                strokeDasharray="5,5"
-                d="M95,200a95,200 0 1,0 190,0a95,200 0 1,0 -190,0"
-                transform="rotate(-15 95 200)"
-              >
-              </path>
-            </AnimatedSVG> */}
-            <AnimatedSVG viewBox="0 0 380 400">
-              <path
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
+                strokeWidth="0.5"
                 strokeDasharray="5,5"
                 d="M 75,200 a 95,200 0 1,0 190,0 a 95,200 0 1,0 -190,0"
                 transform="rotate(-15 235 200)"
@@ -334,7 +409,7 @@ export default function Home() {
           </div>
         </RightBlock>
       </BlockContainer>
-      <div style={{width: '100%', height: '200px', backgroundColor: '#000'}} />
+      <BlackDiv />
     </main>
   );
 }
