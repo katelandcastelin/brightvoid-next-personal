@@ -35,6 +35,7 @@ const BannerContainer = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
+  background-color: #000;
 `;
 
 const Banner = styled.div`
@@ -79,7 +80,6 @@ const BlockContainer = styled.div`
   justify-content: center;
   border-top: 1px solid #fff;
   border-bottom: 4px solid #fff;
-  margin-bottom: 100px;
 
   @media (max-width: 1711px) {
     height: 400px;
@@ -102,6 +102,18 @@ const LeftBlock = styled.div`
 
   h1 {
     font-size: 80px;
+    background: -webkit-linear-gradient(216deg, rgba(0,0,36,0.8) 0%, rgba(5,5,61,0.8) 35%, rgba(0,112,185,0.8) 100%);
+    background: linear-gradient(216deg, rgba(0,0,36,0.8) 0%, rgba(5,5,61,0.8) 35%, rgba(0,112,185,0.8) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+    text-shadow:
+      0 0 2px #0000,
+      0 0 5px rgba(0, 112, 185, 0.3),
+      10px 0 10px rgba(0, 112, 185, 0.2),
+      0 0 15px rgba(0, 112, 185, 0.1);
   }
 
   @media (max-width: 1600px) {
@@ -142,6 +154,111 @@ const LeftBlock = styled.div`
   }
 `;
 
+const LeftCircle = styled(LeftBlock)`
+  position: absolute;
+  z-index: -1;
+  border: 1px dotted #fff;
+  width: 190px;
+  height: 380px;
+  border-radius: 50%;
+  transform: rotate(-15deg);
+  left: 100px;
+
+  @media (max-width: 995px) {
+    left: 800px;
+    width: 80px;
+    height: 150px;
+    top: 20px;
+  }
+
+  @media (max-width: 920px) {
+    left: 700px;
+  }
+
+  @media (max-width: 820px) {
+    left: 600px;
+  }
+
+  @media (max-width: 790px) {
+    left: 450px;
+    width: 125px;
+    height: 250px;
+    top: 13px;
+  }
+
+  @media (max-width: 627px) {
+    left: 350px;
+  }
+
+  @media (max-width: 603px) {
+    top: -10px;
+  }
+
+  @media (max-width: 550px) {
+    top: -25px;
+  }
+
+  @media (max-width: 530px) {
+    left: 300px;
+  }
+
+  @media (max-width: 490px) {
+    left: 280px;
+  }
+`;
+
+const AnimatedSVG = styled.svg`
+  position: relative;
+  z-index: -1;
+  width: 350px;
+  height: 400px;
+
+  path {
+    animation: dash 25s linear infinite;
+  }
+
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @media (max-width: 995px) {
+    left: 750px;
+    width: 150px;
+    height: 200px;
+  }
+
+  @media (max-width: 920px) {
+    left: 650px;
+  }
+
+  @media (max-width: 820px) {
+    left: 550px;
+  }
+
+  @media (max-width: 790px) {
+    left: 350px;
+    width: 250px;
+    height: 400px;
+  }
+
+  @media (max-width: 627px) {
+    left: 260px;
+  }
+
+  @media (max-width: 530px) {
+    left: 220px;
+  }
+
+  @media (max-width: 490px) {
+    left: 200px;
+  }
+`;
+
 const RightBlock = styled.div`
   width: 40%;
   border-left: 1px solid #fff;
@@ -171,6 +288,7 @@ const RightBlock = styled.div`
     border-left: none;
     padding: 20px;
     border-bottom: 2px solid #fff;
+    background-color: #000;
   }
 
   @media (max-width: 875px) {
@@ -188,19 +306,39 @@ const DirectoryButton = styled.button`
   font-size: 20px;
   background-color: transparent;
   cursor: pointer;
-  transition: box-shadow 0.1s ease-in-out;
-  
+  transition: box-shadow 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+
   &:hover {
+    text-shadow:
+      0 0 5px rgba(9, 9, 121, 0.5),
+      0 0 15px rgba(9, 9, 121, 0.5),
+      0 0 25px rgba(0, 212, 255, 0.5),
+      0 0 3px rgba(9, 9, 121, 0.5),
+      0 0 5px rgba(9, 9, 121, 0.5),
+      0 0 15px rgba(9, 9, 121, 0.5),
+      0 0 25px rgba(0, 212, 255, 0.5),
+      0 0 30px rgba(0, 212, 255, 0.5);
+
     box-shadow: 
-    0 0 8px rgba(255, 255, 255, 0.2),
-    0 0 20px rgba(255, 255, 255, 0.2),
-    0 0 40px rgba(255, 255, 255, 0.2),
-    0 0 80px rgba(255, 255, 255, 0.2);
+      0 0 5px rgba(9, 9, 121, 0.2),
+      0 0 10px rgba(9, 9, 121, 0.3),
+      0 0 15px rgba(0, 212, 255, 0.3),
+      0 0 60px rgba(0, 212, 255, 0.3);
   }
 
   @media (max-width: 995px) {
     margin-right: 30px;
     margin-top: 5px;
+  }
+`;
+
+const BlackDiv = styled.div`
+  width: 100%;
+  height: 200px;
+  background-color: #000;
+
+  @media (max-width: 995px) {
+    display: none;
   }
 `;
 
@@ -234,7 +372,22 @@ export default function Home() {
           <h1>
             Step into the Brightvoid
           </h1>
+          <div style={{position: 'absolute'}}>
+            <LeftCircle />
+            <AnimatedSVG viewBox="0 0 380 430">
+              <path
+                fill="none"
+                stroke="white"
+                strokeWidth="0.5"
+                strokeDasharray="5,5"
+                d="M 75,200 a 95,200 0 1,0 190,0 a 95,200 0 1,0 -190,0"
+                transform="rotate(-15 235 200)"
+              >
+              </path>
+            </AnimatedSVG>
+          </div>
         </LeftBlock>
+        
         <RightBlock>
           <div>
             <p>
@@ -256,6 +409,7 @@ export default function Home() {
           </div>
         </RightBlock>
       </BlockContainer>
+      <BlackDiv />
     </main>
   );
 }
