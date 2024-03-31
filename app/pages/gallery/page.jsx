@@ -7,9 +7,8 @@ import CollectionDisplay from '../../components/CollectionDisplay';
 import GalleryHeader from '../../components/GalleryHeader';
 
 const Background = styled.div`
-  background-image: radial-gradient( circle farthest-corner at 10% 20%,  #282828 0%, rgba(4,0,4,1) 90% );
+  /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  #282828 0%, rgba(4,0,4,1) 90% ); */
   padding-top: 120px;
-  height: 100vh;
   overflow-y: ${props => props.completed ? 'hidden' : 'scroll'};
 `;
 

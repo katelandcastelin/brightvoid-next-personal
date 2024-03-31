@@ -7,6 +7,10 @@
   margin-top: 100px;
 }
 
+.page {
+  min-height: 100vh;
+}
+
 @media (max-width: 790px) {
   .main {
     margin: 100px 0;
