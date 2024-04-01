@@ -10,6 +10,13 @@ const Container = styled.div`
   padding: 10px;
   background: radial-gradient(circle at center bottom, rgba(59, 59, 59, 0.8) 0%, #0d0d0d 70%);
   background-size: 100% 200%;
+
+  p {
+    font-family: monospace;
+    font-size: large;
+    text-transform: uppercase;
+    color: #d7ffc7;
+  }
 `;
 
 const Content = styled.div`
@@ -19,23 +26,19 @@ const Content = styled.div`
 const SocialsLinks = styled.div`
   display: flex;
   justify-content: center;
-  gap: 10px;
+  /* gap: 10px; */
 
   a {
     margin-right: 10px;
   }
   
   img {
-    height: 30px;
-    border-radius: 10px;
-    background-color: aliceblue;
+    height: 50px;
+    border-radius: 3px;
+    padding: 7px;
 
     &:hover {
-      box-shadow: 
-      0 0 5px rgba(9, 9, 121, 0.2),
-      0 0 10px rgba(9, 9, 121, 0.3),
-      0 0 15px rgba(0, 212, 255, 0.3),
-      0 0 60px rgba(0, 212, 255, 0.3);
+      background-color: #2b2b2b;
     }
   }
 `;
