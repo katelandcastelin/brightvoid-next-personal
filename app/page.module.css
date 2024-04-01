@@ -11,6 +11,68 @@
   min-height: 100vh;
 }
 
+.lighth {
+  position: relative;
+  background-color: #000;
+  height: 300px;
+  width: 100%;
+  perspective: 100px;
+  overflow: hidden
+}
+.lighth::before {
+  content: '';
+  position: absolute;
+  background: linear-gradient(0, transparent, #000);
+  top: 0;
+  right: -100vh;
+  left: -100vh;
+  height: 20px;
+  z-index: 99
+}
+.lightv {
+  position: relative;
+  background-color: black;
+  color: #e5279d;
+  height: 100%;
+  width: 100%;
+  transform: rotateX(25deg);
+}
+.lightv::before {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: -100vh;
+  bottom: -100vh;
+  left: 50%;
+  width: 10px;
+  box-shadow: -140px 0 0 currentColor, -290px 0 0 currentColor, -440px 0 0 currentColor, -590px 0 0 currentColor, -740px 0 0 currentColor, -890px 0 0 currentColor, -1040px 0 0 currentColor, -1190px 0 0 currentColor,
+  140px 0 0 currentColor, 290px 0 0 currentColor, 440px 0 0 currentColor, 590px 0 0 currentColor, 740px 0 0 currentColor, 890px 0 0 currentColor, 1040px 0 0 currentColor, 1190px 0 0 currentColor
+}
+.lightv::after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+  top: 0;
+  right: -100vh;
+  left: -100vh;
+  height: 10px;
+  box-shadow: 0 90px 0 0 currentColor, 0 190px 0 currentColor, 0 290px currentColor,
+  0 -90px 0 0 currentColor, 0 -190px 0 currentColor, 0 -290px currentColor;
+  animation: lightv 1s linear infinite;
+}
+@keyframes lightv {
+  from {
+    transform: translateY(0)
+  }
+  to {
+    transform: translateY(97.7px)
+  }
+}
+
+
 @media (max-width: 790px) {
   .main {
     margin: 100px 0;
