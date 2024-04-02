@@ -14,7 +14,7 @@ const HowToBlock = styled.div`
 
 export default function submitArt() {
   return (
-    <div style={{display: 'flex', justifyContent: 'center'}}>
+    <div style={{display: 'flex', justifyContent: 'center', marginTop: '150px'}}>
     <div className={styles.wrapper}>
       <Header />
       <HowToBlock>
