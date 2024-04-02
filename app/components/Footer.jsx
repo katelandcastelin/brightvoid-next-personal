@@ -14,15 +14,17 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const Content = styled.div`
+const PageLinks = styled.div`
   text-align: center;
+  z-index: 2;
+  position: relative;
 
   a {
     gap: 10px;
     font-family: monospace;
     font-size: large;
     color: #f0ffea;
-    transition: text-shadow 0.3s ease-in-out;
+    transition: text-shadow 0.1s ease-in-out;
 
     &:hover {
       text-shadow: 0 0 10px #dcffcf, 0 0 3px #dcffcf, 0 0 1px #dcffcf;
@@ -34,6 +36,7 @@ const SocialsLinks = styled.div`
   display: flex;
   justify-content: center;
   gap: 10px;
+  position: relative;
   
   img {
     height: 45px;
@@ -66,6 +69,7 @@ const Overlay = styled.div`
     linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   mix-blend-mode: difference;
+  z-index: 0;
 `;
 
 const GlitchOverlay = styled(Overlay)`
@@ -84,27 +88,27 @@ export default function Footer () {
           <p>Get in touch</p>
         </div>
         <SocialsLinks>
-          <a href=''>
+          <a href='' target='_blank'>
             <img src='/icons/facebook.png' />
           </a>
-          <a href=''>
+          <a href='' target='_blank'>
             <img src='/icons/instagram.png' />
           </a>
-          <a href=''>
+          <a href='' target='_blank'>
             <img src='/icons/tiktok.png' />
           </a>
-          <a href=''>
+          <a href='' target='_blank'>
             <img src='/icons/twitter.png' />
           </a>
-          <a href=''>
+          <a href='' target='_blank'>
             <img src='/icons/discord.png' />
           </a>
-          <a href=''>
+          <a href='' target='_blank'>
             <img src='/icons/telegram.png' />
           </a>
         </SocialsLinks>
       </div>
-      <Content>
+      <PageLinks>
         <a href='/pages/contact'>
           Contact
         </a>
@@ -114,13 +118,7 @@ export default function Footer () {
         <a href='/pages/gallery'>
           Our artists
         </a>
-      </Content>
-      <div>
-        HELLO THERE
-        <br />
-        <br />
-        more content
-      </div>
+      </PageLinks>
     </Container>
   )
 }
