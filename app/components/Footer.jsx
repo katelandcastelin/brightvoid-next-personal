@@ -1,7 +1,6 @@
 'use client';
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-import GlitchingText from './GlitchingText';
 
 const Container = styled.div`
   height: 350px;
@@ -136,11 +135,12 @@ const AnimatedSpan = styled.span`
   animation: ${displayLetterKeyframes} 0.5s ease-in-out forwards;
   letter-spacing: 1px;
   ${props => generateSpanStyles(props.index)}
+  letter-spacing: 10px;
 `;
 
 const AnimatedTitle = styled.div`
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   margin: 0;
   width: 100%;
   text-align: center;
@@ -148,8 +148,32 @@ const AnimatedTitle = styled.div`
   animation: ${textGlitchKeyframes} 3s ease-in-out infinite alternate;
 `;
 
+const Placeholder = styled.div`
+  height: 25px;
+  visibility: hidden;
+`;
+
 export default function Footer () {
   const text = "Get in touch";
+  const [showAnimation, setShowAnimation] = useState(false);
+  const [animationPlayed, setAnimationPlayed] = useState(false);
+
+  useEffect(() => {
+    const checkScroll = () => {
+      if (!animationPlayed && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        setShowAnimation(true);
+        setAnimationPlayed(true);
+      }
+    };
+
+    checkScroll();
+
+    window.addEventListener('scroll', checkScroll);
+
+    return () => {
+      window.removeEventListener('scroll', checkScroll);
+    };
+  }, [animationPlayed]);
 
   const renderText = () => {
     return text.split("").map((char, index) => (
@@ -164,12 +188,13 @@ export default function Footer () {
       <Overlay />
       <GlitchOverlay />
       <div>
-        <AnimatedTitle>
-          {renderText()}
-        </AnimatedTitle>
-        {/* <div style={{textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase'}}>
-          <p>Get in touch</p>
-        </div> */}
+        {showAnimation ? (
+          <AnimatedTitle>
+            {renderText()}
+          </AnimatedTitle>
+        ) : (
+          <Placeholder />
+        )}
         <SocialsLinks>
           <a href='' target='_blank'>
             <img src='/icons/facebook.png' />
