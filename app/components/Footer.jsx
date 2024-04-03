@@ -1,6 +1,6 @@
 'use client';
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useRef, useEffect } from 'react';
+import styled, { keyframes, css } from 'styled-components';
 
 const Container = styled.div`
   height: 350px;
@@ -78,11 +78,93 @@ const GlitchOverlay = styled(Overlay)`
   transform: translateX(0.1rem);
 `;
 
+const textGlitchKeyframes = keyframes`
+  0% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  95% {
+    opacity: 0.1;
+  }
+  96% {
+    opacity: 1;
+    transform: translateX(1px);
+  }
+  97% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+`;
+
+const displayLetterKeyframes = keyframes`
+  0% {
+    transform: translateY(2px);
+    color: white;
+    opacity: 0;
+  }
+  10%, 20% {
+    opacity: 1;
+    color: limegreen;
+  }
+  50% {
+    opacity: 1;
+    color: darkgreen;
+    transform: translateY(1px);
+  }
+  60%, 100% {
+    opacity: 1;
+    color: white;
+    transform: translateY(0);
+  }
+`;
+
+const generateSpanStyles = (index) => css`
+  animation-delay: ${index * 0.1 + Math.random() * 0.5}s;
+`;
+
+const AnimatedSpan = styled.span`
+  display: inline-block;
+  min-width: 1rem;
+  opacity: 0;
+  animation: ${displayLetterKeyframes} 0.5s ease-in-out forwards;
+  letter-spacing: 1px;
+  ${props => generateSpanStyles(props.index)}
+`;
+
+const AnimatedTitle = styled.div`
+  color: white;
+  font-size: 48px;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Share Tech Mono', monospace;
+  animation: ${textGlitchKeyframes} 3s ease-in-out infinite alternate;
+`;
+
 export default function Footer () {
+  const text = "Get in touch";
+
+  const renderText = () => {
+    return text.split("").map((char, index) => (
+      <AnimatedSpan key={index} index={index}>
+        {char}
+      </AnimatedSpan>
+    ));
+  };
+
   return (
     <Container>
       <Overlay />
       <GlitchOverlay />
+      <AnimatedTitle>
+        {renderText()}
+      </AnimatedTitle>
       <div>
         <div style={{textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase'}}>
           <p>Get in touch</p>
