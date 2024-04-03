@@ -124,8 +124,8 @@ const displayLetterKeyframes = keyframes`
   }
 `;
 
-const generateSpanStyles = (index) => css`
-  animation-delay: ${index * 0.1 + Math.random() * 0.5}s;
+const generateSpanStyles = () => css`
+  animation-delay: ${Math.random() * 1}s;
 `;
 
 const AnimatedSpan = styled.span`
@@ -139,7 +139,7 @@ const AnimatedSpan = styled.span`
 
 const AnimatedTitle = styled.div`
   color: white;
-  font-size: 48px;
+  font-size: 30px;
   margin: 0;
   width: 100%;
   text-align: center;
@@ -152,7 +152,7 @@ export default function Footer () {
 
   const renderText = () => {
     return text.split("").map((char, index) => (
-      <AnimatedSpan key={index} index={index}>
+      <AnimatedSpan key={index}>
         {char}
       </AnimatedSpan>
     ));
@@ -162,13 +162,13 @@ export default function Footer () {
     <Container>
       <Overlay />
       <GlitchOverlay />
-      <AnimatedTitle>
-        {renderText()}
-      </AnimatedTitle>
       <div>
-        <div style={{textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase'}}>
+        <AnimatedTitle>
+          {renderText()}
+        </AnimatedTitle>
+        {/* <div style={{textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase'}}>
           <p>Get in touch</p>
-        </div>
+        </div> */}
         <SocialsLinks>
           <a href='' target='_blank'>
             <img src='/icons/facebook.png' />
