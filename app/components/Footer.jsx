@@ -1,6 +1,7 @@
 'use client';
 import React, { useRef, useEffect } from 'react';
 import styled, { keyframes, css } from 'styled-components';
+import GlitchingText from './GlitchingText';
 
 const Container = styled.div`
   height: 350px;
@@ -110,11 +111,11 @@ const displayLetterKeyframes = keyframes`
   }
   10%, 20% {
     opacity: 1;
-    color: limegreen;
+    color: #49dc49;
   }
   50% {
     opacity: 1;
-    color: darkgreen;
+    color: #095b09;
     transform: translateY(1px);
   }
   60%, 100% {
@@ -125,7 +126,7 @@ const displayLetterKeyframes = keyframes`
 `;
 
 const generateSpanStyles = () => css`
-  animation-delay: ${Math.random() * 1}s;
+  animation-delay: ${Math.random() * 0.8}s;
 `;
 
 const AnimatedSpan = styled.span`
