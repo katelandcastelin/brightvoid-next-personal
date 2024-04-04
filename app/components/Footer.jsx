@@ -125,14 +125,14 @@ const displayLetterKeyframes = keyframes`
 `;
 
 const generateSpanStyles = () => css`
-  animation-delay: ${Math.random() * 0.8}s;
+  animation-delay: ${Math.random() * 0.5}s;
 `;
 
 const AnimatedSpan = styled.span`
   display: inline-block;
   min-width: 1rem;
   opacity: 0;
-  animation: ${displayLetterKeyframes} 0.5s ease-in-out forwards;
+  animation: ${displayLetterKeyframes} 0.3s ease-in-out forwards;
   letter-spacing: 1px;
   ${props => generateSpanStyles(props.index)}
   letter-spacing: 10px;
