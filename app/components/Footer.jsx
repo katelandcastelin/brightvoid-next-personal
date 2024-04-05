@@ -114,7 +114,7 @@ const displayLetterKeyframes = keyframes`
   }
   50% {
     opacity: 1;
-    color: #095b09;
+    color: #65c438;
     transform: translateY(1px);
   }
   60%, 100% {

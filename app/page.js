@@ -157,7 +157,7 @@ const LeftBlock = styled.div`
 const LeftCircle = styled(LeftBlock)`
   position: absolute;
   z-index: -1;
-  border: 1px dotted #fff;
+  border: 1px dotted #7ad4f8;
   width: 190px;
   height: 380px;
   border-radius: 50%;
@@ -377,7 +377,7 @@ export default function Home() {
             <AnimatedSVG viewBox="0 0 380 430">
               <path
                 fill="none"
-                stroke="white"
+                stroke="#7ad4f8"
                 strokeWidth="0.5"
                 strokeDasharray="5,5"
                 d="M 75,200 a 95,200 0 1,0 190,0 a 95,200 0 1,0 -190,0"

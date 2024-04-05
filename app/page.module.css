@@ -1,14 +1,12 @@
 .main {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between;
-  align-items: center; */
-  /* height: 100vh; */
   margin-top: 100px;
 }
 
 .page {
   min-height: 100vh;
+  margin-top: 100px;
 }
 
 .lighth {
