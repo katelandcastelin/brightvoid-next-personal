@@ -14,10 +14,9 @@ const spin = keyframes`
 `;
 
 const Scene = styled.div`
-  left: 10rem;
   width: 25rem;
   height: 25rem;
-  margin: 2% auto;
+  margin: auto;
   perspective: 100rem;
 `;
 
@@ -151,13 +150,15 @@ export default function ContactPage() {
       </MaxWidthWrapper>
 
       <Scene>
-      <Wrapper>
-        <Globe>
-          <Ring />
-          <Ring />
-        </Globe>
-      </Wrapper>
-    </Scene>
+        <Wrapper>
+          <div style={{height: '100%', display: 'flex', alignItems: 'end'}}>
+            <Globe>
+              <Ring />
+              <Ring />
+            </Globe>
+          </div>
+        </Wrapper>
+      </Scene>
     </div>
   )
 }
