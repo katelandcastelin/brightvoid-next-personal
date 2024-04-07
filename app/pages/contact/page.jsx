@@ -65,7 +65,7 @@ const InfoContainer = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 2rem;
-  gap: 40px;
+  gap: 80px;
 `;
 
 const Section = styled.div`
@@ -105,7 +105,8 @@ const ActionButton = styled.button`
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  max-width: 600px;
+  width: 100%;
   padding: 2rem;
 `;
 
@@ -144,7 +145,9 @@ export default function ContactPage() {
             <h2>Contact Us</h2>
             <FormInput type="text" placeholder="Your Email" />
             <FormTextArea placeholder="Your Message"></FormTextArea>
-            <ActionButton>Send Message</ActionButton>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+              <ActionButton>Send Message</ActionButton>
+            </div>
           </FormContainer>
         </div>
       </MaxWidthWrapper>

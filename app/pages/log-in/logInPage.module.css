@@ -20,6 +20,8 @@
   padding: 20px;
   margin: 0 40px;
   border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  backdrop-filter: blur(2px);
+  z-index: 1;
 }
 
 .form {
