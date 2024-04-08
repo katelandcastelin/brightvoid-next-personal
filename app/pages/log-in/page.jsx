@@ -130,7 +130,7 @@ export default function LogInPage() {
   };
 
   return (
-    <div className={styles.main}>
+    <div className={styles.main} style={{minHeight: '70vh', marginBottom: '100px'}}>
       <Header />
       <div className={styles.formsContainer}>
 
