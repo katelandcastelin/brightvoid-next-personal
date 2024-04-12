@@ -2,8 +2,59 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './logInPage.module.css';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Header from '../../components/Header';
+
+
+const spin = keyframes`
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+`;
+
+const Scene = styled.div`
+  width: 25rem;
+  height: 25rem;
+  margin: auto;
+  perspective: 100rem;
+`;
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  transform: rotateX(180deg) rotateY(180deg);
+  transform-style: preserve-3d;
+`;
+
+const Globe = styled.div`
+  position: relative;
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  animation: ${spin} 25s linear infinite;
+`;
+
+const Ring = styled.span`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0.3rem;
+  border-style: dotted;
+  border-radius: 50%;
+  color: #7ad4f8;
+  transform: rotateY(4deg) rotateX(75deg) scale(1.5);
+
+  &:nth-child(1) {
+    transform: rotateY(4deg) rotateX(75deg) scale(2);
+    border-style: dashed;
+  }
+`;
 
 const Label = styled.label`
   margin-bottom: 10px;
@@ -79,7 +130,7 @@ export default function LogInPage() {
   };
 
   return (
-    <div className={styles.main}>
+    <div className={styles.main} style={{minHeight: '70vh', marginBottom: '100px'}}>
       <Header />
       <div className={styles.formsContainer}>
 
@@ -164,6 +215,18 @@ export default function LogInPage() {
             </div>
           )}
         </div>
+      </div>
+      <div style={{position: 'absolute'}}>
+        <Scene>
+          <Wrapper>
+            <div style={{height: '100%', display: 'flex', alignItems: 'end'}}>
+              <Globe>
+                <Ring />
+                <Ring />
+              </Globe>
+            </div>
+          </Wrapper>
+        </Scene>
       </div>
     </div>
   )

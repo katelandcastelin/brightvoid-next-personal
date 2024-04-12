@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   color: #a8a8a8;
-  margin-top: 150px;
+  margin-top: 180px;
 }
 
 .formsContainer {
@@ -12,6 +12,7 @@
   justify-content: space-evenly;
   text-align: center;
   width: 90%;
+  position: absolute;
 }
 
 .formBlock {
@@ -20,6 +21,8 @@
   padding: 20px;
   margin: 0 40px;
   border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  backdrop-filter: blur(2px);
+  z-index: 1;
 }
 
 .form {
