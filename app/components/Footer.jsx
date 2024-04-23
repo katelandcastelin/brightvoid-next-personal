@@ -12,6 +12,8 @@ const Container = styled.div`
   background-size: 100% 200%;
   position: relative;
   overflow: hidden;
+  font-family: "bc-mikser", sans-serif;
+  font-style: normal;
 `;
 
 const PageLinks = styled.div`
@@ -144,7 +146,7 @@ const AnimatedTitle = styled.div`
   margin: 0;
   width: 100%;
   text-align: center;
-  font-family: 'Share Tech Mono', monospace;
+  font-family: "bc-mikser", sans-serif;
   animation: ${textGlitchKeyframes} 3s ease-in-out infinite alternate;
 `;
 

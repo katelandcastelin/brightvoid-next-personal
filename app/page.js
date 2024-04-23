@@ -99,6 +99,7 @@ const LeftBlock = styled.div`
   padding: 40px;
   display: flex;
   align-items: center;
+  font-family: "schmaltzy", sans-serif;
 
   h1 {
     font-size: 80px;
@@ -114,6 +115,8 @@ const LeftBlock = styled.div`
       0 0 5px rgba(0, 112, 185, 0.3),
       10px 0 10px rgba(0, 112, 185, 0.2),
       0 0 15px rgba(0, 112, 185, 0.1);
+    font-weight: 100;
+    letter-spacing: 5px;
   }
 
   @media (max-width: 1600px) {
