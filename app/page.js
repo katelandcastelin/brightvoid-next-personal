@@ -116,7 +116,7 @@ const LeftBlock = styled.div`
       10px 0 10px rgba(0, 112, 185, 0.2),
       0 0 15px rgba(0, 112, 185, 0.1);
     font-weight: 100;
-    letter-spacing: 5px;
+    letter-spacing: 15px;
   }
 
   @media (max-width: 1600px) {
