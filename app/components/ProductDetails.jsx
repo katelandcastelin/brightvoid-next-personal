@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import clothingProducts from '../pages/clothing/clothingData';
 import ThumbnailGallery from './ThumbnailGallery';
+import ProductOptionDetails from './ProductOptionDetails';
 
 const Container = styled.div`
   height: 100vh;
@@ -95,7 +96,9 @@ export default function ProductDetails({ product }) {
               </ImageContainer>
             </div>
           </ImageAndThumbnailContainer>
-          <div style={{ flex: 1 }}>TEST</div>
+          <div style={{ flex: 1 }}>
+            <ProductOptionDetails />
+          </div>
         </SecondContainer>
       </Container>
     </div>
