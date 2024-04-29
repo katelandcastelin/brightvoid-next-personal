@@ -18,6 +18,7 @@ const SizeButton = styled.button`
   font-size: 16px;
   border: 1px solid #aaa;
   background-color: ${props => props.isSelected ? '#ccc' : 'transparent'};
+  color: ${props => props.isSelected ? '#000' : null};
   cursor: pointer;
   width: 50px;
   padding: 10px 0;
@@ -25,6 +26,11 @@ const SizeButton = styled.button`
 
   &:hover {
     background-color: #bbb;
+    color: #000;
+  }
+
+  &:active {
+    background-color: #9a9a9a;
   }
 `;
 
@@ -57,7 +63,39 @@ const QuantityText = styled.span`
   width: 50px;
 `;
 
-export default function ProductOptionDetails() {
+const AddToCartButton = styled.button`
+  margin-top: 20px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 10px 15px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+
+  &:hover {
+    text-shadow:
+      0 0 5px rgba(9, 9, 121, 0.5),
+      0 0 15px rgba(9, 9, 121, 0.5),
+      0 0 25px #00d4ff7f,
+      0 0 3px rgba(9, 9, 121, 0.5),
+      0 0 5px rgba(9, 9, 121, 0.5),
+      0 0 15px rgba(9, 9, 121, 0.5),
+      0 0 25px rgba(0, 212, 255, 0.5),
+      0 0 30px rgba(0, 212, 255, 0.5);
+
+    box-shadow: 
+      0 0 5px rgba(9, 9, 121, 0.2),
+      0 0 10px rgba(9, 9, 121, 0.3),
+      0 0 15px rgba(0, 212, 255, 0.3),
+      0 0 60px rgba(0, 212, 255, 0.3);
+  }
+
+  &:active {
+    border: 1px solid #00d4ff7f;
+  }
+`;
+
+export default function ProductOptionDetails({ product }) {
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState(null);
 
@@ -77,13 +115,9 @@ export default function ProductOptionDetails() {
 
   return (
     <Container>
-      <h1>Product name</h1>
-      <h3>Price</h3>
-      <div>
-        choose an option drop down
-        <br />
-        black / white options
-      </div>
+      <h1>{product.name}</h1>
+      <h3>R {product.price}</h3>
+      <p>description of artwork</p>
       <SizeOptions>
         {['XS', 'S', 'M', 'L', 'XL'].map(size => (
           <SizeButton
@@ -102,7 +136,7 @@ export default function ProductOptionDetails() {
           <Button onClick={handleIncrease}>+</Button>
         </QuantityControl>
       </div>
-      <button style={{marginTop: '20px'}}>Add to basket</button>
+      <AddToCartButton>Add to cart</AddToCartButton>
     </Container>
   );
 }

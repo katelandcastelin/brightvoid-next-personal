@@ -97,7 +97,7 @@ export default function ProductDetails({ product }) {
             </div>
           </ImageAndThumbnailContainer>
           <div style={{ flex: 1 }}>
-            <ProductOptionDetails />
+            <ProductOptionDetails product={product} />
           </div>
         </SecondContainer>
       </Container>
