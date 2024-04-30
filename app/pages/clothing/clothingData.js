@@ -3,10 +3,11 @@ import clothingGallery from "./clothingGallery";
 const clothingProducts = [
   {
     id: 'C1',
-    name: 'Human snake',
+    // name: 'Human snake',
     image: '/clothing/bt-model1.png',
     images: clothingGallery.find(item => item.id === 'C6').images,
     price: 220,
+    artworkId: '/artworks/ai2.png',
   },
   {
     id: 'C2',
@@ -14,13 +15,15 @@ const clothingProducts = [
     image: '/clothing/wt-model1.png',
     images: clothingGallery.find(item => item.id === 'C6').images,
     price: 200,
+    artworkId: '/artworks/ai1.png',
   },
   {
     id: 'C3',
-    name: 'Sphere spiral',
+    name: '',
     image: '/clothing/bt.png',
     images: clothingGallery.find(item => item.id === 'C6').images,
     price: 160,
+    artworkId: '/artworks/ai3.jpeg',
   },
   {
     id: 'C4',
@@ -28,6 +31,7 @@ const clothingProducts = [
     image: '/clothing/wt-models1.png',
     images: clothingGallery.find(item => item.id === 'C4').images,
     price: 100,
+    artworkId: '',
   },
   {
     id: 'C5',
@@ -35,13 +39,15 @@ const clothingProducts = [
     image: '/clothing/wt-model2.png',
     images: clothingGallery.find(item => item.id === 'C6').images,
     price: 100,
+    artworkId: '',
   },
   {
     id: 'C6',
-    name: 'Fortune spiral',
+    name: 'Whispers of the Wind',
     image: '/clothing/bt-model2.png',
     images: clothingGallery.find(item => item.id === 'C6').images,
     price: 180,
+    artworkId: '/artworks/ai2.png',
   },
   {
     id: 'C7',
@@ -49,6 +55,7 @@ const clothingProducts = [
     image: '/clothing/wt-model3.png',
     images: clothingGallery.find(item => item.id === 'C7').images,
     price: 180,
+    artworkId: '',
   },
 ];
 
