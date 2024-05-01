@@ -52,15 +52,6 @@ export default function CollectionDisplay({ selectedArtwork }) {
           </div>
         </div>
       </div>
-      {/* <Grid>
-        {selectedArtwork.collection.map((piece, index) => (
-          <div>
-            <div>
-              <Image src={piece.image} alt={piece.description} />
-            </div>
-          </div>
-        ))}
-      </Grid> */}
     </Container>
   )
 }

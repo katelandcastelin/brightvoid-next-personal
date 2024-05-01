@@ -1,9 +1,9 @@
 'use client';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import clothingProducts from '../pages/clothing/clothingData';
 import ThumbnailGallery from './ThumbnailGallery';
 import ProductOptionDetails from './ProductOptionDetails';
+import artAndAristData from '../backend/data';
 
 const Container = styled.div`
   height: 100vh;
@@ -82,7 +82,7 @@ const ImageContainer = styled.div`
 
 export default function ProductDetails({ product }) {
   const [selectedImage, setSelectedImage] = useState(product.image);
-  const productImages = clothingProducts.find(item => item.id === product.id)?.images || [];
+  const productImages = product.images || []; 
 
   return (
     <div style={{display: 'flex', justifyContent: 'center'}}>
