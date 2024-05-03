@@ -5,6 +5,7 @@ const artAndAristData = [
     id: 'C1',
     productId: 'C1',
     image: '/artworks/ai3.jpeg',
+    productImage: '/clothing/bt-model1.png',
     images: clothingGallery.find(item => item.id === 'C6').images,
     price: 220,
 
@@ -24,15 +25,16 @@ const artAndAristData = [
   {
     id: 'C2',
     productId: 'C2',
-    image: '/artworks/ai3.jpeg',
+    image: '/artworks/ai1.png',
+    productImage: '',
     images: clothingGallery.find(item => item.id === 'C6').images,
     price: 220,
 
     artworkId: 'A1',
-    title: 'Human Snake',
-    artist: 'Aisha Patel',
+    title: 'Ocomiinrauy',
+    artist: 'Elena Rodriguez',
     year: '2022',
-    aboutTheArtist: 'Aisha Patel explores the delicate balance between chaos and serenity through her minimalist compositions. With a philosophy rooted in finding beauty and peace in the midst of disorder, Aisha’s work is a reflection of her journey towards mindfulness and tranquility. Her piece "Serenity in Chaos" exemplifies her mastery in using pastels to convey a sense of calm, inviting viewers into a meditative state amidst the complexities of modern life.',
+    aboutTheArtist: 'number 2',
     collectionName: '',
 
     collection: [
@@ -45,6 +47,7 @@ const artAndAristData = [
     id: 'C3',
     productId: 'C3',
     image: '/artworks/ai3.jpeg',
+    productImage: '',
     images: clothingGallery.find(item => item.id === 'C6').images,
     price: 220,
 
@@ -65,7 +68,8 @@ const artAndAristData = [
     id: 'C4',
     productId: 'C4',
     image: '/artworks/ai3.jpeg',
-    images: clothingGallery.find(item => item.id === 'C6').images,
+    productImage: '',
+    images: clothingGallery.find(item => item.id === 'C4').images,
     price: 220,
 
     artworkId: 'A1',
@@ -85,6 +89,7 @@ const artAndAristData = [
     id: 'C5',
     productId: 'C5',
     image: '/artworks/ai3.jpeg',
+    productImage: '',
     images: clothingGallery.find(item => item.id === 'C6').images,
     price: 220,
 
@@ -105,6 +110,7 @@ const artAndAristData = [
     id: 'C6',
     productId: 'C6',
     image: '/artworks/ai3.jpeg',
+    productImage: '',
     images: clothingGallery.find(item => item.id === 'C6').images,
     price: 220,
 
@@ -125,7 +131,8 @@ const artAndAristData = [
     id: 'C7',
     productId: 'C7',
     image: '/artworks/ai3.jpeg',
-    images: clothingGallery.find(item => item.id === 'C6').images,
+    productImage: '',
+    images: clothingGallery.find(item => item.id === 'C7').images,
     price: 220,
 
     artworkId: 'A1',
