@@ -3,7 +3,8 @@ import React from 'react';
 import Header from '../../components/Header';
 import Link from 'next/link';
 import styles from './clothingPage.module.css';
-import clothingProducts from './clothingData';
+// import clothingProducts from './clothingData';
+import artAndAristData from '@/app/backend/data';
 import styled from 'styled-components';
 
 const Card = styled.div`
@@ -40,17 +41,17 @@ const ProductImageContainer = styled.div`
 `;
 
 export default function ClothingPage() {
-  const clothing = [...clothingProducts].reverse();
+  const clothing = [...artAndAristData].reverse();
 
   return (
     <div className={styles.main}>
       <Header />
       <div className={styles.grid}>
         {clothing.map((item) => (
-          <Link key={item.id} href={`/pages/clothing/${item.id}`}>
+          <Link key={item.id} href={`/pages/clothing/${item.productId}`}>
             <Card>
               <ProductImageContainer>
-                <img src={item.image} alt={item.description} />
+                <img src={item.productImage} alt={item.description} />
               </ProductImageContainer>
               <p>R {item.price}</p>
               <p>{item.description}</p>

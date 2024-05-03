@@ -118,7 +118,7 @@ export default function ProductOptionDetails({ product }) {
     <Container>
       <h1>{product.name}</h1>
       <h3>R {product.price}</h3>
-      <p>description of artwork</p>
+      <p>{product.aboutTheArtist}</p>
       <SizeOptions>
         {['XS', 'S', 'M', 'L', 'XL'].map(size => (
           <SizeButton
