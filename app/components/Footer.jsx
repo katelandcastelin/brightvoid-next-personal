@@ -18,7 +18,7 @@ const Container = styled.div`
 
 const PageLinks = styled.div`
   text-align: center;
-  z-index: 2;
+  /* z-index: 2; */
   position: relative;
 
   a {

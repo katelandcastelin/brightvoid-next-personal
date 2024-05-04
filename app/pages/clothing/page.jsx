@@ -3,13 +3,11 @@ import React from 'react';
 import Header from '../../components/Header';
 import Link from 'next/link';
 import styles from './clothingPage.module.css';
-// import clothingProducts from './clothingData';
 import artAndAristData from '@/app/backend/data';
 import styled from 'styled-components';
 
 const Card = styled.div`
   padding: 1rem 1.2rem;
-  transition: filter 200ms, border 200ms;
   cursor: pointer;
   margin: 5px;
   margin: 20px;
@@ -17,6 +15,15 @@ const Card = styled.div`
   height: 420px;
   border: 1px solid #767676;
   border-radius: 8px;
+  transition: border 200ms ease-in-out;
+
+  &:hover {
+    border: 1px solid #b9b9b9;
+
+    img {
+      transform: scale(1.06);
+    }
+  }
 `;
 
 const ProductImageContainer = styled.div`
@@ -33,10 +40,6 @@ const ProductImageContainer = styled.div`
     object-fit: cover;
     border-radius: 5px 5px 0 0;
     transition: transform 200ms ease-in-out;
-
-    &:hover {
-      transform: scale(1.06);
-    }
   }
 `;
 

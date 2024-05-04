@@ -48,7 +48,7 @@ export default function CollectionDisplay({ selectedArtwork }) {
             <p>{selectedArtwork.aboutTheArtist}</p>
           </div>
           <div style={{width: '45%'}}>
-            <Image src={selectedArtwork.id} />
+            <Image src={selectedArtwork.image} />
           </div>
         </div>
       </div>

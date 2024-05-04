@@ -46,7 +46,7 @@ const artAndAristData = [
   {
     id: 'C3',
     productId: 'C3',
-    image: '',
+    image: '/artworks/collection1/collection1.jpeg',
     productImage: '/clothing/bt.png',
     images: clothingGallery.find(item => item.id === 'C6').images,
     price: 220,
@@ -64,33 +64,33 @@ const artAndAristData = [
       }
     ]
   },
-  // {
-  //   id: 'C4',
-  //   productId: 'C4',
-  //   image: '',
-  //   productImage: '',
-  //   images: clothingGallery.find(item => item.id === 'C4').images,
-  //   price: 220,
+  {
+    id: 'C4',
+    productId: 'C4',
+    image: '/artworks/ai2.png',
+    productImage: '/clothing/bt-model2.png',
+    images: clothingGallery.find(item => item.id === 'C6').images,
+    price: 220,
 
-  //   artworkId: 'A4',
-  //   title: '',
-  //   artist: '',
-  //   year: '2021',
-  //   aboutTheArtist: 'number 4',
-  //   collectionName: '',
+    artworkId: 'A4',
+    title: 'Fortune Teller',
+    artist: '',
+    year: '2021',
+    aboutTheArtist: 'number 4',
+    collectionName: '',
 
-  //   collection: [
-  //     {
-  //       description: '',
-  //     }
-  //   ]
-  // },
+    collection: [
+      {
+        description: '',
+      }
+    ]
+  },
   // {
   //   id: 'C5',
   //   productId: 'C5',
   //   image: '',
   //   productImage: '',
-  //   images: clothingGallery.find(item => item.id === 'C6').images,
+  //   images: clothingGallery.find(item => item.id === 'C4').images,
   //   price: 220,
 
   //   artworkId: 'A5',
