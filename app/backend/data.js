@@ -18,7 +18,7 @@ const artAndAristData = [
 
     collection: [
       {
-        description: 'description 1',
+        description: 'human snake description.',
       }
     ]
   },
@@ -74,7 +74,7 @@ const artAndAristData = [
 
     artworkId: 'A4',
     title: 'Fortune Teller',
-    artist: '',
+    artist: 'Fiona Matel',
     year: '2021',
     aboutTheArtist: 'number 4',
     collectionName: '',
@@ -85,27 +85,27 @@ const artAndAristData = [
       }
     ]
   },
-  // {
-  //   id: 'C5',
-  //   productId: 'C5',
-  //   image: '',
-  //   productImage: '',
-  //   images: clothingGallery.find(item => item.id === 'C4').images,
-  //   price: 220,
+  {
+    id: 'C5',
+    productId: 'C5',
+    image: '/art-display/1.jpeg',
+    productImage: '/clothing/wt-model3.png',
+    images: clothingGallery.find(item => item.id === 'C4').images,
+    price: 220,
 
-  //   artworkId: 'A5',
-  //   title: '',
-  //   artist: '',
-  //   year: '2022',
-  //   aboutTheArtist: 'number 5',
-  //   collectionName: '',
+    artworkId: 'A5',
+    title: 'Humandala',
+    artist: 'Kyle R. Spine',
+    year: '2022',
+    aboutTheArtist: 'number 5',
+    collectionName: '',
 
-  //   collection: [
-  //     {
-  //       description: '',
-  //     }
-  //   ]
-  // },
+    collection: [
+      {
+        description: '',
+      }
+    ]
+  },
   // {
   //   id: 'C6',
   //   productId: 'C6',

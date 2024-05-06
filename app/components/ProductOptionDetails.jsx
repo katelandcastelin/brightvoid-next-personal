@@ -114,11 +114,14 @@ export default function ProductOptionDetails({ product }) {
     setSelectedSize(size);
   };
 
+  const description = product.collection && product.collection.length > 0 ? product.collection[0].description : 'No description available';
+
   return (
     <Container>
-      <h1>{product.name}</h1>
+      <h1>{product.title}</h1>
+      <h4>{product.artist}</h4>
       <h3>R {product.price}</h3>
-      <p>{product.aboutTheArtist}</p>
+      <p>{description}</p>
       <SizeOptions>
         {['XS', 'S', 'M', 'L', 'XL'].map(size => (
           <SizeButton
