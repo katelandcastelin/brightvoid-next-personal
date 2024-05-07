@@ -18,6 +18,7 @@ const artAndAristData = [
 
     collection: [
       {
+        collectionArtworkId: 1,
         description: 'human snake description.',
       }
     ]
@@ -39,7 +40,12 @@ const artAndAristData = [
 
     collection: [
       {
-        description: '',
+        collectionArtworkId: 1,
+        description: 'The Ocomiinrauy way.',
+      },
+      {
+        collectionArtworkId: 2,
+        description: 'Description 2.',
       }
     ]
   },
@@ -60,7 +66,8 @@ const artAndAristData = [
 
     collection: [
       {
-        description: '',
+        collectionArtworkId: 1,
+        description: 'Wheel of Speares.',
       }
     ]
   },
@@ -106,48 +113,48 @@ const artAndAristData = [
       }
     ]
   },
-  // {
-  //   id: 'C6',
-  //   productId: 'C6',
-  //   image: '',
-  //   productImage: '',
-  //   images: clothingGallery.find(item => item.id === 'C6').images,
-  //   price: 220,
+  {
+    id: 'C6',
+    productId: 'C6',
+    image: '/art-display/3.jpeg',
+    productImage: '/clothing/wt-model2.png',
+    images: clothingGallery.find(item => item.id === 'C6').images,
+    price: 220,
 
-  //   artworkId: 'A6',
-  //   title: '',
-  //   artist: '',
-  //   year: '2019',
-  //   aboutTheArtist: 'number 6',
-  //   collectionName: '',
+    artworkId: 'A6',
+    title: 'Black void awaits',
+    artist: 'Sam Joe',
+    year: '2019',
+    aboutTheArtist: 'number 6 about the artist',
+    collectionName: 'Collection Sam Joe',
 
-  //   collection: [
-  //     {
-  //       description: '',
-  //     }
-  //   ]
-  // },
-  // {
-  //   id: 'C7',
-  //   productId: 'C7',
-  //   image: '',
-  //   productImage: '',
-  //   images: clothingGallery.find(item => item.id === 'C7').images,
-  //   price: 220,
+    collection: [
+      {
+        description: '',
+      }
+    ]
+  },
+  {
+    id: 'C7',
+    productId: 'C7',
+    image: '/art-display/2.jpeg',
+    productImage: '/clothing/wt-models1.png',
+    images: clothingGallery.find(item => item.id === 'C7').images,
+    price: 220,
 
-  //   artworkId: 'A7',
-  //   title: '',
-  //   artist: '',
-  //   year: '2023',
-  //   aboutTheArtist: 'number 7',
-  //   collectionName: '',
+    artworkId: 'A7',
+    title: 'Bright void awaits',
+    artist: 'Sam Joe',
+    year: '2023',
+    aboutTheArtist: 'number 7',
+    collectionName: 'Collection Sam Joe',
 
-  //   collection: [
-  //     {
-  //       description: '',
-  //     }
-  //   ]
-  // },
+    collection: [
+      {
+        description: '',
+      }
+    ]
+  },
 ];
 
 export default artAndAristData;
