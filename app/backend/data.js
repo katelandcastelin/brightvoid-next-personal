@@ -130,7 +130,9 @@ const artAndAristData = [
 
     collection: [
       {
-        description: '',
+        collectionImageId: 1,
+        collectionImage: '/art-display/2.jpeg',
+        description: 'test',
       }
     ]
   },
@@ -151,7 +153,9 @@ const artAndAristData = [
 
     collection: [
       {
-        description: '',
+        collectionImageId: 2,
+        collectionImage: '/art-display/3.jpeg',
+        description: 'test 2',
       }
     ]
   },
