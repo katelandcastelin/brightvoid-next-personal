@@ -40,27 +40,29 @@ const Image = styled.img`
 `;
 
 export default function CollectionDisplay({ selectedArtwork }) {
+  const collectionImageSrc = selectedArtwork.collection.length > 0 ? selectedArtwork.collection[0].collectionImage : null;
+  const collectionDescription = selectedArtwork.collection.length > 0 ? selectedArtwork.collection[0].description : null;
+
   return (
     <Container>
       <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
         <div style={{display: 'flex', justifyContent: 'space-around', width: '80%'}}>
           <div style={{width: '45%'}}>
-            <p>{selectedArtwork.aboutTheArtist}</p>
+            <div>
+              <p>{selectedArtwork.aboutTheArtist}</p>
+            </div>
+            {collectionImageSrc && (
+              <div style={{display: 'flex'}}>
+                <Image src={collectionImageSrc} alt="Collection image" />
+                <p>{collectionDescription}</p>
+              </div>
+            )}
           </div>
           <div style={{width: '45%'}}>
-            <Image src={selectedArtwork.id} />
+            <Image src={selectedArtwork.image} />
           </div>
         </div>
       </div>
-      {/* <Grid>
-        {selectedArtwork.collection.map((piece, index) => (
-          <div>
-            <div>
-              <Image src={piece.image} alt={piece.description} />
-            </div>
-          </div>
-        ))}
-      </Grid> */}
     </Container>
   )
 }

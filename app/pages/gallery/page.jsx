@@ -2,9 +2,10 @@
 import { React, useState } from 'react';
 import styles from './galleryPage.module.css';
 import styled from 'styled-components';
-import Artworks from './artworks-data/artworks';
+// import Artworks from './artworks-data/artworks';
 import CollectionDisplay from '../../components/CollectionDisplay';
 import GalleryHeader from '../../components/GalleryHeader';
+import artAndAristData from '@/app/backend/data';
 
 const Background = styled.div`
   /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  #282828 0%, rgba(4,0,4,1) 90% ); */
@@ -52,12 +53,12 @@ export default function GalleryPage() {
     setSelectedArtwork(null);
   }
 
-  const artworks = Artworks.map((artwork) => (
-    <div key={artwork.id} style={{display: 'flex', justifyContent: 'center'}}>
+  const artworks = artAndAristData.map((artwork) => (
+    <div key={artwork.image} style={{display: 'flex', justifyContent: 'center'}}>
       <div>
         <div className={styles.frame}>
           <Artwork
-            src={artwork.id}
+            src={artwork.image}
             onClick={() => handleImageClick(artwork)} 
           />
           <div className={styles.labelContainer}>

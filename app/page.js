@@ -102,7 +102,7 @@ const LeftBlock = styled.div`
   font-family: "schmaltzy", sans-serif;
 
   h1 {
-    font-size: 80px;
+    font-size: 70px;
     background: -webkit-linear-gradient(216deg, rgba(0,0,36,0.8) 0%, rgba(5,5,61,0.8) 35%, rgba(0,112,185,0.8) 100%);
     background: linear-gradient(216deg, rgba(0,0,36,0.8) 0%, rgba(5,5,61,0.8) 35%, rgba(0,112,185,0.8) 100%);
     -webkit-background-clip: text;
@@ -116,7 +116,6 @@ const LeftBlock = styled.div`
       10px 0 10px rgba(0, 112, 185, 0.2),
       0 0 15px rgba(0, 112, 185, 0.1);
     font-weight: 100;
-    letter-spacing: 15px;
   }
 
   @media (max-width: 1600px) {
