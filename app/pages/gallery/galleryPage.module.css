@@ -71,3 +71,40 @@
   z-index: 3;
   cursor: pointer;
 }
+
+.spinner {
+  background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+  height: 100%;
+  width: 100%;
+  animation: spinning 7s linear infinite;
+  border-radius: 100%;
+  filter: blur(100px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+  opacity: 0.4;
+}
+
+.spinner:nth-child(2) {
+  background-image: linear-gradient(rgb(35, 128, 209) 35%, rgb(0, 195, 240));
+  position: absolute;
+  top: 190%;
+  left: 300%;
+  transform: translate(-50%, -50%);
+  animation: spinning-child 7s linear infinite;
+  height: 500px;
+  width: 500px;
+}
+
+@keyframes spinning {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinning-child {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

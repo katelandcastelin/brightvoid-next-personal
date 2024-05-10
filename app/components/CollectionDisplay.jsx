@@ -47,7 +47,7 @@ export default function CollectionDisplay({ selectedArtwork }) {
     <Container>
       <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
         <div style={{display: 'flex', justifyContent: 'space-around', width: '80%'}}>
-          <div style={{width: '45%'}}>
+          <div style={{width: '45%', display: 'flex', flexDirection: 'column'}}>
             <div>
               <p>{selectedArtwork.aboutTheArtist}</p>
             </div>

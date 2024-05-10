@@ -2,13 +2,11 @@
 import { React, useState } from 'react';
 import styles from './galleryPage.module.css';
 import styled from 'styled-components';
-// import Artworks from './artworks-data/artworks';
 import CollectionDisplay from '../../components/CollectionDisplay';
 import GalleryHeader from '../../components/GalleryHeader';
 import artAndAristData from '@/app/backend/data';
 
 const Background = styled.div`
-  /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  #282828 0%, rgba(4,0,4,1) 90% ); */
   padding-top: 120px;
   overflow-y: ${props => props.completed ? 'hidden' : 'scroll'};
 `;
@@ -73,6 +71,10 @@ export default function GalleryPage() {
 
   return (
     <Background>
+      <div style={{position: 'absolute', height: '300px', width: '300px'}}>
+        <div className={styles.spinner} />
+        <div className={styles.spinner} />
+      </div>
       <GalleryHeader />
       <Container>
         {artworks}

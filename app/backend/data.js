@@ -132,7 +132,7 @@ const artAndAristData = [
       {
         collectionImageId: 1,
         collectionImage: '/art-display/2.jpeg',
-        description: 'test',
+        description: 'description C6',
       }
     ]
   },
@@ -148,14 +148,14 @@ const artAndAristData = [
     title: 'Bright void awaits',
     artist: 'Sam Joe',
     year: '2023',
-    aboutTheArtist: 'number 7',
+    aboutTheArtist: 'about the artist number C7',
     collectionName: 'Collection Sam Joe',
 
     collection: [
       {
         collectionImageId: 2,
         collectionImage: '/art-display/3.jpeg',
-        description: 'test 2',
+        description: 'description for C7',
       }
     ]
   },
