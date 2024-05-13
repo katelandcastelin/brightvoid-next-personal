@@ -132,7 +132,17 @@ const artAndAristData = [
       {
         collectionImageId: 1,
         collectionImage: '/art-display/2.jpeg',
-        description: 'description C6',
+        description: 'description C6 one',
+      },
+      {
+        collectionImageId: 2,
+        collectionImage: '/art-display/3.jpeg',
+        description: 'description two',
+      },
+      {
+        collectionImageId: 3,
+        collectionImage: '/art-display/4.jpeg',
+        description: 'description three',
       }
     ]
   },

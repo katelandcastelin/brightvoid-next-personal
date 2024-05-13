@@ -9,6 +9,9 @@ import artAndAristData from '@/app/backend/data';
 const Background = styled.div`
   padding-top: 120px;
   overflow-y: ${props => props.completed ? 'hidden' : 'scroll'};
+  overflow-y: ${props => props.completed ? 'hidden' : 'auto'};
+  height: 100vh;  // To ensure the entire page height is considered
+  width: 100vw; 
 `;
 
 const Container = styled.div`
@@ -70,7 +73,7 @@ export default function GalleryPage() {
   ));
 
   return (
-    <Background>
+    <Background completed={selectedArtwork !== null}>
       <div style={{position: 'absolute', height: '300px', width: '300px'}}>
         <div className={styles.spinner} />
         <div className={styles.spinner} />

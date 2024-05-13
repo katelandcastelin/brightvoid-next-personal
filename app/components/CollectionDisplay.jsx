@@ -7,7 +7,7 @@ const Container = styled.div`
   max-width: 100vw;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding-top: 180px;
+  padding-top: 100px;
 `;
 
 const Grid = styled.div`
@@ -45,24 +45,19 @@ export default function CollectionDisplay({ selectedArtwork }) {
 
   return (
     <Container>
-      <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
-        <div style={{display: 'flex', justifyContent: 'space-around', width: '80%'}}>
-          <div style={{width: '45%', display: 'flex', flexDirection: 'column'}}>
-            <div>
-              <p>{selectedArtwork.aboutTheArtist}</p>
-            </div>
-            {collectionImageSrc && (
-              <div style={{display: 'flex'}}>
-                <Image src={collectionImageSrc} alt="Collection image" />
-                <p>{collectionDescription}</p>
-              </div>
-            )}
-          </div>
-          <div style={{width: '45%'}}>
-            <Image src={selectedArtwork.image} />
-          </div>
-        </div>
+      <div>
+        <p>{selectedArtwork.aboutTheArtist}</p>
       </div>
+      <div style={{width: '45%'}}>
+        <Image src={selectedArtwork.image} />
+      </div>
+
+      {collectionImageSrc && (
+        <Grid style={{display: 'flex'}}>
+          <Image src={collectionImageSrc} alt="Collection image" />
+          <p>{collectionDescription}</p>
+        </Grid>
+      )}
     </Container>
   )
 }
