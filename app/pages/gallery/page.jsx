@@ -1,5 +1,5 @@
 'use client';
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import styles from './galleryPage.module.css';
 import styled from 'styled-components';
 import CollectionDisplay from '../../components/CollectionDisplay';
@@ -8,10 +8,6 @@ import artAndAristData from '@/app/backend/data';
 
 const Background = styled.div`
   padding-top: 120px;
-  overflow-y: ${props => props.completed ? 'hidden' : 'scroll'};
-  overflow-y: ${props => props.completed ? 'hidden' : 'auto'};
-  height: 100vh;  // To ensure the entire page height is considered
-  width: 100vw; 
 `;
 
 const Container = styled.div`
@@ -45,6 +41,21 @@ const Artwork = styled.img`
 
 export default function GalleryPage() {
   const [selectedArtwork, setSelectedArtwork] = useState(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    if (selectedArtwork) {
+      const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+      setScrollPosition(currentPosition);
+
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${currentPosition}px`;
+    } else {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      window.scrollTo(0, scrollPosition);
+    }
+  }, [selectedArtwork]);
 
   const handleImageClick = (artworkId) => {
     setSelectedArtwork(artworkId);
@@ -73,27 +84,30 @@ export default function GalleryPage() {
   ));
 
   return (
-    <Background completed={selectedArtwork !== null}>
-      <div style={{position: 'absolute', height: '300px', width: '300px'}}>
-        <div className={styles.spinner} />
-        <div className={styles.spinner} />
-      </div>
-      <GalleryHeader />
+    <>
+      <Background>
+        <div style={{position: 'absolute', height: '300px', width: '300px'}}>
+          <div className={styles.spinner} />
+          <div className={styles.spinner} />
+        </div>
+        <GalleryHeader />
+      </Background>
+
       <Container>
         {artworks}
-
-        {selectedArtwork && (
-          <div
-            className={styles.fullScreenContainer}
-            completed={selectedArtwork !== null}
-          >
-            <CollectionDisplay selectedArtwork={selectedArtwork} />
-            <button className={styles.closeButton} onClick={handleCloseClick}>
-              close
-            </button>
-          </div>
-        )}
       </Container>
-    </Background>
+
+      {selectedArtwork && (
+        <div
+          className={styles.fullScreenContainer}
+          completed={selectedArtwork !== null}
+        >
+          <CollectionDisplay selectedArtwork={selectedArtwork} />
+          <button className={styles.closeButton} onClick={handleCloseClick}>
+            close
+          </button>
+        </div>
+      )}
+    </>
   );
 }
