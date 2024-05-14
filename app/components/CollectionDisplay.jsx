@@ -7,23 +7,7 @@ const Container = styled.div`
   max-width: 100vw;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding-top: 100px;
-`;
-
-const Grid = styled.div`
-  columns: 2 200px;
-  column-gap: 20px;
-  justify-content: space-around;
-  width: 90%;
-  margin: 0 auto;
-  padding: 1rem;
-
-  @media (max-width: 750px) {
-    columns: 1 100px;
-    column-gap: auto;
-    width: 90%;
-    margin: 0 auto;
-  }
+  padding: 100px 50px;
 `;
 
 const Image = styled.img`
@@ -36,29 +20,33 @@ const Image = styled.img`
   border-top-color: #ccb;
   position: inherit;
   z-index: 1;
-  cursor: pointer;
 `;
 
 export default function CollectionDisplay({ selectedArtwork }) {
 
   return (
     <Container>
-      <div>
-        <p>{selectedArtwork.aboutTheArtist}</p>
-      </div>
-      <div style={{width: '45%'}}>
-        <Image src={selectedArtwork.image} />
+      <div style={{display: 'flex', width: '100%', justifyContent: 'space-evenly'}}>
+        <div>
+          <h1 style={{fontFamily: 'schmaltzy, sans-serif', fontWeight: '400', letterSpacing: '4px'}}>
+            {selectedArtwork.artist}
+          </h1>
+          <p>{selectedArtwork.aboutTheArtist}</p>
+        </div>
+        <div style={{minWidth: '50%', maxWidth: '50%', display: 'flex', justifyContent: 'end'}}>
+          <Image src={selectedArtwork.image} />
+        </div>
       </div>
 
       {selectedArtwork.collection && selectedArtwork.collection.length > 0 && (
-        <Grid>
+        <div>
           {selectedArtwork.collection.map((item) => (
             <div key={item.collectionImageId}>
-              <Image src={item.collectionImage} alt="Collection image" />
               <p>{item.description}</p>
+              <Image src={item.collectionImage} alt="Collection image" />
             </div>
           ))}
-        </Grid>
+        </div>
       )}
     </Container>
   )

@@ -125,24 +125,24 @@ const artAndAristData = [
     title: 'Black void awaits',
     artist: 'Sam Joe',
     year: '2019',
-    aboutTheArtist: 'number 6 about the artist',
-    collectionName: 'Collection Sam Joe',
+    aboutTheArtist: 'Sam Joe is an emerging contemporary artist known for his abstract expressions and bold use of colors. Based in London, his works explore themes of existentialism and cosmic philosophy, drawing heavily from personal experiences and historical contexts. Sam has exhibited in various galleries across Europe and is fast gaining recognition in the international art scene.',
+    collectionName: 'Ethereal Expressions',
 
     collection: [
       {
         collectionImageId: 1,
         collectionImage: '/art-display/2.jpeg',
-        description: 'description C6 one',
+        description: 'This early piece showcases the transition from realism to abstract, capturing the tension in form and hue.',
       },
       {
         collectionImageId: 2,
         collectionImage: '/art-display/3.jpeg',
-        description: 'description two',
+        description: 'Featured at the Modern Art Expo, this artwork reflects the depth of the void through layered textures and contrasting light.',
       },
       {
         collectionImageId: 3,
         collectionImage: '/art-display/4.jpeg',
-        description: 'description three',
+        description: '',
       }
     ]
   },
