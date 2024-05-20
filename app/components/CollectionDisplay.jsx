@@ -15,8 +15,8 @@ const MainImage = styled.img`
   max-width: 50%;
   border: solid 2px;
   border-color: #eed #eed #ffe #ccb;
+  object-fit: contain;
 `;
-
 
 const ArtistSection = styled.div`
   display: flex;
@@ -30,14 +30,33 @@ const ArtistInfo = styled.div`
   padding-right: 25px;
 `;
 
-const Image = styled.img`
-  /* max-height: 80vh;
+const CollectionList = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+
+  p {
+    padding: 50px;
+  }
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+  max-height: 80vh;
   max-width: 50%;
-  border: solid 2px;
-  border-color: #eed #eed #ffe #ccb; */
+  overflow: hidden;
+
+  &:hover div {
+    opacity: 1;
+    top: 0;
+  }
+`;
+
+const Image = styled.img`
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: contain;
 `;
 
 const HoverOverlay = styled.div`
@@ -53,34 +72,6 @@ const HoverOverlay = styled.div`
   align-items: center;
   opacity: 0;
   transition: all 0.3s ease-in-out;
-`;
-
-const CollectionList = styled.div`
-  display: flex;
-  padding-top: 40px;
-
-  /* &:hover div {
-    opacity: 1;
-    top: 0;
-  } */
-
-  p {
-    padding: 50px;
-  }
-`;
-
-
-const ImageContainer = styled.div`
-  position: relative;
-  max-height: 80vh;
-  max-width: 50%;
-  border: solid 2px;
-  border-color: #eed #eed #ffe #ccb;
-
-  &:hover div {
-    opacity: 1;
-    top: 0;
-  }
 `;
 
 export default function CollectionDisplay({ selectedArtwork }) {
@@ -103,12 +94,11 @@ export default function CollectionDisplay({ selectedArtwork }) {
           {selectedArtwork.collection.map((item) => (
             <CollectionList key={item.collectionImageId}>
               <ImageContainer>
-              <Image src={item.collectionImage} alt="Collection image"/>
-              <HoverOverlay>
-                <p>{item.description}</p>
-              </HoverOverlay>
+                <Image src={item.collectionImage} alt="Collection image"/>
+                <HoverOverlay>
+                  <p>{item.description}</p>
+                </HoverOverlay>
               </ImageContainer>
-              
             </CollectionList>
           ))}
         </div>
