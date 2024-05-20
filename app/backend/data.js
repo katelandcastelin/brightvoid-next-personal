@@ -16,12 +16,12 @@ const artAndAristData = [
     aboutTheArtist: 'Aisha Patel explores the delicate balance between chaos and serenity through her minimalist compositions. With a philosophy rooted in finding beauty and peace in the midst of disorder, Aisha’s work is a reflection of her journey towards mindfulness and tranquility. Her piece "Serenity in Chaos" exemplifies her mastery in using pastels to convey a sense of calm, inviting viewers into a meditative state amidst the complexities of modern life.',
     collectionName: '',
 
-    collection: [
-      {
-        collectionArtworkId: 1,
-        description: 'human snake description.',
-      }
-    ]
+    // collection: [
+    //   {
+    //     collectionArtworkId: 1,
+    //     description: 'human snake description.',
+    //   }
+    // ]
   },
   {
     id: 'C2',
@@ -135,6 +135,11 @@ const artAndAristData = [
         description: 'This early piece showcases the transition from realism to abstract, capturing the tension in form and hue.',
       },
       {
+        collectionImageId: 4,
+        collectionImage: '/artworks/ai2.png',
+        description: 'Test.',
+      },
+      {
         collectionImageId: 2,
         collectionImage: '/art-display/3.jpeg',
         description: 'Featured at the Modern Art Expo, this artwork reflects the depth of the void through layered textures and contrasting light.',
@@ -143,7 +148,7 @@ const artAndAristData = [
         collectionImageId: 3,
         collectionImage: '/art-display/4.jpeg',
         description: '',
-      }
+      },
     ]
   },
   {
