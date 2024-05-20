@@ -10,18 +10,12 @@ const artAndAristData = [
     price: 220,
 
     artworkId: 'A1',
-    title: 'Human Snake',
-    artist: 'Aisha Patel',
+    title: '',
+    artist: '',
     year: '2022',
-    aboutTheArtist: 'Aisha Patel explores the delicate balance between chaos and serenity through her minimalist compositions. With a philosophy rooted in finding beauty and peace in the midst of disorder, Aisha’s work is a reflection of her journey towards mindfulness and tranquility. Her piece "Serenity in Chaos" exemplifies her mastery in using pastels to convey a sense of calm, inviting viewers into a meditative state amidst the complexities of modern life.',
+    aboutTheArtist: '',
     collectionName: '',
-
-    // collection: [
-    //   {
-    //     collectionArtworkId: 1,
-    //     description: 'human snake description.',
-    //   }
-    // ]
+    initialDescription: '',
   },
   {
     id: 'C2',
@@ -95,17 +89,22 @@ const artAndAristData = [
   {
     id: 'C5',
     productId: 'C5',
-    image: '/art-display/1.jpeg',
+    image: '/artworks/1.jpeg',
     productImage: '/clothing/wt-model3.png',
     images: clothingGallery.find(item => item.id === 'C4').images,
     price: 220,
 
     artworkId: 'A5',
-    title: 'Humandala',
-    artist: 'Kyle R. Spine',
+    title: 'Celestial Compass',
+    artist: 'Isadora Marlowe',
     year: '2022',
-    aboutTheArtist: 'number 5',
-    collectionName: '',
+    aboutTheArtist: 'Isadora Marlowe, a recluse with storm-tossed eyes, weaves her existence into her art. She once sailed with pirates, danced with mermaids, and whispered secrets to the wind. Her studio, perched on Cornwall’s cliffs, overlooks the restless ocean—a canvas for celestial musings. Isadora’s scent blends salt spray, old books, and stardust. She communicates through tide-washed bottles, cryptic notes inviting kindred souls to decipher her coded messages.',
+    initialDescription: `The Celestial Compass emerged from Isadora Marlowe’s midnight reveries, where constellations danced with forgotten memories. The aged parchment, once a ship’s log, cradles the silver ink etchings—a cosmic cartography of secrets. Each cardinal point whispers its tale:
+    North: A forgotten constellation, its name lost to time, guides wanderers toward uncharted realms. Isadora believes it harbors the echoes of ancient stardust.
+    East: Dawn’s birthplace, where possibilities bloom like dew-kissed petals. The compass needle trembles, urging dreamers to embrace new beginnings.
+    South: Solar winds carry melodies—half-remembered songs from distant shores. Isadora swears she hears mermaids singing in this quadrant.
+    West: Twilight cradles memories like fragile seashells. Here, the compass reveals glimpses of other lives—parallel existences or past incarnations, perhaps. The central gray square? A portal, veiled in mystery. Some say it leads to Isadora’s lost love, while others claim it connects to the moon itself.`,
+    collectionName: 'Navigating Dreams',
 
     collection: [
       {
@@ -116,7 +115,7 @@ const artAndAristData = [
   {
     id: 'C6',
     productId: 'C6',
-    image: '/art-display/3.jpeg',
+    image: '/artworks/3.jpeg',
     productImage: '/clothing/wt-model2.png',
     images: clothingGallery.find(item => item.id === 'C6').images,
     price: 220,
@@ -131,7 +130,7 @@ const artAndAristData = [
     collection: [
       {
         collectionImageId: 1,
-        collectionImage: '/art-display/2.jpeg',
+        collectionImage: '/artworks/2.jpeg',
         description: 'This early piece showcases the transition from realism to abstract, capturing the tension in form and hue.',
       },
       {
@@ -141,12 +140,12 @@ const artAndAristData = [
       },
       {
         collectionImageId: 2,
-        collectionImage: '/art-display/3.jpeg',
-        description: 'Featured at the Modern Art Expo, this artwork reflects the depth of the void through layered textures and contrasting light.',
+        collectionImage: '/artworks/3.jpeg',
+        description: 'This artwork invites viewers into a surreal and metaphysical landscape, where the boundaries between the earthly and the celestial blur. At the center, a monolithic doorway opens to a cosmic vista, with a radiant star casting its light upon an expanse of space. The foreground features an enigmatic figure draped in robes, standing at the threshold of this interstellar gateway. This figure serves as both guardian and traveler, poised at the juncture of known reality and infinite possibility. Surrounding this central scene are intricate borders filled with esoteric symbols and celestial bodies, suggesting a universe rich with hidden knowledge and cosmic connections. The meticulous detail in every element—from the textured fields to the individual stars—creates a tapestry that is both hypnotic and thought-provoking. This image captivates with its stark black-and-white contrast, drawing attention to the fine linework that constructs this otherworldly scene. It is interesting for its blend of mysticism with astronomical themes, evoking contemplation on humanity’s place within the vast cosmos. The artwork’s relevance lies in its ability to resonate on both an aesthetic level and as an allegory for exploration—be it internal or through the stars.',
       },
       {
         collectionImageId: 3,
-        collectionImage: '/art-display/4.jpeg',
+        collectionImage: '/artworks/4.jpeg',
         description: '',
       },
     ]
@@ -154,13 +153,13 @@ const artAndAristData = [
   {
     id: 'C7',
     productId: 'C7',
-    image: '/art-display/2.jpeg',
+    image: '/artworks/2.jpeg',
     productImage: '/clothing/wt-models1.png',
     images: clothingGallery.find(item => item.id === 'C7').images,
     price: 220,
 
     artworkId: 'A7',
-    title: 'Bright void awaits',
+    title: 'The Cosmic Pilgrimage',
     artist: 'Sam Joe',
     year: '2023',
     aboutTheArtist: 'about the artist number C7',
@@ -169,8 +168,8 @@ const artAndAristData = [
     collection: [
       {
         collectionImageId: 2,
-        collectionImage: '/art-display/3.jpeg',
-        description: 'description for C7',
+        collectionImage: '/artworks/3.jpeg',
+        description: '',
       }
     ]
   },

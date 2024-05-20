@@ -10,9 +10,22 @@ const Container = styled.div`
   padding: 100px 50px;
 `;
 
-const MainImage = styled.img`
+const InitialImageContainer = styled.div`
+  position: relative;
   max-height: 80vh;
   max-width: 50%;
+  overflow: hidden;
+
+  &:hover div {
+    opacity: 1;
+    top: 0;
+    overflow-y: auto;
+  }
+`;
+
+const MainImage = styled.img`
+  height: 100%;
+  width: 100%;
   border: solid 2px;
   border-color: #eed #eed #ffe #ccb;
   object-fit: contain;
@@ -37,6 +50,7 @@ const CollectionList = styled.div`
 
   p {
     padding: 50px;
+    color: #fff;
   }
 `;
 
@@ -84,10 +98,15 @@ export default function CollectionDisplay({ selectedArtwork }) {
           </h1>
           <p>{selectedArtwork.aboutTheArtist}</p>
         </ArtistInfo>
-        <MainImage src={selectedArtwork.image} alt="Main artwork image" />
+        <InitialImageContainer>
+          <MainImage src={selectedArtwork.image} alt="Main artwork image" />
+          <HoverOverlay>
+            <p>{selectedArtwork.initialDescription}</p>
+          </HoverOverlay>
+        </InitialImageContainer>
       </ArtistSection>
 
-      <div style={{border: '2px solid #fff'}}></div>
+      <div style={{border: '2px solid #fff'}} />
 
       {selectedArtwork.collection && selectedArtwork.collection.length > 0 && (
         <div>
@@ -99,6 +118,7 @@ export default function CollectionDisplay({ selectedArtwork }) {
                   <p>{item.description}</p>
                 </HoverOverlay>
               </ImageContainer>
+
             </CollectionList>
           ))}
         </div>

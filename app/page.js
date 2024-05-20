@@ -355,7 +355,7 @@ export default function Home() {
               <h1>Title for banner 1</h1>
             </TextContainer>
             <ImageContainer>
-              <StyledImage src="/art-display/1.jpeg" />
+              <StyledImage src="/artworks/1.jpeg" />
             </ImageContainer>
           </Banner>
           <Banner delay={12}>
@@ -363,7 +363,7 @@ export default function Home() {
               <h1>Title for banner 2</h1>
             </TextContainer>
             <ImageContainer>
-              <StyledImage src="/art-display/2.jpeg" />
+              <StyledImage src="/artworks/2.jpeg" />
             </ImageContainer>
           </Banner>
         </div>
