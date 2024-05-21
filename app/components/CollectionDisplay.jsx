@@ -83,6 +83,7 @@ const HoverOverlay = styled.div`
   color: #fff;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   opacity: 0;
   transition: all 0.3s ease-in-out;
@@ -101,12 +102,14 @@ export default function CollectionDisplay({ selectedArtwork }) {
         <InitialImageContainer>
           <MainImage src={selectedArtwork.image} alt="Main artwork image" />
           <HoverOverlay>
+            <h3>{selectedArtwork.title}</h3>
             <p>{selectedArtwork.initialDescription}</p>
           </HoverOverlay>
         </InitialImageContainer>
       </ArtistSection>
 
       <div style={{border: '2px solid #fff'}} />
+      <h1>{selectedArtwork.collectionName}</h1>
 
       {selectedArtwork.collection && selectedArtwork.collection.length > 0 && (
         <div>

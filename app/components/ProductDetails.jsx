@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import ThumbnailGallery from './ThumbnailGallery';
 import ProductOptionDetails from './ProductOptionDetails';
-import artAndAristData from '../backend/data';
 
 const Container = styled.div`
   height: 100vh;

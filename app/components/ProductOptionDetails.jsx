@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import artAndAristData from '../backend/data';
 
 const Container = styled.div`
   max-height: 70vh;
