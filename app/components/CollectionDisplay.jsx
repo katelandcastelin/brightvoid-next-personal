@@ -118,6 +118,7 @@ export default function CollectionDisplay({ selectedArtwork }) {
               <ImageContainer>
                 <Image src={item.collectionImage} alt="Collection image"/>
                 <HoverOverlay>
+                  <h1>{item.title}</h1>
                   <p>{item.description}</p>
                 </HoverOverlay>
               </ImageContainer>

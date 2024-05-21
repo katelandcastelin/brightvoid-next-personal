@@ -118,7 +118,7 @@ export default function ProductOptionDetails({ product }) {
   return (
     <Container>
       <h1>{product.title}</h1>
-      <h4>{description}</h4>
+      {/* <h4>{description}</h4> */}
       <h5>{product.artist}</h5>
       <h3>R {product.price}</h3>
       <SizeOptions>

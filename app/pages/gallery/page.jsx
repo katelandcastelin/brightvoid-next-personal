@@ -65,7 +65,7 @@ export default function GalleryPage() {
     setSelectedArtwork(null);
   }
 
-  const artworks = artAndAristData.map((artwork) => (
+  const artworks = artAndAristData.slice().reverse().map((artwork) => (
     <div key={artwork.image} style={{display: 'flex', justifyContent: 'center'}}>
       <div>
         <div className={styles.frame}>

@@ -16,11 +16,15 @@ const artists = {
   },
   IsadoraMarlowe: {
     name: 'Isadora Marlowe',
-    about: 'Isadora Marlowe, a recluse with storm-tossed eyes, weaves her existence into her art. She once sailed with pirates, danced with mermaids, and whispered secrets to the wind. Her studio, perched on Cornwall’s cliffs, overlooks the restless ocean—a canvas for celestial musings. Isadora’s scent blends salt spray, old books, and stardust. She communicates through tide-washed bottles, cryptic notes inviting kindred souls to decipher her coded messages.'
+    about: 'A recluse with storm-tossed eyes, weaves her existence into her art. She once sailed with pirates, danced with mermaids, and whispered secrets to the wind. Her studio, perched on Cornwall’s cliffs, overlooks the restless ocean—a canvas for celestial musings. Isadora’s scent blends salt spray, old books, and stardust. She communicates through tide-washed bottles, cryptic notes inviting kindred souls to decipher her coded messages.'
   },
   ElowenThistledown: {
     name: 'Elowen Thistledown',
-    about: 'Elowen Thistledown, a wanderer between worlds, collects echoes. Her studio, nestled in a forgotten attic, smells of old books and rain-soaked earth. She wears silver rings adorned with moonstone and weaves spells into her ink. Elowen’s voice, when she speaks, carries the weight of forgotten ages. She communicates through dreams, leaving cryptic symbols on dew-kissed windows. Seek her at twilight, where the veil thins.'
+    about: 'A wanderer between worlds, collects echoes. Her studio, nestled in a forgotten attic, smells of old books and rain-soaked earth. She wears silver rings adorned with moonstone and weaves spells into her ink. Elowen’s voice, when she speaks, carries the weight of forgotten ages. She communicates through dreams, leaving cryptic symbols on dew-kissed windows. Seek her at twilight, where the veil thins.'
+  },
+  CoralineKnut: {
+    name: 'Coraline Knut',
+    about: 'Aspiring artist from under a rock to the top of the mountains.',
   },
 };
 
@@ -30,7 +34,7 @@ const collections = {
     {
       collectionArtworkId: 1,
       collectionImage: '/artworks/Elena_Rodriguez-Ocominauty/Cosmic_Mechanism.jpeg',
-      description: '',
+      description: 'testing',
     },
   ],
   NavigatingDreams: [
@@ -58,6 +62,19 @@ const collections = {
       collectionImageId: 3,
       collectionImage: '/artworks/4.jpeg',
       description: '',
+    },
+  ],
+  EndsEmbrace: [
+    {
+      collectionImageId: 1,
+      collectionImage: '/artworks/new1.png',
+      description: 'Far away, a ship by a sunken island.',
+    },
+    {
+      collectionImageId: 2,
+      collectionImage: '/artworks/new3.png',
+      title: 'Test the title',
+      description: 'The Journey',
     },
   ],
 };
@@ -180,6 +197,23 @@ const artAndArtistData = [
     aboutTheArtist: artists.ElowenThistledown.about,
     collectionName: 'Veil of Echoes',
     collection: collections.VeilOfEchoes.slice(2), // Using slice to include specific items from the collection
+  },
+  {
+    id: 'C8',
+    productId: 'C8',
+    image: '/artworks/new2.png',
+    productImage: '/clothing/wt-models1.png',
+    images: clothingGallery.find(item => item.id === 'C7').images,
+    price: 200,
+
+    artworkId: 'A8',
+    title: 'Enter',
+    initialDescription: 'In the distance waits the embrace of the unknown.',
+    artist: artists.CoralineKnut.name,
+    year: '2024',
+    aboutTheArtist: artists.CoralineKnut.about,
+    collectionName: `End's embrace`,
+    collection: collections.EndsEmbrace,
   },
 ];
 
