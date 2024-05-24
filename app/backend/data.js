@@ -1,6 +1,5 @@
 import clothingGallery from "../pages/clothing/clothingGallery";
 
-// Artists data
 const artists = {
   CelestiaLumina: {
     name: 'Celestia Lumina',
@@ -8,7 +7,7 @@ const artists = {
   },
   ElenaRodriguez: {
     name: 'Elena Rodriguez',
-    about: 'Astra Vortex, the enigmatic artist behind the captivating “Cosmic Mechanism” and the mystical Ocominauty collection, remains shrouded in mystery. Their work seamlessly blends intricate geometric patterns, celestial symbolism, and steampunk aesthetics. Astra’s creations evoke ancient wisdom and cosmic order, inviting viewers to explore the depths of vision and enlightenment. Whether through cosmic maps or mandalas, Astra Vortex weaves a tapestry of wonder that transcends time and space.'
+    about: 'The enigmatic artist behind the captivating “Cosmic Mechanism” and the mystical Ocominauty collection, remains shrouded in mystery. Their work seamlessly blends intricate geometric patterns, celestial symbolism, and steampunk aesthetics. Astra’s creations evoke ancient wisdom and cosmic order, inviting viewers to explore the depths of vision and enlightenment. Whether through cosmic maps or mandalas, Astra Vortex weaves a tapestry of wonder that transcends time and space.'
   },
   FionaMatel: {
     name: 'Fiona Matel',
@@ -24,51 +23,77 @@ const artists = {
   },
   CoralineKnut: {
     name: 'Coraline Knut',
-    about: 'Aspiring artist from under a rock to the top of the mountains.',
+    about: 'Aspiring artist.',
+  },
+  DaleArcher: {
+    name: 'Dale Archer',
+    about: 'Dale Archer "about" goes here.',
   },
 };
 
-// Collections data
+const artworks = {
+
+}
+
 const collections = {
-  Ocominauty: [
+  Ocomiinauty: [
+    {by: artists.ElenaRodriguez,},
+    {
+      collectionArtworkId: 1,
+      collectionImage: '/artworks/Ocomiinrauy.png',
+      title: 'Ocomiinrauy',
+      description: '',
+    },
     {
       collectionArtworkId: 1,
       collectionImage: '/artworks/Elena_Rodriguez-Ocominauty/Cosmic_Mechanism.jpeg',
-      description: 'testing',
+      title: 'Cosmic Mechanism',
+      description: '',
     },
   ],
   NavigatingDreams: [
+    {by: artists.IsadoraMarlowe,},
     {
+      collectionArtworkId: 1,
+      collectionImage: '',
+      title: '',
       description: '',
     }
   ],
   VeilOfEchoes: [
+    {by: artists.ElowenThistledown,},
     {
       collectionImageId: 1,
       collectionImage: '/artworks/Threshold_of_Remembrance.jpeg',
+      title: '',
       description: 'This early piece showcases the transition from realism to abstract, capturing the tension in form and hue.',
     },
     {
       collectionImageId: 4,
       collectionImage: '/artworks/ai2.png',
+      title: '',
       description: 'Threshold of Remembrance',
     },
     {
       collectionImageId: 2,
       collectionImage: '/artworks/3.jpeg',
+      title: '',
       description: 'This artwork invites viewers into a surreal and metaphysical landscape, where the boundaries between the earthly and the celestial blur. At the center, a monolithic doorway opens to a cosmic vista, with a radiant star casting its light upon an expanse of space. The foreground features an enigmatic figure draped in robes, standing at the threshold of this interstellar gateway. This figure serves as both guardian and traveler, poised at the juncture of known reality and infinite possibility. Surrounding this central scene are intricate borders filled with esoteric symbols and celestial bodies, suggesting a universe rich with hidden knowledge and cosmic connections. The meticulous detail in every element—from the textured fields to the individual stars—creates a tapestry that is both hypnotic and thought-provoking. This image captivates with its stark black-and-white contrast, drawing attention to the fine linework that constructs this otherworldly scene. It is interesting for its blend of mysticism with astronomical themes, evoking contemplation on humanity’s place within the vast cosmos. The artwork’s relevance lies in its ability to resonate on both an aesthetic level and as an allegory for exploration—be it internal or through the stars.',
     },
     {
       collectionImageId: 3,
       collectionImage: '/artworks/4.jpeg',
+      title: '',
       description: '',
     },
   ],
   EndsEmbrace: [
+    {by: artists.CoralineKnut,},
     {
       collectionImageId: 1,
       collectionImage: '/artworks/new1.png',
-      description: 'Far away, a ship by a sunken island.',
+      title: '',
+      description: 'Far away, sunken ship by a sunny island.',
     },
     {
       collectionImageId: 2,
@@ -94,7 +119,6 @@ const artAndArtistData = [
     initialDescription: 'This artwork is a testament to the quest for knowledge and the beauty of the unknown, urging onlookers to embrace the journey of self-discovery and cosmic exploration.',
     year: '2022',
     aboutTheArtist: artists.CelestiaLumina.about,
-    collectionName: '',
   },
   {
     id: 'C2',
@@ -106,12 +130,12 @@ const artAndArtistData = [
 
     artworkId: 'A2',
     artist: artists.ElenaRodriguez.name,
-    title: 'Cosmic intricacy',
-    initialDescription: '"Cosmic intricacy" emerges from the depths of celestial imagination.',
+    title: 'Ocomiinrauy',
+    initialDescription: '"Ocomiinrauy" emerges from the depths of celestial imagination.',
     year: '2022',
     aboutTheArtist: artists.ElenaRodriguez.about,
-    collectionName: 'Ocominauty',
-    collection: collections.Ocominauty,
+    collectionName: 'Ocomiinauty',
+    collection: collections.Ocomiinauty,
   },
   {
     id: 'C3',
@@ -128,7 +152,7 @@ const artAndArtistData = [
     year: '2020',
     aboutTheArtist: artists.ElenaRodriguez.about,
     collectionName: 'Ocominauty',
-    collection: collections.Ocominauty,
+    collection: collections.Ocomiinauty,
   },
   {
     id: 'C4',

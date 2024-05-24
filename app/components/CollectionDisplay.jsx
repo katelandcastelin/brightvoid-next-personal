@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const Container = styled.div`
   max-height: 100%;
@@ -26,8 +27,8 @@ const InitialImageContainer = styled.div`
 const MainImage = styled.img`
   height: 100%;
   width: 100%;
-  border: solid 2px;
-  border-color: #eed #eed #ffe #ccb;
+  border-left: solid 2px #fff;
+  /* border-color: #eed #eed #ffe #ccb; */
   object-fit: contain;
 `;
 
@@ -98,12 +99,22 @@ export default function CollectionDisplay({ selectedArtwork }) {
             {selectedArtwork.artist}
           </h1>
           <p>{selectedArtwork.aboutTheArtist}</p>
+          <Link href={`/pages/clothing/${selectedArtwork.productId}`}>
+            <button>
+              View in shop
+            </button>
+          </Link>
         </ArtistInfo>
         <InitialImageContainer>
           <MainImage src={selectedArtwork.image} alt="Main artwork image" />
           <HoverOverlay>
             <h3>{selectedArtwork.title}</h3>
             <p>{selectedArtwork.initialDescription}</p>
+            <Link href={`/pages/clothing/${selectedArtwork.productId}`}>
+              <button>
+                View in shop
+              </button>
+            </Link>
           </HoverOverlay>
         </InitialImageContainer>
       </ArtistSection>
