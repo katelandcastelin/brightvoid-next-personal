@@ -29,6 +29,10 @@ const artists = {
     name: 'Dale Archer',
     about: 'Dale Archer "about" goes here.',
   },
+  NickKai: {
+    name: 'Nick Kai',
+    about: 'Nick Kai "about" goes here.',
+  },
 };
 
 const artworks = {
@@ -100,6 +104,48 @@ const collections = {
       collectionImage: '/artworks/new3.png',
       title: 'Test the title',
       description: 'The Journey',
+    },
+  ],
+  DaleArcher: [
+    {by: artists.DaleArcher,},
+    {
+      collectionImageId: 1,
+      collectionImage: '/artworks/ocean1.png',
+      title: '',
+      description: '',
+    },
+    {
+      collectionImageId: 2,
+      collectionImage: '/artworks/sky.png',
+      title: 'Burn',
+      description: 'Fire in my brain burning every thought.',
+    },
+    {
+      collectionImageId: 3,
+      collectionImage: '/artworks/fire.png',
+      title: '',
+      description: '',
+    },
+  ],
+  NickKai: [
+    {by: artists.NickKai,},
+    {
+      collectionImageId: 1,
+      collectionImage: '/artworks/may1.jpg',
+      title: '',
+      description: '',
+    },
+    {
+      collectionImageId: 1,
+      collectionImage: '/artworks/may2.png',
+      title: '',
+      description: '',
+    },
+    {
+      collectionImageId: 1,
+      collectionImage: '/artworks/may3.jpg',
+      title: '',
+      description: '',
     },
   ],
 };
@@ -238,6 +284,38 @@ const artAndArtistData = [
     aboutTheArtist: artists.CoralineKnut.about,
     collectionName: `End's embrace`,
     collection: collections.EndsEmbrace,
+  },
+  {
+    id: 'C9',
+    productId: 'C9',
+    image: '/artworks/ocean1.png',
+    productImage: '',
+    // images: clothingGallery.find(item => item.id === 'C7').images,
+    price: 200,
+
+    artworkId: 'A9',
+    title: 'Ocean',
+    initialDescription: 'Initial descripeiton of ocean',
+    artist: artists.DaleArcher.name,
+    year: '2024',
+    aboutTheArtist: artists.DaleArcher.about,
+    collection: collections.DaleArcher,
+  },
+  {
+    id: 'C10',
+    productId: 'C10',
+    image: '/artworks/may1.jpg',
+    productImage: '',
+    // images: clothingGallery.find(item => item.id === 'C7').images,
+    price: 250,
+
+    artworkId: 'A10',
+    title: 'Title goes here',
+    initialDescription: 'Initial descripeiton goes here',
+    artist: artists.NickKai.name,
+    year: '2024',
+    aboutTheArtist: artists.NickKai.about,
+    collection: collections.NickKai,
   },
 ];
 

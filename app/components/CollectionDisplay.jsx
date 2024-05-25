@@ -90,6 +90,34 @@ const HoverOverlay = styled.div`
   transition: all 0.3s ease-in-out;
 `;
 
+const ActionButton = styled.button`
+  border-radius: 5px;
+  margin-top: 20px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: box-shadow 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+
+  &:hover {
+    text-shadow:
+      0 0 5px rgba(9, 9, 121, 0.5),
+      0 0 15px rgba(9, 9, 121, 0.5),
+      0 0 25px rgba(0, 212, 255, 0.5),
+      0 0 3px rgba(9, 9, 121, 0.5),
+      0 0 5px rgba(9, 9, 121, 0.5),
+      0 0 15px rgba(9, 9, 121, 0.5),
+      0 0 25px rgba(0, 212, 255, 0.5),
+      0 0 30px rgba(0, 212, 255, 0.5);
+
+    box-shadow: 
+      0 0 5px rgba(9, 9, 121, 0.2),
+      0 0 10px rgba(9, 9, 121, 0.3),
+      0 0 15px rgba(0, 212, 255, 0.3),
+      0 0 60px rgba(0, 212, 255, 0.3);
+  }
+`;
+
 export default function CollectionDisplay({ selectedArtwork }) {
   return (
     <Container>
@@ -100,9 +128,9 @@ export default function CollectionDisplay({ selectedArtwork }) {
           </h1>
           <p>{selectedArtwork.aboutTheArtist}</p>
           <Link href={`/pages/clothing/${selectedArtwork.productId}`}>
-            <button>
+            <ActionButton>
               View in shop
-            </button>
+            </ActionButton>
           </Link>
         </ArtistInfo>
         <InitialImageContainer>
@@ -111,9 +139,9 @@ export default function CollectionDisplay({ selectedArtwork }) {
             <h3>{selectedArtwork.title}</h3>
             <p>{selectedArtwork.initialDescription}</p>
             <Link href={`/pages/clothing/${selectedArtwork.productId}`}>
-              <button>
+              <ActionButton>
                 View in shop
-              </button>
+              </ActionButton>
             </Link>
           </HoverOverlay>
         </InitialImageContainer>
