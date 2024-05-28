@@ -35,13 +35,9 @@ const artists = {
   },
 };
 
-const artworks = {
-
-}
-
 const collections = {
   Ocomiinauty: [
-    {by: artists.ElenaRodriguez,},
+    // {by: artists.ElenaRodriguez,},
     {
       collectionArtworkId: 1,
       collectionImage: '/artworks/Ocomiinrauy.png',
@@ -55,28 +51,22 @@ const collections = {
       description: '',
     },
   ],
-  NavigatingDreams: [
-    {by: artists.IsadoraMarlowe,},
-    {
-      collectionArtworkId: 1,
-      collectionImage: '',
-      title: '',
-      description: '',
-    }
-  ],
+  // NavigatingDreams: [
+  //   {by: artists.IsadoraMarlowe,},
+  //   {
+  //     collectionArtworkId: 1,
+  //     collectionImage: '',
+  //     title: '',
+  //     description: '',
+  //   }
+  // ],
   VeilOfEchoes: [
-    {by: artists.ElowenThistledown,},
+    // {by: artists.ElowenThistledown,},
     {
       collectionImageId: 1,
       collectionImage: '/artworks/Threshold_of_Remembrance.jpeg',
       title: '',
       description: 'This early piece showcases the transition from realism to abstract, capturing the tension in form and hue.',
-    },
-    {
-      collectionImageId: 4,
-      collectionImage: '/artworks/ai2.png',
-      title: '',
-      description: 'Threshold of Remembrance',
     },
     {
       collectionImageId: 2,
@@ -92,11 +82,11 @@ const collections = {
     },
   ],
   EndsEmbrace: [
-    {by: artists.CoralineKnut,},
+    // {by: artists.CoralineKnut,},
     {
       collectionImageId: 1,
       collectionImage: '/artworks/new1.png',
-      title: '',
+      title: 'First title',
       description: 'Far away, sunken ship by a sunny island.',
     },
     {
@@ -107,7 +97,7 @@ const collections = {
     },
   ],
   DaleArcher: [
-    {by: artists.DaleArcher,},
+    // {by: artists.DaleArcher,},
     {
       collectionImageId: 1,
       collectionImage: '/artworks/ocean1.png',
@@ -128,7 +118,7 @@ const collections = {
     },
   ],
   NickKai: [
-    {by: artists.NickKai,},
+    // {by: artists.NickKai,},
     {
       collectionImageId: 1,
       collectionImage: '/artworks/may1.jpg',
@@ -233,8 +223,6 @@ const artAndArtistData = [
     East: Dawn’s birthplace, where possibilities bloom like dew-kissed petals. The compass needle trembles, urging dreamers to embrace new beginnings.
     South: Solar winds carry melodies—half-remembered songs from distant shores. Isadora swears she hears mermaids singing in this quadrant.
     West: Twilight cradles memories like fragile seashells. Here, the compass reveals glimpses of other lives—parallel existences or past incarnations, perhaps. The central gray square? A portal, veiled in mystery. Some say it leads to Isadora’s lost love, while others claim it connects to the moon itself.`,
-    collectionName: 'Navigating Dreams',
-    collection: collections.NavigatingDreams,
   },
   {
     id: 'C6',
