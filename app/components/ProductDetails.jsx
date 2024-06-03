@@ -81,7 +81,7 @@ const ImageContainer = styled.div`
 
 export default function ProductDetails({ product }) {
   const [selectedImage, setSelectedImage] = useState(product.productImage);
-  const productImages = product.images || []; 
+  const productImages = product.images || [];
 
   return (
     <div style={{display: 'flex', justifyContent: 'center'}}>

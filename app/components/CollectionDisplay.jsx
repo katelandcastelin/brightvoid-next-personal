@@ -161,7 +161,6 @@ export default function CollectionDisplay({ selectedArtwork }) {
                   <p>{item.description}</p>
                 </HoverOverlay>
               </ImageContainer>
-
             </CollectionList>
           ))}
         </div>
