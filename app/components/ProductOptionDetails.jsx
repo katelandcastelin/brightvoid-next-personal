@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import artAndAristData from '../backend/data';
 
 const Container = styled.div`
   max-height: 70vh;
@@ -18,8 +17,8 @@ const SizeButton = styled.button`
   padding: 5px 10px;
   font-size: 16px;
   border: 1px solid #aaa;
-  background-color: ${props => props.isSelected ? '#ccc' : 'transparent'};
-  color: ${props => props.isSelected ? '#000' : null};
+  background-color: ${props => props.$isSelected ? '#ccc' : 'transparent'};
+  color: ${props => props.$isSelected ? '#000' : null};
   cursor: pointer;
   width: 50px;
   padding: 10px 0;
@@ -119,7 +118,7 @@ export default function ProductOptionDetails({ product }) {
   return (
     <Container>
       <h1>{product.title}</h1>
-      <h4>{description}</h4>
+      {/* <h4>{description}</h4> */}
       <h5>{product.artist}</h5>
       <h3>R {product.price}</h3>
       <SizeOptions>
@@ -127,7 +126,7 @@ export default function ProductOptionDetails({ product }) {
           <SizeButton
             key={size}
             onClick={() => handleSizeSelect(size)}
-            isSelected={selectedSize === size}
+            $isSelected={selectedSize === size}
           >
             {size}
           </SizeButton>

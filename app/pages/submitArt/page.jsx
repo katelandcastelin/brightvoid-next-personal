@@ -42,9 +42,21 @@ export default function submitArt() {
         Submission form
         <div>Artists name</div>
         <div>
-          Artwork information
           <div>Title</div>
           <div>Description/story behind it</div>
+          About the Artist: A Cosmic Enigma
+
+          🌠 Name: Unknown 🎨 Pseudonym: StellarDreamer
+
+          Biography: StellarDreamer, a reclusive artist shrouded in celestial mystique, emerged from the cosmic tapestry to grace us with their ethereal creations. Born under a meteor shower and raised by starlight, their journey transcends mere mortal existence.
+
+          🌌 Inspirations: StellarDreamer draws inspiration from ancient observatories, forgotten manuscripts, and the whispers of nebulae. Their studio, nestled atop a moonlit peak, resonates with the hum of distant quasars. Each stroke of their brush echoes the cosmic symphony—the birth of galaxies, the collapse of stars, and the eons-old dance of celestial bodies.
+
+          🔭 Themes: Their work seamlessly weaves science and imagination. Armillary spheres, astrolabes, and zodiac constellations converge with intricate patterns, hinting at forgotten star maps. StellarDreamer invites viewers to explore the universe within—a voyage beyond the mundane, guided by cosmic coordinates.
+
+          🌟 Legacy: Despite their anonymity, StellarDreamer’s art has found its way into observatories, planetariums, and private collections across galaxies. Admirers speculate that they exist simultaneously in multiple dimensions, sketching nebulae while sipping stardust tea.
+
+          📜 Quote: “Art is the language of the cosmos,” StellarDreamer once whispered to a passing comet. And indeed, their celestial lexicon continues to captivate, leaving stardust trails in our hearts.
         </div>
         <div>
           Upload feature

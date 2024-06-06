@@ -1,68 +1,170 @@
 'use client';
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const Container = styled.div`
   max-height: 100%;
   max-width: 100vw;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding-top: 180px;
+  padding: 100px 50px;
 `;
 
-const Grid = styled.div`
-  columns: 2 200px;
-  column-gap: 20px;
-  justify-content: space-around;
-  width: 90%;
-  margin: 0 auto;
-  padding: 1rem;
+const InitialImageContainer = styled.div`
+  position: relative;
+  max-height: 80vh;
+  max-width: 50%;
+  overflow: hidden;
 
-  @media (max-width: 750px) {
-    columns: 1 100px;
-    column-gap: auto;
-    width: 90%;
-    margin: 0 auto;
+  &:hover div {
+    opacity: 1;
+    top: 0;
+    overflow-y: auto;
+  }
+`;
+
+const MainImage = styled.img`
+  height: 100%;
+  width: 100%;
+  border-left: solid 2px #fff;
+  /* border-color: #eed #eed #ffe #ccb; */
+  object-fit: contain;
+`;
+
+const ArtistSection = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-bottom: 40px;
+`;
+
+const ArtistInfo = styled.div`
+  width: 50%;
+  padding-right: 25px;
+`;
+
+const CollectionList = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+
+  p {
+    padding: 50px;
+    color: #fff;
+  }
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+  max-height: 80vh;
+  max-width: 50%;
+  overflow: hidden;
+
+  &:hover div {
+    opacity: 1;
+    top: 0;
   }
 `;
 
 const Image = styled.img`
-  max-height: 80vh;
-  max-width: 100%;
-  border: solid 2px;
-  border-bottom-color: #ffe;
-  border-left-color: #eed;
-  border-right-color: #eed;
-  border-top-color: #ccb;
-  position: inherit;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+`;
+
+const HoverOverlay = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+`;
+
+const ActionButton = styled.button`
+  border-radius: 5px;
+  margin-top: 20px;
+  border: 1px solid #fff;
+  background-color: transparent;
   cursor: pointer;
+  padding: 10px 15px;
+  transition: box-shadow 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+
+  &:hover {
+    text-shadow:
+      0 0 5px rgba(9, 9, 121, 0.5),
+      0 0 15px rgba(9, 9, 121, 0.5),
+      0 0 25px rgba(0, 212, 255, 0.5),
+      0 0 3px rgba(9, 9, 121, 0.5),
+      0 0 5px rgba(9, 9, 121, 0.5),
+      0 0 15px rgba(9, 9, 121, 0.5),
+      0 0 25px rgba(0, 212, 255, 0.5),
+      0 0 30px rgba(0, 212, 255, 0.5);
+
+    box-shadow: 
+      0 0 5px rgba(9, 9, 121, 0.2),
+      0 0 10px rgba(9, 9, 121, 0.3),
+      0 0 15px rgba(0, 212, 255, 0.3),
+      0 0 60px rgba(0, 212, 255, 0.3);
+  }
 `;
 
 export default function CollectionDisplay({ selectedArtwork }) {
-  const collectionImageSrc = selectedArtwork.collection.length > 0 ? selectedArtwork.collection[0].collectionImage : null;
-  const collectionDescription = selectedArtwork.collection.length > 0 ? selectedArtwork.collection[0].description : null;
-
   return (
     <Container>
-      <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
-        <div style={{display: 'flex', justifyContent: 'space-around', width: '80%'}}>
-          <div style={{width: '45%'}}>
-            <div>
-              <p>{selectedArtwork.aboutTheArtist}</p>
-            </div>
-            {collectionImageSrc && (
-              <div style={{display: 'flex'}}>
-                <Image src={collectionImageSrc} alt="Collection image" />
-                <p>{collectionDescription}</p>
-              </div>
-            )}
-          </div>
-          <div style={{width: '45%'}}>
-            <Image src={selectedArtwork.image} />
-          </div>
+      <ArtistSection>
+        <ArtistInfo>
+          <h1 style={{ fontFamily: 'Schmaltzy, sans-serif', fontWeight: '400', letterSpacing: '4px' }}>
+            {selectedArtwork.artist}
+          </h1>
+          <p>{selectedArtwork.aboutTheArtist}</p>
+          <Link href={`/pages/clothing/${selectedArtwork.productId}`}>
+            <ActionButton>
+              View in shop
+            </ActionButton>
+          </Link>
+        </ArtistInfo>
+        <InitialImageContainer>
+          <MainImage src={selectedArtwork.image} alt="Main artwork image" />
+          <HoverOverlay>
+            <h3>{selectedArtwork.title}</h3>
+            <p>{selectedArtwork.initialDescription}</p>
+            <Link href={`/pages/clothing/${selectedArtwork.productId}`}>
+              <ActionButton>
+                View in shop
+              </ActionButton>
+            </Link>
+          </HoverOverlay>
+        </InitialImageContainer>
+      </ArtistSection>
+
+      <div style={{border: '2px solid #fff'}} />
+      <h1>{selectedArtwork.collectionName}</h1>
+
+      {selectedArtwork.collection && selectedArtwork.collection.length > 0 && (
+        <div>
+          {selectedArtwork.collection.map((item) => (
+            <CollectionList key={item.collectionImageId}>
+              <ImageContainer>
+                <Image src={item.collectionImage} alt="Collection image"/>
+                <HoverOverlay>
+                  <h1>{item.title}</h1>
+                  <p>{item.description}</p>
+                </HoverOverlay>
+              </ImageContainer>
+            </CollectionList>
+          ))}
         </div>
-      </div>
+      )}
     </Container>
   )
 }

@@ -1,4 +1,4 @@
-import { React, useState, useEffect }from 'react';
+import { React, useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.div`
@@ -19,6 +19,21 @@ const HeaderContainer = styled.div`
     height: 60px;
     display: flex;
   }
+
+  &:hover .links {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+const Links = styled.div`
+  margin-left: 20px;
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  transform: translateX(-100%);
+  z-index: -2;
 `;
 
 export default function GallerHeader() {
@@ -48,9 +63,15 @@ export default function GallerHeader() {
 
   return (
     <HeaderContainer style={{ top: isVisible ? '0' : '-100px' }}>
+      <div style={{height: '60px', width: '60px', position: 'absolute', background: '#000', zIndex: '-1', top: '0', left: '0'}} />
       <a href="/">
         <img src='/logo/logo-white.png' />
       </a>
+      <Links className='links'>
+        <a href="/pages/clothing">Shop</a>
+        <a href="/pages/contact">Contact</a>
+        <a href="/pages/submitArt">Submit your art</a>
+      </Links>
     </HeaderContainer>
   )
 }

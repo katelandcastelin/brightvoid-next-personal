@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import ThumbnailGallery from './ThumbnailGallery';
 import ProductOptionDetails from './ProductOptionDetails';
-import artAndAristData from '../backend/data';
 
 const Container = styled.div`
   height: 100vh;
@@ -82,7 +81,7 @@ const ImageContainer = styled.div`
 
 export default function ProductDetails({ product }) {
   const [selectedImage, setSelectedImage] = useState(product.productImage);
-  const productImages = product.images || []; 
+  const productImages = product.images || [];
 
   return (
     <div style={{display: 'flex', justifyContent: 'center'}}>
